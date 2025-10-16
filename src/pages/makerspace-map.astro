@@ -1,0 +1,746 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+// Same MakerSpace data as the directory page
+const makerspaces = [
+  {
+    id: 1,
+    name: "TechShop San Francisco",
+    description:
+      "A community workshop and prototyping platform where makers, entrepreneurs, and artists can access professional equipment and classes.",
+    address: "926 Howard St, San Francisco, CA 94103",
+    city: "San Francisco",
+    state: "CA",
+    country: "USA",
+    coordinates: { lat: 37.7749, lng: -122.4194 },
+    phone: "(415) 543-4321",
+    email: "info@techshop.com",
+    website: "https://techshop.com",
+    ownershipModel: "Commercial",
+    membershipCosts: {
+      monthly: 175,
+      annual: 1750,
+      dayPass: 25,
+    },
+    specialties: ["Electronics", "Woodworking", "Metalworking", "3D Printing"],
+    verified: true,
+  },
+  {
+    id: 2,
+    name: "Noisebridge",
+    description:
+      "A hackerspace for technical-creative projects, offering a collaborative environment for learning, teaching, and making.",
+    address: "2169 Mission St, San Francisco, CA 94110",
+    city: "San Francisco",
+    state: "CA",
+    country: "USA",
+    coordinates: { lat: 37.7611, lng: -122.4194 },
+    phone: "(415) 555-0199",
+    email: "info@noisebridge.net",
+    website: "https://noisebridge.net",
+    ownershipModel: "Non-profit Community",
+    membershipCosts: {
+      monthly: 40,
+      annual: 400,
+      dayPass: 0,
+    },
+    specialties: ["Electronics", "Programming", "Biotech", "Open Source"],
+    verified: true,
+  },
+  {
+    id: 3,
+    name: "Austin Creative Reuse",
+    description:
+      "A nonprofit organization dedicated to creative reuse and sustainability through arts and crafts education.",
+    address: "2005 Wheless Ln, Austin, TX 78723",
+    city: "Austin",
+    state: "TX",
+    country: "USA",
+    coordinates: { lat: 30.2672, lng: -97.7431 },
+    phone: "(512) 375-3041",
+    email: "info@austincreativereuse.org",
+    website: "https://austincreativereuse.org",
+    ownershipModel: "Non-profit Community",
+    membershipCosts: {
+      monthly: 0,
+      annual: 50,
+      dayPass: 0,
+    },
+    specialties: ["Textiles", "Paper Crafts", "Sustainability", "Education"],
+    verified: true,
+  },
+  {
+    id: 4,
+    name: "i3 Detroit",
+    description:
+      "A community workshop in Detroit focused on providing access to tools, knowledge, and collaborative workspace.",
+    address: "1481 Wordsworth St, Ferndale, MI 48220",
+    city: "Ferndale",
+    state: "MI",
+    country: "USA",
+    coordinates: { lat: 42.4606, lng: -83.1346 },
+    phone: "(248) 629-3955",
+    email: "info@i3detroit.com",
+    website: "https://i3detroit.com",
+    ownershipModel: "Member-owned Cooperative",
+    membershipCosts: {
+      monthly: 60,
+      annual: 600,
+      dayPass: 15,
+    },
+    specialties: ["Woodworking", "Electronics", "CNC", "Community Building"],
+    verified: true,
+  },
+  {
+    id: 5,
+    name: "Artisan's Asylum",
+    description:
+      "A community workshop in Somerville offering classes, studio space, and access to professional-grade tools and equipment.",
+    address: "96 Holton St, Somerville, MA 02143",
+    city: "Somerville",
+    state: "MA",
+    country: "USA",
+    coordinates: { lat: 42.3876, lng: -71.0995 },
+    phone: "(617) 718-2190",
+    email: "info@artisansasylum.com",
+    website: "https://artisansasylum.com",
+    ownershipModel: "Non-profit Community",
+    membershipCosts: {
+      monthly: 85,
+      annual: 850,
+      dayPass: 30,
+    },
+    specialties: ["Woodworking", "Metalworking", "Electronics", "Textiles", "Ceramics"],
+    verified: true,
+  },
+];
+---
+
+<Layout
+  title="MakerSpace Map"
+  description="Find MakerSpaces near you with our interactive map. Use location services or search by address to discover local maker communities.">
+  <Navigation />
+
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">MakerSpace Map 🗺️</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+          Discover MakerSpaces in your area with our interactive map. Find the perfect workshop near you!
+        </p>
+      </div>
+    </section>
+
+    <!-- Map Controls -->
+    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-white border-b">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+          <!-- Location Controls -->
+          <div class="flex flex-col sm:flex-row gap-4 items-center">
+            <button
+              id="useLocation"
+              class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              Use My Location
+            </button>
+
+            <div class="flex gap-2">
+              <input
+                type="text"
+                id="addressInput"
+                placeholder="Enter address, city, or zip code..."
+                class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent min-w-[300px]"
+              />
+              <button
+                id="searchAddress"
+                class="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                Search
+              </button>
+            </div>
+          </div>
+
+          <!-- Map Info -->
+          <div class="text-sm text-gray-600">
+            <div>📍 {makerspaces.length} MakerSpaces</div>
+            <div>🌍 {new Set(makerspaces.map(ms => ms.state)).size} States</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Container -->
+    <section class="relative">
+      <div id="map" class="w-full h-[600px] bg-gray-200"></div>
+
+      <!-- Map Loading -->
+      <div id="mapLoading" class="absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center">
+        <div class="text-center">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div class="text-gray-600">Loading map...</div>
+        </div>
+      </div>
+
+      <!-- Map Error -->
+      <div id="mapError" class="absolute inset-0 bg-red-50 flex items-center justify-center hidden">
+        <div class="text-center text-red-600">
+          <svg class="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div class="text-lg font-semibold mb-2">Map Loading Failed</div>
+          <div class="text-sm mb-4">Unable to load the interactive map. Please check your internet connection.</div>
+          <button id="retryMap" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+            Retry
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legend -->
+    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="bg-white rounded-lg p-6 shadow-lg">
+          <h3 class="text-lg font-semibold mb-4">Map Legend</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
+              <span class="text-sm">Commercial</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-green-500 rounded-full mr-3"></div>
+              <span class="text-sm">Non-profit Community</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-purple-500 rounded-full mr-3"></div>
+              <span class="text-sm">Member-owned Cooperative</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-yellow-500 rounded-full mr-3"></div>
+              <span class="text-sm">Other</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nearby MakerSpaces List -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">All MakerSpaces</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            makerspaces.map(makerspace => (
+              <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">{makerspace.name}</h3>
+                <div class="text-gray-600 mb-3">
+                  <div class="flex items-center mb-1">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    {makerspace.city}, {makerspace.state}
+                  </div>
+                  <div class="text-sm">{makerspace.ownershipModel}</div>
+                </div>
+                <p class="text-gray-700 text-sm mb-4">{makerspace.description.substring(0, 120)}...</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {makerspace.specialties.slice(0, 3).map(specialty => (
+                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">{specialty}</span>
+                  ))}
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    onclick={`focusMakerSpace(${makerspace.id})`}
+                    class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                    Show on Map
+                  </button>
+                  <a
+                    href="/makerspaces"
+                    class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition-colors">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script>
+  // MakerSpace data
+  const makerspaces = [
+    {
+      id: 1,
+      name: "TechShop San Francisco",
+      description:
+        "A community workshop and prototyping platform where makers, entrepreneurs, and artists can access professional equipment and classes.",
+      address: "926 Howard St, San Francisco, CA 94103",
+      city: "San Francisco",
+      state: "CA",
+      country: "USA",
+      coordinates: { lat: 37.7749, lng: -122.4194 },
+      phone: "(415) 543-4321",
+      email: "info@techshop.com",
+      website: "https://techshop.com",
+      ownershipModel: "Commercial",
+      membershipCosts: {
+        monthly: 175,
+        annual: 1750,
+        dayPass: 25,
+      },
+      specialties: ["Electronics", "Woodworking", "Metalworking", "3D Printing"],
+      verified: true,
+    },
+    {
+      id: 2,
+      name: "Noisebridge",
+      description:
+        "A hackerspace for technical-creative projects, offering a collaborative environment for learning, teaching, and making.",
+      address: "2169 Mission St, San Francisco, CA 94110",
+      city: "San Francisco",
+      state: "CA",
+      country: "USA",
+      coordinates: { lat: 37.7611, lng: -122.4194 },
+      phone: "(415) 555-0199",
+      email: "info@noisebridge.net",
+      website: "https://noisebridge.net",
+      ownershipModel: "Non-profit Community",
+      membershipCosts: {
+        monthly: 40,
+        annual: 400,
+        dayPass: 0,
+      },
+      specialties: ["Electronics", "Programming", "Biotech", "Open Source"],
+      verified: true,
+    },
+    {
+      id: 3,
+      name: "Austin Creative Reuse",
+      description:
+        "A nonprofit organization dedicated to creative reuse and sustainability through arts and crafts education.",
+      address: "2005 Wheless Ln, Austin, TX 78723",
+      city: "Austin",
+      state: "TX",
+      country: "USA",
+      coordinates: { lat: 30.2672, lng: -97.7431 },
+      phone: "(512) 375-3041",
+      email: "info@austincreativereuse.org",
+      website: "https://austincreativereuse.org",
+      ownershipModel: "Non-profit Community",
+      membershipCosts: {
+        monthly: 0,
+        annual: 50,
+        dayPass: 0,
+      },
+      specialties: ["Textiles", "Paper Crafts", "Sustainability", "Education"],
+      verified: true,
+    },
+    {
+      id: 4,
+      name: "i3 Detroit",
+      description:
+        "A community workshop in Detroit focused on providing access to tools, knowledge, and collaborative workspace.",
+      address: "1481 Wordsworth St, Ferndale, MI 48220",
+      city: "Ferndale",
+      state: "MI",
+      country: "USA",
+      coordinates: { lat: 42.4606, lng: -83.1346 },
+      phone: "(248) 629-3955",
+      email: "info@i3detroit.com",
+      website: "https://i3detroit.com",
+      ownershipModel: "Member-owned Cooperative",
+      membershipCosts: {
+        monthly: 60,
+        annual: 600,
+        dayPass: 15,
+      },
+      specialties: ["Woodworking", "Electronics", "CNC", "Community Building"],
+      verified: true,
+    },
+    {
+      id: 5,
+      name: "Artisan's Asylum",
+      description:
+        "A community workshop in Somerville offering classes, studio space, and access to professional-grade tools and equipment.",
+      address: "96 Holton St, Somerville, MA 02143",
+      city: "Somerville",
+      state: "MA",
+      country: "USA",
+      coordinates: { lat: 42.3876, lng: -71.0995 },
+      phone: "(617) 718-2190",
+      email: "info@artisansasylum.com",
+      website: "https://artisansasylum.com",
+      ownershipModel: "Non-profit Community",
+      membershipCosts: {
+        monthly: 85,
+        annual: 850,
+        dayPass: 30,
+      },
+      specialties: ["Woodworking", "Metalworking", "Electronics", "Textiles", "Ceramics"],
+      verified: true,
+    },
+  ];
+
+  let map;
+  let markers = [];
+  let isScrolling = false;
+  let scrollTimeout;
+  let mapActive = false;
+
+  // Ownership model colors
+  const ownershipColors = {
+    Commercial: "#3B82F6",
+    "Non-profit Community": "#10B981",
+    "Member-owned Cooperative": "#8B5CF6",
+    Other: "#F59E0B",
+  };
+
+  // Initialize map
+  function initMap() {
+    try {
+      // Load Leaflet dynamically
+      const script = document.createElement("script");
+      script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+      script.onload = function () {
+        setupMap();
+      };
+      script.onerror = function () {
+        showMapError();
+      };
+      document.head.appendChild(script);
+    } catch (error) {
+      showMapError();
+    }
+  }
+
+  function setupMap() {
+    try {
+      // Create map centered on US with smooth zoom settings
+      map = L.map("map", {
+        wheelPxPerZoomLevel: 800, // Very much more wheel movement needed per zoom level
+        zoomDelta: 0.1, // Very small zoom increments
+      }).setView([39.8283, -98.5795], 4);
+
+      // Add tile layer with enhanced preloading and debugging
+      const tileLayer = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+        keepBuffer: 5, // Keep MORE tiles in buffer for better preloading demonstration
+        updateWhenZooming: false, // Don't update tiles during zoom animation
+        updateWhenIdle: true, // Update tiles when zoom animation completes
+        maxZoom: 18,
+        subdomains: ["a", "b", "c"], // Use multiple subdomains for faster loading
+        bounds: [
+          [-85, -180],
+          [85, 180],
+        ], // Preload tiles within reasonable bounds
+      }).addTo(map);
+
+      // Add markers for each MakerSpace
+      addMakerSpaceMarkers();
+
+      // Disable scroll wheel zoom by default
+      map.scrollWheelZoom.disable();
+
+      // Hide loading
+      document.getElementById("mapLoading").style.display = "none";
+    } catch (error) {
+      showMapError();
+    }
+  }
+
+  function addMakerSpaceMarkers() {
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+
+    makerspaces.forEach(makerspace => {
+      const color = ownershipColors[makerspace.ownershipModel] || ownershipColors["Other"];
+
+      const marker = L.circleMarker([makerspace.coordinates.lat, makerspace.coordinates.lng], {
+        radius: 8,
+        fillColor: color,
+        color: "#fff",
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8,
+      }).addTo(map);
+
+      // Create popup content
+      const popupContent = `
+        <div style="padding: 16px; min-width: 300px; font-family: system-ui, -apple-system, sans-serif;">
+          <h3 style="font-size: 18px; font-weight: bold; color: #111827; margin-bottom: 8px;">${makerspace.name}</h3>
+          <div style="color: #4b5563; margin-bottom: 8px;">
+            <div style="display: flex; align-items: center; margin-bottom: 4px;">
+              <svg style="width: 16px; height: 16px; margin-right: 8px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              ${makerspace.address}
+            </div>
+            <div style="font-size: 14px;">${makerspace.ownershipModel}</div>
+          </div>
+          <p style="color: #374151; font-size: 14px; margin-bottom: 12px;">${makerspace.description.substring(0, 150)}...</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px;">
+            ${makerspace.specialties
+              .slice(0, 4)
+              .map(
+                specialty =>
+                  `<span style="background-color: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 4px; font-size: 12px;">${specialty}</span>`
+              )
+              .join("")}
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <a href="${makerspace.website}" target="_blank" style="padding: 4px 12px; background-color: #2563eb; color: white; border-radius: 4px; font-size: 14px; text-decoration: none; display: inline-block;">
+              Website
+            </a>
+            <a href="mailto:${makerspace.email}" style="padding: 4px 12px; background-color: #6b7280; color: white; border-radius: 4px; font-size: 14px; text-decoration: none; display: inline-block;">
+              Contact
+            </a>
+          </div>
+        </div>
+      `;
+
+      marker.bindPopup(popupContent);
+      markers.push(marker);
+    });
+  }
+
+  function showMapError() {
+    document.getElementById("mapLoading").style.display = "none";
+    document.getElementById("mapError").classList.remove("hidden");
+  }
+
+  // Location services
+  document.getElementById("useLocation").addEventListener("click", function () {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by this browser.");
+      return;
+    }
+
+    this.textContent = "Getting location...";
+    this.disabled = true;
+
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+
+        if (map) {
+          map.setView([lat, lng], 10);
+
+          // Add user location marker
+          L.marker([lat, lng], {
+            icon: L.divIcon({
+              className: "user-location",
+              html: '<div class="w-4 h-4 bg-red-500 rounded-full border-2 border-white"></div>',
+              iconSize: [16, 16],
+            }),
+          })
+            .addTo(map)
+            .bindPopup("Your Location")
+            .openPopup();
+        }
+
+        document.getElementById("useLocation").textContent = "Use My Location";
+        document.getElementById("useLocation").disabled = false;
+      },
+      function (error) {
+        alert("Error getting location: " + error.message);
+        document.getElementById("useLocation").textContent = "Use My Location";
+        document.getElementById("useLocation").disabled = false;
+      }
+    );
+  });
+
+  // Address search (simplified - in production, use a geocoding service)
+  document.getElementById("searchAddress").addEventListener("click", function () {
+    const address = document.getElementById("addressInput").value.trim();
+    if (!address) return;
+
+    // This is a simplified example - in production, you'd use a geocoding service
+    alert(
+      "Address search requires integration with a geocoding service like Google Maps API or OpenStreetMap Nominatim."
+    );
+  });
+
+  // Focus on specific MakerSpace
+  window.focusMakerSpace = function (id) {
+    const makerspace = makerspaces.find(ms => ms.id === id);
+    if (makerspace && map) {
+      map.setView([makerspace.coordinates.lat, makerspace.coordinates.lng], 12);
+
+      // Find and open the corresponding marker popup
+      const marker = markers.find(m => {
+        const lat = m.getLatLng().lat;
+        const lng = m.getLatLng().lng;
+        return Math.abs(lat - makerspace.coordinates.lat) < 0.001 && Math.abs(lng - makerspace.coordinates.lng) < 0.001;
+      });
+
+      if (marker) {
+        marker.openPopup();
+      }
+    }
+  };
+
+  // Retry map loading
+  document.getElementById("retryMap").addEventListener("click", function () {
+    document.getElementById("mapError").classList.add("hidden");
+    document.getElementById("mapLoading").style.display = "flex";
+    initMap();
+  });
+
+  // Check for focus parameter in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const focusId = urlParams.get("focus");
+  if (focusId) {
+    setTimeout(() => {
+      focusMakerSpace(parseInt(focusId));
+    }, 2000); // Wait for map to load
+  }
+
+  // Map interaction management
+  function activateMap() {
+    if (map && !mapActive) {
+      mapActive = true;
+      map.scrollWheelZoom.enable();
+      console.log("Map activated - scroll zoom enabled");
+    }
+  }
+
+  function deactivateMap() {
+    if (map && mapActive) {
+      mapActive = false;
+      map.scrollWheelZoom.disable();
+      console.log("Map deactivated - scroll zoom disabled");
+    }
+  }
+
+  // Handle page scrolling
+  function handleScroll() {
+    isScrolling = true;
+    clearTimeout(scrollTimeout);
+
+    // Deactivate map during scrolling
+    deactivateMap();
+
+    // Reset scroll flag after scrolling stops
+    scrollTimeout = setTimeout(() => {
+      isScrolling = false;
+    }, 150);
+  }
+
+  // Initialize map when page loads
+  document.addEventListener("DOMContentLoaded", function () {
+    initMap();
+
+    // Add scroll detection
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Add map interaction detection
+    const mapContainer = document.getElementById("map");
+    if (mapContainer) {
+      // Activate map on click
+      mapContainer.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent event from bubbling up
+        activateMap();
+      });
+
+      // Activate map on drag start
+      mapContainer.addEventListener("mousedown", function (e) {
+        activateMap();
+      });
+
+      // Activate map on touch start
+      mapContainer.addEventListener("touchstart", function (e) {
+        activateMap();
+      });
+
+      // Deactivate map after mouse leaves and some time passes
+      mapContainer.addEventListener("mouseleave", function () {
+        setTimeout(deactivateMap, 1000); // Reduced to 1 second delay
+      });
+    }
+
+    // Deactivate map when clicking anywhere outside the map
+    document.addEventListener("click", function (e) {
+      if (mapActive && !mapContainer.contains(e.target)) {
+        deactivateMap();
+      }
+    });
+
+    // Deactivate map when touching anywhere outside the map
+    document.addEventListener("touchstart", function (e) {
+      if (mapActive && !mapContainer.contains(e.target)) {
+        deactivateMap();
+      }
+    });
+  });
+</script>
+
+<style>
+  .user-location {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Ensure map shows pointer cursor */
+  #map {
+    cursor: pointer !important;
+  }
+
+  /* Leaflet map container cursor */
+  .leaflet-container {
+    cursor: pointer !important;
+  }
+
+  /* Leaflet map pane cursor */
+  .leaflet-map-pane {
+    cursor: pointer !important;
+  }
+
+  /* Leaflet tile pane cursor */
+  .leaflet-tile-pane {
+    cursor: pointer !important;
+  }
+
+  /* Ensure all map elements show pointer cursor */
+  .leaflet-container * {
+    cursor: pointer !important;
+  }
+</style>

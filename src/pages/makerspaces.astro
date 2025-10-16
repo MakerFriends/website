@@ -1,0 +1,581 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+// Sample MakerSpace data - in a real app, this would come from a database or CMS
+const makerspaces = [
+  {
+    id: 1,
+    name: "TechShop San Francisco",
+    description: "A community workshop and prototyping platform where makers, entrepreneurs, and artists can access professional equipment and classes.",
+    address: "926 Howard St, San Francisco, CA 94103",
+    city: "San Francisco",
+    state: "CA",
+    country: "USA",
+    coordinates: { lat: 37.7749, lng: -122.4194 },
+    phone: "(415) 543-4321",
+    email: "info@techshop.com",
+    website: "https://techshop.com",
+    socialMedia: {
+      facebook: "https://facebook.com/techshop",
+      twitter: "https://twitter.com/techshop",
+      instagram: "https://instagram.com/techshop"
+    },
+    contactName: "Sarah Johnson",
+    contactTitle: "Community Manager",
+    ownershipModel: "Commercial",
+    membershipCosts: {
+      monthly: 175,
+      annual: 1750,
+      dayPass: 25
+    },
+    equipment: [
+      "3D Printers (FDM, SLA, SLS)",
+      "CNC Mills",
+      "Laser Cutters",
+      "Woodworking Tools",
+      "Electronics Lab",
+      "Metalworking Tools",
+      "Textile Equipment",
+      "Ceramics Studio"
+    ],
+    specialties: ["Electronics", "Woodworking", "Metalworking", "3D Printing"],
+    hours: {
+      monday: "9:00 AM - 10:00 PM",
+      tuesday: "9:00 AM - 10:00 PM",
+      wednesday: "9:00 AM - 10:00 PM",
+      thursday: "9:00 AM - 10:00 PM",
+      friday: "9:00 AM - 10:00 PM",
+      saturday: "10:00 AM - 8:00 PM",
+      sunday: "12:00 PM - 6:00 PM"
+    },
+    established: 2006,
+    memberCount: 1500,
+    verified: true
+  },
+  {
+    id: 2,
+    name: "Noisebridge",
+    description: "A hackerspace for technical-creative projects, offering a collaborative environment for learning, teaching, and making.",
+    address: "2169 Mission St, San Francisco, CA 94110",
+    city: "San Francisco",
+    state: "CA",
+    country: "USA",
+    coordinates: { lat: 37.7611, lng: -122.4194 },
+    phone: "(415) 555-0199",
+    email: "info@noisebridge.net",
+    website: "https://noisebridge.net",
+    socialMedia: {
+      twitter: "https://twitter.com/noisebridge",
+      github: "https://github.com/noisebridge"
+    },
+    contactName: "Alex Chen",
+    contactTitle: "Board Member",
+    ownershipModel: "Non-profit Community",
+    membershipCosts: {
+      monthly: 40,
+      annual: 400,
+      dayPass: 0
+    },
+    equipment: [
+      "Electronics Lab",
+      "3D Printers",
+      "Laser Cutters",
+      "Sewing Machines",
+      "Computer Workstations",
+      "Audio/Video Equipment",
+      "Biotech Lab",
+      "Craft Supplies"
+    ],
+    specialties: ["Electronics", "Programming", "Biotech", "Open Source"],
+    hours: {
+      monday: "24/7",
+      tuesday: "24/7",
+      wednesday: "24/7",
+      thursday: "24/7",
+      friday: "24/7",
+      saturday: "24/7",
+      sunday: "24/7"
+    },
+    established: 2007,
+    memberCount: 300,
+    verified: true
+  },
+  {
+    id: 3,
+    name: "Austin Creative Reuse",
+    description: "A nonprofit organization dedicated to creative reuse and sustainability through arts and crafts education.",
+    address: "2005 Wheless Ln, Austin, TX 78723",
+    city: "Austin",
+    state: "TX",
+    country: "USA",
+    coordinates: { lat: 30.2672, lng: -97.7431 },
+    phone: "(512) 375-3041",
+    email: "info@austincreativereuse.org",
+    website: "https://austincreativereuse.org",
+    socialMedia: {
+      facebook: "https://facebook.com/austincreativereuse",
+      instagram: "https://instagram.com/austincreativereuse"
+    },
+    contactName: "Maria Rodriguez",
+    contactTitle: "Executive Director",
+    ownershipModel: "Non-profit Community",
+    membershipCosts: {
+      monthly: 0,
+      annual: 50,
+      dayPass: 0
+    },
+    equipment: [
+      "Sewing Machines",
+      "Paper Crafting Tools",
+      "Art Supplies",
+      "Textile Equipment",
+      "Ceramics Studio",
+      "Woodworking Basics"
+    ],
+    specialties: ["Textiles", "Paper Crafts", "Sustainability", "Education"],
+    hours: {
+      monday: "10:00 AM - 6:00 PM",
+      tuesday: "10:00 AM - 6:00 PM",
+      wednesday: "10:00 AM - 6:00 PM",
+      thursday: "10:00 AM - 8:00 PM",
+      friday: "10:00 AM - 6:00 PM",
+      saturday: "10:00 AM - 6:00 PM",
+      sunday: "12:00 PM - 5:00 PM"
+    },
+    established: 2009,
+    memberCount: 800,
+    verified: true
+  },
+  {
+    id: 4,
+    name: "i3 Detroit",
+    description: "A community workshop in Detroit focused on providing access to tools, knowledge, and collaborative workspace.",
+    address: "1481 Wordsworth St, Ferndale, MI 48220",
+    city: "Ferndale",
+    state: "MI",
+    country: "USA",
+    coordinates: { lat: 42.4606, lng: -83.1346 },
+    phone: "(248) 629-3955",
+    email: "info@i3detroit.com",
+    website: "https://i3detroit.com",
+    socialMedia: {
+      facebook: "https://facebook.com/i3detroit",
+      twitter: "https://twitter.com/i3detroit"
+    },
+    contactName: "James Wilson",
+    contactTitle: "President",
+    ownershipModel: "Member-owned Cooperative",
+    membershipCosts: {
+      monthly: 60,
+      annual: 600,
+      dayPass: 15
+    },
+    equipment: [
+      "CNC Machines",
+      "3D Printers",
+      "Laser Cutters",
+      "Electronics Lab",
+      "Woodworking Shop",
+      "Metalworking Tools",
+      "Textile Equipment",
+      "Ceramics Kiln"
+    ],
+    specialties: ["Woodworking", "Electronics", "CNC", "Community Building"],
+    hours: {
+      monday: "6:00 PM - 10:00 PM",
+      tuesday: "6:00 PM - 10:00 PM",
+      wednesday: "6:00 PM - 10:00 PM",
+      thursday: "6:00 PM - 10:00 PM",
+      friday: "6:00 PM - 10:00 PM",
+      saturday: "10:00 AM - 6:00 PM",
+      sunday: "12:00 PM - 6:00 PM"
+    },
+    established: 2009,
+    memberCount: 120,
+    verified: true
+  },
+  {
+    id: 5,
+    name: "Artisan's Asylum",
+    description: "A community workshop in Somerville offering classes, studio space, and access to professional-grade tools and equipment.",
+    address: "96 Holton St, Somerville, MA 02143",
+    city: "Somerville",
+    state: "MA",
+    country: "USA",
+    coordinates: { lat: 42.3876, lng: -71.0995 },
+    phone: "(617) 718-2190",
+    email: "info@artisansasylum.com",
+    website: "https://artisansasylum.com",
+    socialMedia: {
+      facebook: "https://facebook.com/artisansasylum",
+      instagram: "https://instagram.com/artisansasylum"
+    },
+    contactName: "Lisa Thompson",
+    contactTitle: "Operations Manager",
+    ownershipModel: "Non-profit Community",
+    membershipCosts: {
+      monthly: 85,
+      annual: 850,
+      dayPass: 30
+    },
+    equipment: [
+      "Professional Woodshop",
+      "Metalworking Shop",
+      "Electronics Lab",
+      "3D Printers",
+      "Laser Cutters",
+      "CNC Machines",
+      "Textile Studio",
+      "Ceramics Studio",
+      "Jewelry Making Tools"
+    ],
+    specialties: ["Woodworking", "Metalworking", "Electronics", "Textiles", "Ceramics"],
+    hours: {
+      monday: "9:00 AM - 10:00 PM",
+      tuesday: "9:00 AM - 10:00 PM",
+      wednesday: "9:00 AM - 10:00 PM",
+      thursday: "9:00 AM - 10:00 PM",
+      friday: "9:00 AM - 10:00 PM",
+      saturday: "10:00 AM - 8:00 PM",
+      sunday: "12:00 PM - 6:00 PM"
+    },
+    established: 2010,
+    memberCount: 400,
+    verified: true
+  }
+];
+
+// Get unique values for filters
+const cities = [...new Set(makerspaces.map(ms => ms.city))].sort();
+const states = [...new Set(makerspaces.map(ms => ms.state))].sort();
+const ownershipModels = [...new Set(makerspaces.map(ms => ms.ownershipModel))].sort();
+const specialties = [...new Set(makerspaces.flatMap(ms => ms.specialties))].sort();
+---
+
+<Layout title="MakerSpace Directory" description="Find and connect with MakerSpaces worldwide. Discover workshops, equipment, and communities near you.">
+  <Navigation />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">MakerSpace Directory 🏭</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+          Discover amazing maker communities, workshops, and equipment worldwide. Find your perfect creative space!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#search" class="px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105">
+            Search Spaces 🔍
+          </a>
+          <a href="/makerspace-map" class="px-8 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all">
+            View Map 🗺️
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-6 text-center">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="text-3xl font-bold text-blue-600 mb-2">{makerspaces.length}</div>
+            <div class="text-gray-600">MakerSpaces Listed</div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="text-3xl font-bold text-green-600 mb-2">{makerspaces.reduce((sum, ms) => sum + ms.memberCount, 0).toLocaleString()}</div>
+            <div class="text-gray-600">Total Members</div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="text-3xl font-bold text-purple-600 mb-2">{cities.length}</div>
+            <div class="text-gray-600">Cities Covered</div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="text-3xl font-bold text-orange-600 mb-2">{ownershipModels.length}</div>
+            <div class="text-gray-600">Ownership Models</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section id="search" class="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Find Your Perfect MakerSpace</h2>
+          
+          <!-- Search Bar -->
+          <div class="mb-8">
+            <div class="relative max-w-2xl mx-auto">
+              <input 
+                type="text" 
+                id="searchInput"
+                placeholder="Search by name, city, equipment, or specialty..."
+                class="w-full px-6 py-4 pl-14 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+              <div class="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">City</label>
+              <select id="cityFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">All Cities</option>
+                {cities.map(city => (
+                  <option value={city}>{city}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">State</label>
+              <select id="stateFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">All States</option>
+                {states.map(state => (
+                  <option value={state}>{state}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Ownership</label>
+              <select id="ownershipFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">All Types</option>
+                {ownershipModels.map(model => (
+                  <option value={model}>{model}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Specialty</label>
+              <select id="specialtyFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">All Specialties</option>
+                {specialties.map(specialty => (
+                  <option value={specialty}>{specialty}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <!-- Clear Filters -->
+          <div class="text-center">
+            <button id="clearFilters" class="px-6 py-2 text-gray-600 hover:text-gray-800 underline">
+              Clear All Filters
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div id="resultsCount" class="mb-6">
+          <h3 class="text-xl font-semibold text-gray-900">Showing {makerspaces.length} MakerSpaces</h3>
+        </div>
+        
+        <div id="makerspaceGrid" class="grid lg:grid-cols-2 gap-8">
+          {makerspaces.map((makerspace) => (
+            <div class="makerspace-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1" 
+                 data-city={makerspace.city}
+                 data-state={makerspace.state}
+                 data-ownership={makerspace.ownershipModel}
+                 data-specialties={makerspace.specialties.join(',')}
+                 data-search={`${makerspace.name} ${makerspace.city} ${makerspace.description} ${makerspace.equipment.join(' ')} ${makerspace.specialties.join(' ')}`}>
+              
+              <!-- Header -->
+              <div class="p-6 border-b border-gray-200">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">{makerspace.name}</h3>
+                    <div class="flex items-center text-gray-600 mb-2">
+                      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      </svg>
+                      {makerspace.address}
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      {makerspace.ownershipModel}
+                    </div>
+                  </div>
+                  {makerspace.verified && (
+                    <div class="ml-4">
+                      <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        ✓ Verified
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6">
+                <p class="text-gray-700 mb-4">{makerspace.description}</p>
+                
+                <!-- Contact Info -->
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Contact</h4>
+                    <div class="text-sm text-gray-600 space-y-1">
+                      <div>{makerspace.contactName} - {makerspace.contactTitle}</div>
+                      <div>{makerspace.phone}</div>
+                      <div>{makerspace.email}</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Membership</h4>
+                    <div class="text-sm text-gray-600 space-y-1">
+                      {makerspace.membershipCosts.monthly > 0 && (
+                        <div>Monthly: ${makerspace.membershipCosts.monthly}</div>
+                      )}
+                      {makerspace.membershipCosts.annual > 0 && (
+                        <div>Annual: ${makerspace.membershipCosts.annual}</div>
+                      )}
+                      {makerspace.membershipCosts.dayPass > 0 && (
+                        <div>Day Pass: ${makerspace.membershipCosts.dayPass}</div>
+                      )}
+                      {makerspace.membershipCosts.dayPass === 0 && makerspace.membershipCosts.monthly === 0 && (
+                        <div class="text-green-600 font-semibold">Free Access!</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Equipment -->
+                <div class="mb-4">
+                  <h4 class="font-semibold text-gray-900 mb-2">Key Equipment</h4>
+                  <div class="flex flex-wrap gap-2">
+                    {makerspace.equipment.slice(0, 6).map((equipment) => (
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                        {equipment}
+                      </span>
+                    ))}
+                    {makerspace.equipment.length > 6 && (
+                      <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">
+                        +{makerspace.equipment.length - 6} more
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <!-- Specialties -->
+                <div class="mb-6">
+                  <h4 class="font-semibold text-gray-900 mb-2">Specialties</h4>
+                  <div class="flex flex-wrap gap-2">
+                    {makerspace.specialties.map((specialty) => (
+                      <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex flex-wrap gap-3">
+                  <a href={makerspace.website} target="_blank" rel="noopener noreferrer" 
+                     class="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Visit Website
+                  </a>
+                  <a href={`mailto:${makerspace.email}`} 
+                     class="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                    Contact
+                  </a>
+                  <a href={`/makerspace-map?focus=${makerspace.id}`} 
+                     class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                    View on Map
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Add MakerSpace CTA -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Know a MakerSpace Not Listed?</h2>
+        <p class="text-xl mb-8">
+          Help grow our community directory by adding your local MakerSpace or workshop!
+        </p>
+        <a href="/add-makerspace" class="px-8 py-4 bg-white text-green-600 rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105">
+          Add MakerSpace ➕
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Search and filter functionality
+  const searchInput = document.getElementById('searchInput');
+  const cityFilter = document.getElementById('cityFilter');
+  const stateFilter = document.getElementById('stateFilter');
+  const ownershipFilter = document.getElementById('ownershipFilter');
+  const specialtyFilter = document.getElementById('specialtyFilter');
+  const clearFilters = document.getElementById('clearFilters');
+  const resultsCount = document.getElementById('resultsCount');
+  const makerspaceCards = document.querySelectorAll('.makerspace-card');
+
+  function filterMakerSpaces() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedCity = cityFilter.value;
+    const selectedState = stateFilter.value;
+    const selectedOwnership = ownershipFilter.value;
+    const selectedSpecialty = specialtyFilter.value;
+
+    let visibleCount = 0;
+
+    makerspaceCards.forEach(card => {
+      const searchData = card.dataset.search.toLowerCase();
+      const city = card.dataset.city;
+      const state = card.dataset.state;
+      const ownership = card.dataset.ownership;
+      const specialties = card.dataset.specialties.toLowerCase();
+
+      const matchesSearch = !searchTerm || searchData.includes(searchTerm);
+      const matchesCity = !selectedCity || city === selectedCity;
+      const matchesState = !selectedState || state === selectedState;
+      const matchesOwnership = !selectedOwnership || ownership === selectedOwnership;
+      const matchesSpecialty = !selectedSpecialty || specialties.includes(selectedSpecialty.toLowerCase());
+
+      if (matchesSearch && matchesCity && matchesState && matchesOwnership && matchesSpecialty) {
+        card.style.display = 'block';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    resultsCount.innerHTML = `<h3 class="text-xl font-semibold text-gray-900">Showing ${visibleCount} MakerSpace${visibleCount !== 1 ? 's' : ''}</h3>`;
+  }
+
+  // Event listeners
+  searchInput.addEventListener('input', filterMakerSpaces);
+  cityFilter.addEventListener('change', filterMakerSpaces);
+  stateFilter.addEventListener('change', filterMakerSpaces);
+  ownershipFilter.addEventListener('change', filterMakerSpaces);
+  specialtyFilter.addEventListener('change', filterMakerSpaces);
+
+  clearFilters.addEventListener('click', () => {
+    searchInput.value = '';
+    cityFilter.value = '';
+    stateFilter.value = '';
+    ownershipFilter.value = '';
+    specialtyFilter.value = '';
+    filterMakerSpaces();
+  });
+</script>
