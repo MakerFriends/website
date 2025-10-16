@@ -14,6 +14,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - robots.txt file to prevent search engine indexing
 - CHANGELOG.md following Keep a Changelog standard
 - LICENSE file with MIT License for commercial use
+- SECURITY.md for vulnerability reporting and security policy
+- CONTRIBUTING.md with contribution guidelines and development setup
+- CODE_OF_CONDUCT.md following Contributor Covenant standards
+- CONTRIBUTORS.md to recognize community contributions
+- ROADMAP.md with development priorities and future vision
+- .editorconfig for consistent coding style across editors
+- .prettierrc for automatic code formatting
+- .eslintrc.json for JavaScript/TypeScript linting
+- GitHub Actions workflows for CI/CD automation
+- GitHub issue templates (bug reports, feature requests, questions)
+- Pull request template for structured code reviews
+- Docker configuration for containerized development
+- Multi-stage Dockerfile supporting development and production
+- docker-compose.yml for easy development setup
+- Enhanced Docker helper script (docker-dev.sh) supporting multiple containerization tools
+- Support for Docker Desktop, Rancher Desktop, Podman, Colima, OrbStack, and other alternatives
+- Automatic containerization tool detection and compatibility
+- Nginx configuration for production container
+- Updated documentation with comprehensive containerization tool guidance
 - Complete Astro.js static site with TypeScript and Tailwind CSS
 - Responsive design with modern, bright UI/UX
 - Homepage with hero section, featured projects, and community stats

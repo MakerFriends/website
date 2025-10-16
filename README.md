@@ -58,23 +58,69 @@ makerfriends.com/
 
 ### Prerequisites
 
-- Node.js 20 or higher
-- npm or yarn package manager
+Choose one of the following options:
+
+#### Option 1: Containerized Development (Recommended)
+
+Choose one of the following containerization tools:
+
+- **Docker Desktop** + **Docker Compose**
+- **Rancher Desktop** + **Docker Compose**
+- **Podman** + **Podman Compose**
+- **Colima** + **Docker Compose**
+- **OrbStack** + **Docker Compose**
+
+All tools provide Docker-compatible APIs, so the same commands work across all options.
+
+#### Option 2: Local Development
+
+- **Node.js 22+** (see `.node-version`)
+- **npm** or **yarn** package manager
+- **Git**
 
 ### Installation
 
+#### Using Docker (Recommended)
+
 1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/makerfriends.com.git
+cd makerfriends.com
+```
+
+2. Start development environment:
+
+```bash
+# Using Docker Compose (works with all Docker alternatives)
+docker-compose up
+
+# Or use the helper script
+./docker-dev.sh start
+
+# For Podman users
+podman-compose up
+```
+
+3. Open your browser and navigate to `http://localhost:4321`
+
+#### Using Local Development
+
+1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/makerfriends.com.git
 cd makerfriends.com
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -82,6 +128,72 @@ npm run dev
 4. Open your browser and navigate to `http://localhost:4321`
 
 ## 🛠️ Development
+
+### Containerized Development (Recommended)
+
+```bash
+# Start development environment
+./docker-dev.sh start
+
+# View logs
+./docker-dev.sh logs
+
+# Run commands in container
+./docker-dev.sh run npm install
+./docker-dev.sh run npm run build
+
+# Access container shell
+./docker-dev.sh shell
+
+# Stop development environment
+./docker-dev.sh stop
+
+# Rebuild containers
+./docker-dev.sh rebuild
+```
+
+### Docker Alternative Setup
+
+#### Rancher Desktop
+
+```bash
+# Install Rancher Desktop from https://rancherdesktop.io/
+# Enable Docker API compatibility in settings
+# Then use standard docker-compose commands
+docker-compose up
+```
+
+#### Podman
+
+```bash
+# Install Podman and podman-compose
+# macOS: brew install podman podman-compose
+# Linux: dnf install podman podman-compose
+# Then use podman-compose commands
+podman-compose up
+```
+
+#### Colima (macOS/Linux)
+
+```bash
+# Install Colima
+brew install colima
+
+# Start Colima with Docker API
+colima start --with-kubernetes=false
+
+# Use standard docker-compose commands
+docker-compose up
+```
+
+#### OrbStack (macOS)
+
+```bash
+# Install OrbStack from https://orbstack.dev/
+# Provides Docker-compatible API
+# Use standard docker-compose commands
+docker-compose up
+```
 
 ### Available Scripts
 
@@ -109,6 +221,7 @@ npm run astro
 ### Adding New Pages
 
 1. Create a new `.astro` file in `src/pages/`:
+
 ```astro
 ---
 import Layout from '../layouts/Layout.astro';
@@ -130,6 +243,7 @@ import Footer from '../components/Footer.astro';
 ### Adding Blog Posts
 
 1. Create a new `.astro` file in `src/pages/blog/`:
+
 ```astro
 ---
 import Layout from '../../layouts/Layout.astro';
@@ -148,6 +262,7 @@ import Layout from '../../layouts/Layout.astro';
 The project uses **Tailwind CSS v4** for styling with custom configurations:
 
 ### Custom Colors
+
 - Primary: `#3B82F6` (Blue)
 - Secondary: `#F59E0B` (Amber)
 - Accent: `#10B981` (Green)
@@ -155,6 +270,7 @@ The project uses **Tailwind CSS v4** for styling with custom configurations:
 - Pink: `#EC4899`
 
 ### Custom Animations
+
 - `.animate-float`: Floating animation for elements
 - Custom scrollbar styling
 
@@ -169,11 +285,13 @@ The project uses **Tailwind CSS v4** for styling with custom configurations:
 ### Method 1: Via Cloudflare Dashboard (Recommended)
 
 1. **Build the project**:
+
 ```bash
 npm run build
 ```
 
 2. **Push to Git**:
+
 ```bash
 git add .
 git commit -m "Ready for deployment"
@@ -181,6 +299,7 @@ git push origin main
 ```
 
 3. **Connect to Cloudflare Pages**:
+
    - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
    - Navigate to Pages
    - Click "Create a project"
@@ -195,16 +314,19 @@ git push origin main
 ### Method 2: Via Wrangler CLI
 
 1. **Install Wrangler**:
+
 ```bash
 npm install -g wrangler
 ```
 
 2. **Login to Cloudflare**:
+
 ```bash
 wrangler login
 ```
 
 3. **Build and Deploy**:
+
 ```bash
 npm run build
 wrangler pages deploy dist
@@ -213,6 +335,7 @@ wrangler pages deploy dist
 ### Environment Variables (if needed)
 
 Add environment variables in Cloudflare Pages:
+
 1. Go to your Pages project settings
 2. Navigate to "Environment variables"
 3. Add your variables for production/preview
@@ -245,6 +368,7 @@ The site includes a gradient placeholder for the logo. To add your logo:
 
 1. Add logo file to `public/` (e.g., `logo.svg` or `logo.png`)
 2. Update `Navigation.astro`:
+
 ```astro
 <img src="/logo.svg" alt="MakerFriends" class="w-12 h-12" />
 ```
@@ -290,6 +414,7 @@ npm install
 ## 🔌 Integrations
 
 ### Current Integrations
+
 - Tailwind CSS v4
 
 ### Adding New Integrations
@@ -336,13 +461,19 @@ To add Google Analytics or other tracking:
 
 1. Add tracking script to `src/layouts/Layout.astro`
 2. Add to the `<head>` section:
+
 ```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "GA_MEASUREMENT_ID");
 </script>
 ```
 
@@ -351,15 +482,19 @@ To add Google Analytics or other tracking:
 ### Common Issues
 
 **Issue**: Build fails with "Cannot find module"
+
 - **Solution**: Run `npm install` to ensure all dependencies are installed
 
 **Issue**: Styles not updating
+
 - **Solution**: Clear browser cache or restart dev server
 
 **Issue**: Tailwind classes not working
+
 - **Solution**: Ensure `global.css` is imported in `Layout.astro`
 
 **Issue**: Images not loading in production
+
 - **Solution**: Check image paths start with `/` for public directory
 
 ### Getting Help
