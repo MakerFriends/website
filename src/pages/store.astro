@@ -1,0 +1,370 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+const products = [
+  {
+    id: 1,
+    name: "MakerFriends Logo T-Shirt",
+    price: 24.99,
+    image:
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop",
+    description: "Premium cotton t-shirt with our iconic MakerFriends logo",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: ["Black", "Navy", "Gray"],
+    category: "apparel",
+  },
+  {
+    id: 2,
+    name: "MakerFriends Hoodie",
+    price: 39.99,
+    image:
+      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop",
+    description: "Comfortable hoodie perfect for those long maker sessions",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: ["Black", "Charcoal", "Navy"],
+    category: "apparel",
+  },
+  {
+    id: 3,
+    name: "MakerFriends Sticker Pack",
+    price: 8.99,
+    image:
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&h=400&fit=crop",
+    description: "Set of 10 vinyl stickers featuring maker-themed designs",
+    sizes: ["One Size"],
+    colors: ["Mixed"],
+    category: "accessories",
+  },
+  {
+    id: 4,
+    name: "MakerFriends Coffee Mug",
+    price: 16.99,
+    image:
+      "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400&h=400&fit=crop",
+    description: "Ceramic mug with heat-changing MakerFriends logo",
+    sizes: ["11oz"],
+    colors: ["White"],
+    category: "accessories",
+  },
+  {
+    id: 5,
+    name: "MakerFriends Tote Bag",
+    price: 18.99,
+    image:
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop",
+    description: "Durable canvas tote bag for carrying maker supplies",
+    sizes: ["One Size"],
+    colors: ["Natural", "Black"],
+    category: "accessories",
+  },
+  {
+    id: 6,
+    name: "MakerFriends Notebook",
+    price: 12.99,
+    image:
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=400&fit=crop",
+    description:
+      "Premium notebook for sketching ideas and documenting projects",
+    sizes: ["A5"],
+    colors: ["Black", "Blue"],
+    category: "accessories",
+  },
+  {
+    id: 7,
+    name: "MakerFriends Baseball Cap",
+    price: 22.99,
+    image:
+      "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop",
+    description: "Adjustable baseball cap with embroidered MakerFriends logo",
+    sizes: ["One Size"],
+    colors: ["Black", "Navy", "Gray"],
+    category: "apparel",
+  },
+  {
+    id: 8,
+    name: "MakerFriends Pin Set",
+    price: 14.99,
+    image:
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&h=400&fit=crop",
+    description: "Collection of enamel pins featuring maker tools and symbols",
+    sizes: ["One Size"],
+    colors: ["Mixed"],
+    category: "accessories",
+  },
+];
+---
+
+<Layout
+  title="MakerFriends Store"
+  description="Shop official MakerFriends merchandise including t-shirts, hoodies, accessories, and more. Support the community while showing your maker pride!"
+>
+  <Navigation />
+
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+    >
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          MakerFriends Store 🛍️
+        </h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          Show your maker pride with official MakerFriends merchandise. Every
+          purchase supports our community!
+        </p>
+      </div>
+    </section>
+
+    <!-- Store Stats -->
+    <section
+      class="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-3xl font-bold text-blue-600 mb-2">100%</div>
+            <div class="text-gray-600">Proceeds Support Community</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-purple-600 mb-2">Premium</div>
+            <div class="text-gray-600">Quality Materials</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-pink-600 mb-2">Fast</div>
+            <div class="text-gray-600">Shipping Worldwide</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section
+      class="py-8 px-4 sm:px-6 lg:px-8 bg-white/70 sticky top-20 z-40 backdrop-blur-sm shadow-md"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap gap-3 justify-center">
+          <button
+            class="px-4 py-2 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors"
+          >
+            All Products
+          </button>
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
+            👕 Apparel
+          </button>
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
+            🎒 Accessories
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            products.map((product) => (
+              <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1">
+                <div class="relative h-64 overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    class="w-full h-full object-cover"
+                  />
+                  <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    ${product.price}
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">
+                    {product.name}
+                  </h3>
+                  <p class="text-gray-600 mb-4">{product.description}</p>
+
+                  <div class="mb-4">
+                    <div class="text-sm text-gray-500 mb-2">
+                      Sizes: {product.sizes.join(", ")}
+                    </div>
+                    <div class="text-sm text-gray-500 mb-2">
+                      Colors: {product.colors.join(", ")}
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mb-4">
+                    <select class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <option>Select Size</option>
+                      {product.sizes.map((size) => (
+                        <option value={size}>{size}</option>
+                      ))}
+                    </select>
+                    <select class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <option>Select Color</option>
+                      {product.colors.map((color) => (
+                        <option value={color}>{color}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all hover:scale-105">
+                    Add to Cart 🛒
+                  </button>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Summary (Placeholder) -->
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-2xl p-8">
+          <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">
+            Shopping Cart
+          </h2>
+          <div class="text-center">
+            <div class="text-6xl mb-4">🛒</div>
+            <p class="text-gray-600 mb-6">
+              Your cart is empty. Start shopping to add items!
+            </p>
+            <button
+              class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl font-bold mb-6 text-gray-900">
+              Every Purchase Makes a Difference
+            </h2>
+            <p class="text-lg text-gray-600 mb-6">
+              When you shop at the MakerFriends Store, you're directly
+              supporting our mission to promote STEM/STEAM education and connect
+              makers worldwide.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="text-2xl mr-3">💰</div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-1">
+                    Funds Community Programs
+                  </h3>
+                  <p class="text-gray-600">
+                    Proceeds support workshops, maker grants, and educational
+                    resources
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="text-2xl mr-3">🌍</div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-1">Global Impact</h3>
+                  <p class="text-gray-600">
+                    Help us reach underserved communities with maker education
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="text-2xl mr-3">🤝</div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-1">
+                    Community Building
+                  </h3>
+                  <p class="text-gray-600">
+                    Strengthen connections between makers worldwide
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+              alt="MakerFriends community"
+              class="rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shipping Info -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          Shipping & Returns
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🚚</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Fast Shipping</h3>
+            <p class="text-gray-600">
+              Free shipping on orders over $50. Standard delivery 3-5 business
+              days.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🔄</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Easy Returns</h3>
+            <p class="text-gray-600">
+              30-day return policy. If you're not happy, we'll make it right!
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🌍</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Worldwide</h3>
+            <p class="text-gray-600">
+              We ship to makers everywhere. International shipping available.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+    >
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Questions About Our Store?</h2>
+        <p class="text-xl mb-8">
+          Need help with sizing, shipping, or have questions about our products?
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105"
+          >
+            Contact Support 📧
+          </a>
+          <a
+            href="/about"
+            class="px-8 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
