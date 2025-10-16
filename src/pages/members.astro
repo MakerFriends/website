@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Members" description="Join our community of makers and access exclusive member benefits, resources, and events.">
+  <Navigation />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">Member Benefits</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          Unlock exclusive features and connect with the maker community
+        </p>
+      </div>
+    </section>
+
+    <!-- Member Benefits -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">What You Get as a Member</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Unlimited Project Uploads</h3>
+            <p class="text-gray-600">
+              Share unlimited projects with detailed documentation, images, and instructions.
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
+            <div class="text-4xl mb-4">👥</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Community Access</h3>
+            <p class="text-gray-600">
+              Connect with makers, join discussions, and collaborate on projects together.
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl">
+            <div class="text-4xl mb-4">📚</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Learning Resources</h3>
+            <p class="text-gray-600">
+              Access exclusive tutorials, guides, and educational content from experts.
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
+            <div class="text-4xl mb-4">🏆</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Maker Challenges</h3>
+            <p class="text-gray-600">
+              Participate in monthly challenges and competitions with prizes and recognition.
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-xl">
+            <div class="text-4xl mb-4">🎓</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Workshops & Events</h3>
+            <p class="text-gray-600">
+              Join live workshops, webinars, and maker meetups hosted by community experts.
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl">
+            <div class="text-4xl mb-4">💬</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Forum Access</h3>
+            <p class="text-gray-600">
+              Get help, share tips, and discuss projects in our dedicated community forum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Member Spotlight -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Member Spotlight</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+              SC
+            </div>
+            <h3 class="text-xl font-bold text-center mb-2 text-gray-900">Sarah Chen</h3>
+            <p class="text-center text-blue-600 font-medium mb-3">Electronics Expert</p>
+            <p class="text-gray-600 text-center mb-4">
+              "MakerFriends helped me grow from a beginner to running my own electronics workshop!"
+            </p>
+            <div class="text-center">
+              <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">23 Projects</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+              MT
+            </div>
+            <h3 class="text-xl font-bold text-center mb-2 text-gray-900">Mike Thompson</h3>
+            <p class="text-center text-purple-600 font-medium mb-3">Woodworking Master</p>
+            <p class="text-gray-600 text-center mb-4">
+              "The community support here is incredible. I've made friends and learned so much!"
+            </p>
+            <div class="text-center">
+              <span class="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">18 Projects</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+              AR
+            </div>
+            <h3 class="text-xl font-bold text-center mb-2 text-gray-900">Alex Rivera</h3>
+            <p class="text-center text-pink-600 font-medium mb-3">Robotics Innovator</p>
+            <p class="text-gray-600 text-center mb-4">
+              "This platform connected me with collaborators for my robotics startup. Game changer!"
+            </p>
+            <div class="text-center">
+              <span class="inline-block px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">31 Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Our Growing Community</h2>
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-blue-600 mb-2">5,000+</div>
+            <div class="text-gray-600">Active Members</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-purple-600 mb-2">12,000+</div>
+            <div class="text-gray-600">Projects Shared</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-pink-600 mb-2">500+</div>
+            <div class="text-gray-600">Events Hosted</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-green-600 mb-2">50+</div>
+            <div class="text-gray-600">Countries</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Upcoming Member Events</h2>
+        <div class="space-y-6 max-w-4xl mx-auto">
+          <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between">
+            <div class="flex-1">
+              <div class="text-sm text-blue-600 font-semibold mb-1">March 25, 2025 • 2:00 PM PST</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Arduino Workshop: Building Smart Home Devices</h3>
+              <p class="text-gray-600">Learn to build IoT devices with Arduino and connect them to your smartphone.</p>
+            </div>
+            <button class="mt-4 md:mt-0 md:ml-6 px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
+              Register
+            </button>
+          </div>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between">
+            <div class="flex-1">
+              <div class="text-sm text-purple-600 font-semibold mb-1">March 28, 2025 • 5:00 PM PST</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Woodworking Basics: Essential Joinery Techniques</h3>
+              <p class="text-gray-600">Master fundamental woodworking joints with expert guidance.</p>
+            </div>
+            <button class="mt-4 md:mt-0 md:ml-6 px-6 py-2 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors whitespace-nowrap">
+              Register
+            </button>
+          </div>
+          <div class="bg-gradient-to-r from-pink-50 to-red-50 rounded-xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between">
+            <div class="flex-1">
+              <div class="text-sm text-pink-600 font-semibold mb-1">April 1, 2025 • 1:00 PM PST</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Monthly Maker Challenge: Upcycled Projects</h3>
+              <p class="text-gray-600">Create something amazing from recycled materials and win prizes!</p>
+            </div>
+            <button class="mt-4 md:mt-0 md:ml-6 px-6 py-2 bg-pink-600 text-white rounded-lg font-semibold hover:bg-pink-700 transition-colors whitespace-nowrap">
+              Join Challenge
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready to Join Our Community?</h2>
+        <p class="text-xl mb-8">
+          Create your free account today and start your maker journey with thousands of passionate creators!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/signup" class="px-10 py-4 bg-white text-blue-600 rounded-full font-bold text-xl hover:shadow-2xl transition-all hover:scale-105">
+            Sign Up Now 🚀
+          </a>
+          <a href="/about" class="px-10 py-4 border-2 border-white text-white rounded-full font-bold text-xl hover:bg-white hover:text-blue-600 transition-all">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+

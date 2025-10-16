@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  maker: string;
+  image: string;
+  description: string;
+  link?: string;
+}
+
+const { title, category, maker, image, description, link = '#' } = Astro.props;
+
+const categoryColors: Record<string, string> = {
+  'Electronics': 'bg-blue-500',
+  'Woodworking': 'bg-amber-600',
+  'Robotics': 'bg-purple-500',
+  'Papercrafting': 'bg-pink-500',
+  '3D Printing': 'bg-green-500',
+  'Sewing': 'bg-red-500',
+  'Arduino': 'bg-teal-500',
+  'Raspberry Pi': 'bg-indigo-500',
+};
+
+const colorClass = categoryColors[category] || 'bg-gray-500';
+---
+
+<article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+  <div class="relative h-48 overflow-hidden">
+    <img src={image} alt={title} class="w-full h-full object-cover" />
+    <span class={`absolute top-4 right-4 ${colorClass} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
+      {category}
+    </span>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+    <p class="text-sm text-blue-600 font-medium mb-3">by {maker}</p>
+    <p class="text-gray-600 mb-4">{description}</p>
+    <a href={link} class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+      View Project
+      <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+</article>
+

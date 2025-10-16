@@ -1,0 +1,6 @@
+name = "makerfriends"
+compatibility_date = "2025-03-15"
+
+[site]
+bucket = "./dist"
+

@@ -1,16 +1,194 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <Navigation />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-float">
+            Welcome to MakerFriends!
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            Where creativity meets community! Join makers worldwide in sharing projects, 
+            learning new skills, and building lasting friendships through STEM/STEAM innovation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/signup" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105">
+              Join the Community 🚀
+            </a>
+            <a href="/projects" class="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-all">
+              Explore Projects 🔍
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating decorative elements -->
+      <div class="absolute top-20 left-10 w-20 h-20 bg-blue-400 rounded-full opacity-20 animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-400 rounded-full opacity-20 animate-float" style="animation-delay: 1s;"></div>
+      <div class="absolute top-40 right-20 w-16 h-16 bg-pink-400 rounded-full opacity-20 animate-float" style="animation-delay: 2s;"></div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white/50">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Our Mission</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-lg transition-shadow">
+            <div class="text-5xl mb-4">🎓</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Promote STEM/STEAM Learning</h3>
+            <p class="text-gray-600">
+              Inspire the next generation of innovators through hands-on making and collaborative learning experiences.
+            </p>
+          </div>
+          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-lg transition-shadow">
+            <div class="text-5xl mb-4">🤝</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Connect Makers</h3>
+            <p class="text-gray-600">
+              Build a vibrant community where makers share knowledge, tips, and techniques across all skill levels.
+            </p>
+          </div>
+          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-pink-100 hover:shadow-lg transition-shadow">
+            <div class="text-5xl mb-4">✨</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Share Good Times</h3>
+            <p class="text-gray-600">
+              Create lasting friendships and celebrate the joy of making together in a supportive environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4 text-gray-900">Featured Projects</h2>
+          <p class="text-lg text-gray-600">Check out amazing creations from our community!</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ProjectCard 
+            title="Smart Home Weather Station"
+            category="Electronics"
+            maker="Sarah Chen"
+            image="https://images.unsplash.com/photo-1592833159155-c62d1f560d8d?w=800&h=600&fit=crop"
+            description="An Arduino-based weather station with LCD display and mobile app integration for real-time monitoring."
+            link="/projects/weather-station"
+          />
+          <ProjectCard 
+            title="Rustic Bookshelf with LED"
+            category="Woodworking"
+            maker="Mike Thompson"
+            image="https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&h=600&fit=crop"
+            description="Beautiful reclaimed wood bookshelf featuring integrated LED lighting and modern joinery techniques."
+            link="/projects/led-bookshelf"
+          />
+          <ProjectCard 
+            title="Line Following Robot"
+            category="Robotics"
+            maker="Alex Rivera"
+            image="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=800&h=600&fit=crop"
+            description="Educational robot kit that teaches programming basics while following a line using IR sensors."
+            link="/projects/line-robot"
+          />
+        </div>
+        <div class="text-center mt-12">
+          <a href="/projects" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            View All Projects →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Explore by Category</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <a href="/projects?category=electronics" class="p-6 bg-white rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">⚡</div>
+            <h3 class="font-bold text-gray-900">Electronics</h3>
+          </a>
+          <a href="/projects?category=woodworking" class="p-6 bg-white rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🪵</div>
+            <h3 class="font-bold text-gray-900">Woodworking</h3>
+          </a>
+          <a href="/projects?category=robotics" class="p-6 bg-white rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🤖</div>
+            <h3 class="font-bold text-gray-900">Robotics</h3>
+          </a>
+          <a href="/projects?category=papercrafting" class="p-6 bg-white rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">📄</div>
+            <h3 class="font-bold text-gray-900">Papercrafting</h3>
+          </a>
+          <a href="/projects?category=3d-printing" class="p-6 bg-white rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🖨️</div>
+            <h3 class="font-bold text-gray-900">3D Printing</h3>
+          </a>
+          <a href="/projects?category=sewing" class="p-6 bg-white rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🧵</div>
+            <h3 class="font-bold text-gray-900">Sewing</h3>
+          </a>
+          <a href="/projects?category=arduino" class="p-6 bg-white rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">💻</div>
+            <h3 class="font-bold text-gray-900">Arduino</h3>
+          </a>
+          <a href="/projects?category=raspberry-pi" class="p-6 bg-white rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🥧</div>
+            <h3 class="font-bold text-gray-900">Raspberry Pi</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white">
+          <h2 class="text-3xl font-bold text-center mb-12">Join Our Growing Community</h2>
+          <div class="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="text-4xl font-bold mb-2">5,000+</div>
+              <div class="text-blue-100">Active Makers</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-2">12,000+</div>
+              <div class="text-blue-100">Projects Shared</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-2">50+</div>
+              <div class="text-blue-100">Countries</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-2">100%</div>
+              <div class="text-blue-100">Free to Join</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white/50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6 text-gray-900">Ready to Start Making?</h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Join thousands of makers sharing ideas, learning new skills, and creating amazing projects together!
+        </p>
+        <a href="/signup" class="inline-block px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold text-xl hover:shadow-xl transition-all hover:scale-105">
+          Create Your Free Account Today! 🎉
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

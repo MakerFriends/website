@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Getting Started with Arduino: A Beginner's Guide" description="Learn the basics of Arduino programming and start building your first electronic projects today!">
+  <Navigation />
+  
+  <main class="flex-1">
+    <!-- Article Header -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8">
+        <a href="/blog" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center mb-6">
+          ← Back to Blog
+        </a>
+        <div class="flex items-center space-x-4 mb-4">
+          <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+            Electronics
+          </span>
+          <span class="text-gray-500">8 min read</span>
+          <span class="text-gray-500">March 15, 2025</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Getting Started with Arduino: A Beginner's Guide
+        </h1>
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+            SC
+          </div>
+          <div>
+            <div class="font-semibold text-gray-900">Sarah Chen</div>
+            <div class="text-sm text-gray-500">Electronics Enthusiast</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <img 
+        src="https://images.unsplash.com/photo-1553406830-ef2513450d76?w=1200&h=600&fit=crop" 
+        alt="Arduino Board"
+        class="w-full rounded-2xl shadow-2xl mb-12"
+      />
+
+      <!-- Article Content -->
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          Arduino has revolutionized the world of electronics and DIY projects, making it accessible for 
+          beginners and experts alike. Whether you're looking to build your first LED circuit or create 
+          complex IoT devices, Arduino is the perfect starting point.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">What is Arduino?</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Arduino is an open-source electronics platform based on easy-to-use hardware and software. 
+          It consists of a physical programmable circuit board (microcontroller) and a piece of software, 
+          or IDE (Integrated Development Environment) that runs on your computer.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Why Choose Arduino?</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-3 mb-6">
+          <li><strong>Beginner-Friendly:</strong> Simple, clear programming language based on C++</li>
+          <li><strong>Affordable:</strong> Arduino boards start at just $20-30</li>
+          <li><strong>Versatile:</strong> Can control lights, motors, sensors, and more</li>
+          <li><strong>Community Support:</strong> Massive online community with thousands of tutorials</li>
+          <li><strong>Open Source:</strong> Free software and open hardware design</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">What You'll Need</h2>
+        <div class="bg-blue-50 p-6 rounded-xl mb-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Starter Kit Essentials:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Arduino Uno board (or compatible)</li>
+            <li>USB cable (usually included)</li>
+            <li>Breadboard for prototyping</li>
+            <li>Jumper wires</li>
+            <li>LEDs (various colors)</li>
+            <li>Resistors (220Ω and 10kΩ)</li>
+            <li>Push buttons</li>
+            <li>Sensors (temperature, light, motion)</li>
+          </ul>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Setting Up Your Arduino IDE</h2>
+        <ol class="list-decimal list-inside text-gray-700 space-y-3 mb-6">
+          <li>Download the Arduino IDE from arduino.cc</li>
+          <li>Install the software on your computer</li>
+          <li>Connect your Arduino board via USB</li>
+          <li>Select your board type under Tools → Board</li>
+          <li>Select the correct port under Tools → Port</li>
+        </ol>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Your First Program: Blink LED</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Let's start with the classic "Hello World" of Arduino - making an LED blink!
+        </p>
+        <div class="bg-gray-900 text-gray-100 p-6 rounded-xl mb-6 overflow-x-auto">
+          <pre><code class="text-sm">{`void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);  // Turn LED on
+  delay(1000);                      // Wait 1 second
+  digitalWrite(LED_BUILTIN, LOW);   // Turn LED off
+  delay(1000);                      // Wait 1 second
+}`}</code></pre>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Understanding the Code</h2>
+        <ul class="space-y-4 text-gray-700 mb-6">
+          <li><strong>setup():</strong> Runs once when the Arduino starts. Used to initialize settings.</li>
+          <li><strong>loop():</strong> Runs continuously after setup(). Your main program logic goes here.</li>
+          <li><strong>pinMode():</strong> Configures a pin as INPUT or OUTPUT.</li>
+          <li><strong>digitalWrite():</strong> Sets a pin HIGH (on) or LOW (off).</li>
+          <li><strong>delay():</strong> Pauses the program for specified milliseconds.</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Next Steps</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Once you've mastered the basics, try these projects:
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-3 mb-6">
+          <li>Create a traffic light system with multiple LEDs</li>
+          <li>Build a temperature monitor with an LCD display</li>
+          <li>Make a motion-activated alarm with a PIR sensor</li>
+          <li>Control motors to build a simple robot</li>
+          <li>Connect to WiFi and create IoT projects</li>
+        </ul>
+
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl mt-12">
+          <h3 class="text-2xl font-bold mb-4">💡 Pro Tips for Success</h3>
+          <ul class="space-y-3">
+            <li>✓ Start simple and gradually increase complexity</li>
+            <li>✓ Always check your wiring before powering on</li>
+            <li>✓ Use the Serial Monitor for debugging</li>
+            <li>✓ Join Arduino forums and communities for help</li>
+            <li>✓ Document your projects and share them!</li>
+          </ul>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Conclusion</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Arduino opens up a world of possibilities for makers and tinkerers. With just a basic kit and 
+          some creativity, you can build amazing projects that combine hardware and software. The key is 
+          to start simple, learn from examples, and don't be afraid to experiment!
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Happy making, and welcome to the wonderful world of Arduino! Share your projects with our 
+          community and inspire others to start their maker journey.
+        </p>
+      </div>
+
+      <!-- Share Section -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Share this article</h3>
+        <div class="flex space-x-4">
+          <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            Share on Twitter
+          </button>
+          <button class="px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors">
+            Share on Facebook
+          </button>
+          <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+            Share on Pinterest
+          </button>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="/blog/building-first-robot" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <span class="text-sm text-purple-600 font-semibold">Robotics</span>
+            <h4 class="text-lg font-bold text-gray-900 mt-2">Building Your First Robot</h4>
+          </a>
+          <a href="/blog/smart-home-raspberry-pi" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <span class="text-sm text-purple-600 font-semibold">Raspberry Pi</span>
+            <h4 class="text-lg font-bold text-gray-900 mt-2">Smart Home Automation</h4>
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+

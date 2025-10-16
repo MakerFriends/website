@@ -1,14 +1,23 @@
 {
   "name": "makerfriends.com",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "MakerFriends - A vibrant community platform connecting makers worldwide",
+  "author": "MakerFriends Team",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check"
   },
   "dependencies": {
-    "astro": "^5.14.5"
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.5",
+    "tailwindcss": "^4.1.14"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
