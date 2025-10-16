@@ -10,11 +10,36 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 
 - **Project Showcase**: Browse and share maker projects across multiple categories
 - **Maker Directory**: Connect with talented makers worldwide
+- **Interactive MakerSpaces Map**: Discover maker spaces worldwide with Leaflet.js integration
+- **MakerSpaces Directory**: Searchable directory with filtering and community contributions
+- **Newsletter System**: Email subscriptions with multiple backend integrations
 - **Blog System**: Tutorials, tips, and maker stories
 - **Community Features**: Forums (coming soon), workshops, and events
 - **Responsive Design**: Beautiful UI that works on all devices
 - **Static Site**: Lightning-fast performance with Astro
 - **Cloudflare Pages Ready**: Optimized for Cloudflare Pages deployment
+
+## 🆕 Recent Additions (v1.2.0)
+
+### Interactive MakerSpaces Map
+
+- **Leaflet.js Integration**: Interactive map showing maker spaces worldwide
+- **Location Services**: Automatic location detection and address search
+- **Smart Zoom Controls**: Precise zoom sensitivity for better user experience
+- **Tile Preloading**: Smooth map interactions with preloaded tiles
+- **Color-coded Markers**: Different colors for ownership models (Commercial, Non-profit, etc.)
+
+### MakerSpaces Directory
+
+- **Searchable Directory**: Filter maker spaces by location, specialties, and ownership
+- **Community Contributions**: Form for users to add new maker spaces
+- **Detailed Information**: Contact info, equipment, membership costs, and more
+
+### Newsletter System
+
+- **Multiple Backend Support**: Formspree, Mailchimp, and ConvertKit integration
+- **Responsive Design**: Beautiful signup form that works on all devices
+- **Privacy Compliant**: GDPR-friendly with unsubscribe options
 
 ## 📁 Project Structure
 
@@ -27,12 +52,16 @@ makerfriends.com/
 │   ├── components/
 │   │   ├── Navigation.astro
 │   │   ├── Footer.astro
-│   │   └── ProjectCard.astro
+│   │   ├── ProjectCard.astro
+│   │   └── NewsletterSignup.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
 │   │   ├── index.astro      # Home page
 │   │   ├── about.astro      # About Us
+│   │   ├── makerspaces.astro # MakerSpaces directory
+│   │   ├── makerspace-map.astro # Interactive map
+│   │   └── add-makerspace.astro # Add MakerSpace form
 │   │   ├── history.astro    # Our History
 │   │   ├── projects.astro   # Projects Gallery
 │   │   ├── makers.astro     # Maker Directory
@@ -463,10 +492,7 @@ To add Google Analytics or other tracking:
 2. Add to the `<head>` section:
 
 ```html
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {

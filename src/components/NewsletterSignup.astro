@@ -1,0 +1,138 @@
+---
+// Newsletter Signup Component
+// Supports multiple providers: Mailchimp, ConvertKit, Formspree, etc.
+---
+
+<div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Stay Connected with MakerFriends</h2>
+    <p class="text-xl mb-8 text-blue-100">
+      Get the latest updates on MakerSpaces, projects, and community events delivered to your inbox.
+    </p>
+
+    <!-- Newsletter Form -->
+    <form id="newsletterForm" class="max-w-md mx-auto" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input
+          type="email"
+          name="email"
+          id="newsletterEmail"
+          placeholder="Enter your email address"
+          required
+          class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        />
+        <input type="hidden" name="_subject" value="New Newsletter Subscription" />
+        <input type="hidden" name="_replyto" value="" />
+        <button
+          type="submit"
+          class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+          Subscribe
+        </button>
+      </div>
+      <p class="text-sm text-blue-200 mt-3">We respect your privacy. Unsubscribe at any time.</p>
+    </form>
+
+    <!-- Success/Error Messages -->
+    <div id="newsletterMessage" class="mt-4 hidden">
+      <div id="successMessage" class="hidden text-green-200 bg-green-800/30 rounded-lg p-3">
+        ✅ Thanks for subscribing! Check your email to confirm.
+      </div>
+      <div id="errorMessage" class="hidden text-red-200 bg-red-800/30 rounded-lg p-3">
+        ❌ Something went wrong. Please try again.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("newsletterForm")?.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const messageDiv = document.getElementById("newsletterMessage");
+    const successDiv = document.getElementById("successMessage");
+    const errorDiv = document.getElementById("errorMessage");
+
+    // Hide previous messages
+    messageDiv?.classList.remove("hidden");
+    successDiv?.classList.add("hidden");
+    errorDiv?.classList.add("hidden");
+
+    try {
+      // Option 1: Formspree (recommended for static sites)
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        successDiv?.classList.remove("hidden");
+        form.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Newsletter signup error:", error);
+
+      // Option 2: Mailchimp API (requires API key)
+      // await subscribeToMailchimp(email);
+
+      // Option 3: ConvertKit API (requires API key)
+      // await subscribeToConvertKit(email);
+
+      errorDiv?.classList.remove("hidden");
+    }
+  });
+
+  // Mailchimp Integration (requires API key and list ID)
+  async function subscribeToMailchimp(email) {
+    const MAILCHIMP_API_KEY = "YOUR_API_KEY";
+    const MAILCHIMP_LIST_ID = "YOUR_LIST_ID";
+    const MAILCHIMP_SERVER = "YOUR_SERVER_PREFIX"; // e.g., 'us1'
+
+    const response = await fetch(
+      `https://${MAILCHIMP_SERVER}.api.mailchimp.com/3.0/lists/${MAILCHIMP_LIST_ID}/members`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Basic ${btoa(`anystring:${MAILCHIMP_API_KEY}`)}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email_address: email,
+          status: "subscribed",
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Mailchimp subscription failed");
+    }
+  }
+
+  // ConvertKit Integration (requires API key and form ID)
+  async function subscribeToConvertKit(email) {
+    const CONVERTKIT_API_KEY = "YOUR_API_KEY";
+    const CONVERTKIT_FORM_ID = "YOUR_FORM_ID";
+
+    const response = await fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        api_key: CONVERTKIT_API_KEY,
+        email: email,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("ConvertKit subscription failed");
+    }
+  }
+</script>

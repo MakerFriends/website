@@ -5,11 +5,29 @@ All notable changes to the MakerFriends website project will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2025-01-16
+## [1.2.0] - 2025-01-16
 
 ### Added
 
-- Initial release of MakerFriends.com website
+- Interactive MakerSpaces map with Leaflet.js integration
+- Searchable MakerSpaces directory with filtering capabilities
+- Add MakerSpace form for community contributions
+- Newsletter signup component with multiple backend integrations (Formspree, Mailchimp, ConvertKit)
+- Enhanced map controls with location services and address search
+- Map tile preloading for smooth zooming experience
+- MakerSpace markers with color-coded ownership models
+- Map interaction management (click-to-activate scroll zoom)
+
+### Enhanced
+
+- Improved map zoom sensitivity (wheelPxPerZoomLevel: 800, zoomDelta: 0.1)
+- Prettier configuration optimized for HTML formatting
+- Navigation and footer updated with MakerSpaces links
+
+## [1.1.0] - 2025-01-16
+
+### Added
+
 - MakerFriends Store page with merchandise catalog and product showcase
 - robots.txt file to prevent search engine indexing
 - CHANGELOG.md following Keep a Changelog standard
@@ -18,6 +36,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CONTRIBUTING.md with contribution guidelines and development setup
 - CODE_OF_CONDUCT.md following Contributor Covenant standards
 - CONTRIBUTORS.md to recognize community contributions
+
+## [1.0.0] - 2025-01-16
+
+### Added
+
+- Initial release of MakerFriends.com website
 - ROADMAP.md with development priorities and future vision
 - .editorconfig for consistent coding style across editors
 - .prettierrc for automatic code formatting
