@@ -5,6 +5,29 @@ All notable changes to the MakerFriends website project will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-01-16
+
+### Added
+
+- Comprehensive GDPR compliance implementation
+- Cookie consent banner with granular controls
+- Cookie settings modal with detailed preferences
+- Privacy Policy page with complete data processing information
+- GDPR Compliance page with legal details and user rights
+- Newsletter signup with explicit consent checkbox
+- Data processing transparency and consent tracking
+- User rights implementation (access, rectification, erasure, portability)
+- Third-party data processor documentation
+- Data breach notification procedures
+- International data transfer safeguards
+
+### Enhanced
+
+- Newsletter signup now GDPR compliant with Buttondown integration
+- Cookie management with three categories (Necessary, Analytics, Marketing)
+- Privacy documentation with comprehensive legal coverage
+- Footer updated with Privacy Policy and GDPR Compliance links
+
 ## [1.2.0] - 2025-01-16
 
 ### Added

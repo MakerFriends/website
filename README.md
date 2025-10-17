@@ -19,7 +19,16 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 - **Static Site**: Lightning-fast performance with Astro
 - **Cloudflare Pages Ready**: Optimized for Cloudflare Pages deployment
 
-## 🆕 Recent Additions (v1.2.0)
+## 🆕 Recent Additions (v1.3.0)
+
+### GDPR Compliance & Privacy
+
+- **Complete GDPR Compliance**: Full implementation of EU data protection regulations
+- **Cookie Consent Management**: Granular cookie controls with user preferences
+- **Privacy Documentation**: Comprehensive privacy policy and GDPR compliance pages
+- **User Rights Implementation**: Access, rectification, erasure, and data portability
+- **Consent Tracking**: Explicit consent management for all data processing
+- **Data Protection by Design**: Privacy built into all systems and processes
 
 ### Interactive MakerSpaces Map
 
@@ -37,9 +46,10 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 
 ### Newsletter System
 
-- **Multiple Backend Support**: Formspree, Mailchimp, and ConvertKit integration
+- **Buttondown Integration**: Developer-friendly newsletter service
+- **GDPR Compliant**: Explicit consent checkbox and privacy notices
 - **Responsive Design**: Beautiful signup form that works on all devices
-- **Privacy Compliant**: GDPR-friendly with unsubscribe options
+- **Consent Tracking**: Records consent timestamps and sources
 
 ## 📁 Project Structure
 
@@ -53,7 +63,8 @@ makerfriends.com/
 │   │   ├── Navigation.astro
 │   │   ├── Footer.astro
 │   │   ├── ProjectCard.astro
-│   │   └── NewsletterSignup.astro
+│   │   ├── NewsletterSignup.astro
+│   │   └── CookieConsent.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
@@ -61,7 +72,9 @@ makerfriends.com/
 │   │   ├── about.astro      # About Us
 │   │   ├── makerspaces.astro # MakerSpaces directory
 │   │   ├── makerspace-map.astro # Interactive map
-│   │   └── add-makerspace.astro # Add MakerSpace form
+│   │   ├── add-makerspace.astro # Add MakerSpace form
+│   │   ├── privacy.astro # Privacy Policy
+│   │   └── gdpr-compliance.astro # GDPR Compliance
 │   │   ├── history.astro    # Our History
 │   │   ├── projects.astro   # Projects Gallery
 │   │   ├── makers.astro     # Maker Directory
