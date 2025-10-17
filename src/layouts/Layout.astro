@@ -1,12 +1,16 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import CookieConsent from "../components/CookieConsent.astro";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "Join MakerFriends - Connect with makers, share projects, and inspire creativity in STEM/STEAM learning!" } = Astro.props;
+const {
+  title,
+  description = "Join MakerFriends - Connect with makers, share projects, and inspire creativity in STEM/STEAM learning!",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +22,7 @@ const { title, description = "Join MakerFriends - Connect with makers, share pro
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | MakerFriends</title>
-    
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -27,6 +31,8 @@ const { title, description = "Join MakerFriends - Connect with makers, share pro
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
+
+    <!-- Cookie Consent Banner -->
+    <CookieConsent />
   </body>
 </html>
-

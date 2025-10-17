@@ -1,6 +1,13 @@
 ---
 // Newsletter Signup Component
-// Supports multiple providers: Mailchimp, ConvertKit, Formspree, etc.
+// Primary: Buttondown (recommended for developer-friendly newsletters)
+// Fallback: Formspree, Mailchimp, ConvertKit
+//
+// Setup Instructions:
+// 1. Create account at buttondown.email
+// 2. Get your API key from Settings > API
+// 3. Replace YOUR_BUTTONDOWN_API_KEY with your actual key
+// 4. Test the integration
 ---
 
 <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-4 sm:px-6 lg:px-8">
@@ -11,7 +18,7 @@
     </p>
 
     <!-- Newsletter Form -->
-    <form id="newsletterForm" class="max-w-md mx-auto" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form id="newsletterForm" class="max-w-md mx-auto">
       <div class="flex flex-col sm:flex-row gap-3">
         <input
           type="email"
@@ -21,15 +28,37 @@
           required
           class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
         />
-        <input type="hidden" name="_subject" value="New Newsletter Subscription" />
-        <input type="hidden" name="_replyto" value="" />
         <button
           type="submit"
           class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
           Subscribe
         </button>
       </div>
-      <p class="text-sm text-blue-200 mt-3">We respect your privacy. Unsubscribe at any time.</p>
+
+      <!-- GDPR Compliance Section -->
+      <div class="mt-4 text-left">
+        <div class="flex items-start gap-3">
+          <input
+            type="checkbox"
+            id="gdprConsent"
+            name="gdprConsent"
+            required
+            class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+          />
+          <label for="gdprConsent" class="text-sm text-blue-200 leading-relaxed">
+            I consent to receiving newsletters from MakerFriends. I understand that I can unsubscribe at any time.
+            <a href="/privacy" class="underline hover:text-white" target="_blank">Privacy Policy</a>
+          </label>
+        </div>
+
+        <div class="mt-3 text-xs text-blue-300">
+          <strong>Data Processing:</strong> We use Buttondown to manage our newsletter. Your email and subscription preferences
+          are stored securely. We may track open rates and click-through rates to improve our content.
+          <a href="/privacy#data-processing" class="underline hover:text-white" target="_blank"
+            >Learn more about data processing</a
+          >.
+        </div>
+      </div>
     </form>
 
     <!-- Success/Error Messages -->
@@ -50,9 +79,16 @@
 
     const form = e.target;
     const email = form.email.value;
+    const gdprConsent = form.gdprConsent.checked;
     const messageDiv = document.getElementById("newsletterMessage");
     const successDiv = document.getElementById("successMessage");
     const errorDiv = document.getElementById("errorMessage");
+
+    // GDPR Compliance Check
+    if (!gdprConsent) {
+      alert("Please provide consent to receive newsletters by checking the consent checkbox.");
+      return;
+    }
 
     // Hide previous messages
     messageDiv?.classList.remove("hidden");
@@ -60,34 +96,75 @@
     errorDiv?.classList.add("hidden");
 
     try {
-      // Option 1: Formspree (recommended for static sites)
-      const formData = new FormData(form);
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
+      // Primary: Buttondown API (recommended for developer-friendly newsletters)
+      await subscribeToButtondown(email, gdprConsent);
 
-      if (response.ok) {
-        successDiv?.classList.remove("hidden");
-        form.reset();
-      } else {
-        throw new Error("Form submission failed");
-      }
+      successDiv?.classList.remove("hidden");
+      form.reset();
     } catch (error) {
       console.error("Newsletter signup error:", error);
 
-      // Option 2: Mailchimp API (requires API key)
+      // Fallback options (uncomment as needed):
+      // await subscribeToFormspree(email);
       // await subscribeToMailchimp(email);
-
-      // Option 3: ConvertKit API (requires API key)
       // await subscribeToConvertKit(email);
 
       errorDiv?.classList.remove("hidden");
     }
   });
+
+  // Buttondown Integration (recommended for developer-friendly newsletters)
+  async function subscribeToButtondown(email, gdprConsent) {
+    const BUTTONDOWN_API_KEY = "YOUR_BUTTONDOWN_API_KEY";
+
+    const response = await fetch("https://api.buttondown.email/v1/subscribers", {
+      method: "POST",
+      headers: {
+        Authorization: `Token ${BUTTONDOWN_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        referrer_url: window.location.href,
+        tags: ["makerfriends", "website-signup", "gdpr-consent"],
+        notes: `Subscribed from MakerFriends website on ${new Date().toISOString()}. GDPR Consent: ${gdprConsent ? "Yes" : "No"}`,
+        metadata: {
+          gdpr_consent: gdprConsent,
+          consent_timestamp: new Date().toISOString(),
+          consent_source: "website_signup_form",
+          ip_address: "anonymized", // Note: IP should be anonymized in production
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`Buttondown subscription failed: ${errorData.detail || "Unknown error"}`);
+    }
+
+    return response.json();
+  }
+
+  // Formspree Integration (fallback option)
+  async function subscribeToFormspree(email) {
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("_subject", "New Newsletter Subscription from MakerFriends");
+
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Formspree subscription failed");
+    }
+  }
 
   // Mailchimp Integration (requires API key and list ID)
   async function subscribeToMailchimp(email) {
