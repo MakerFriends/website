@@ -6,22 +6,16 @@ import Footer from "../components/Footer.astro";
 
 <Layout
   title="Add MakerSpace"
-  description="Help grow our community by adding your local MakerSpace to our directory. Share your workshop with makers worldwide!"
->
+  description="Help grow our community by adding your local MakerSpace to our directory. Share your workshop with makers worldwide!">
   <Navigation />
 
   <main class="flex-1">
     <!-- Hero Section -->
-    <section
-      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white"
-    >
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
       <div class="max-w-7xl mx-auto text-center">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6">
-          Add Your MakerSpace 🏭
-        </h1>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">Add Your MakerSpace 🏭</h1>
         <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-          Help makers worldwide discover your workshop! Add your MakerSpace to
-          our growing directory.
+          Help makers worldwide discover your workshop! Add your MakerSpace to our growing directory.
         </p>
       </div>
     </section>
@@ -31,30 +25,20 @@ import Footer from "../components/Footer.astro";
       <div class="max-w-4xl mx-auto">
         <div class="bg-white rounded-2xl shadow-2xl p-8">
           <div class="mb-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-              MakerSpace Information
-            </h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">MakerSpace Information</h2>
             <p class="text-gray-600">
-              Please provide detailed information about your MakerSpace. All
-              fields marked with * are required.
+              Please provide detailed information about your MakerSpace. All fields marked with * are required.
             </p>
           </div>
 
           <form id="makerspaceForm" class="space-y-8">
             <!-- Basic Information -->
             <div class="border-b border-gray-200 pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Basic Information
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Basic Information</h3>
 
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    for="name"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    MakerSpace Name *
-                  </label>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-2"> MakerSpace Name * </label>
                   <input
                     type="text"
                     id="name"
@@ -66,12 +50,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="website"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Website URL
-                  </label>
+                  <label for="website" class="block text-sm font-medium text-gray-700 mb-2"> Website URL </label>
                   <input
                     type="url"
                     id="website"
@@ -83,37 +62,24 @@ import Footer from "../components/Footer.astro";
               </div>
 
               <div class="mt-6">
-                <label
-                  for="description"
-                  class="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Description *
-                </label>
+                <label for="description" class="block text-sm font-medium text-gray-700 mb-2"> Description * </label>
                 <textarea
                   id="description"
                   name="description"
                   required
                   rows="4"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="Describe your MakerSpace, its mission, and what makes it special..."
-                ></textarea>
+                  placeholder="Describe your MakerSpace, its mission, and what makes it special..."></textarea>
               </div>
             </div>
 
             <!-- Location Information -->
             <div class="border-b border-gray-200 pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Location Information
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Location Information</h3>
 
               <div class="grid md:grid-cols-2 gap-6">
                 <div class="md:col-span-2">
-                  <label
-                    for="address"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Full Address *
-                  </label>
+                  <label for="address" class="block text-sm font-medium text-gray-700 mb-2"> Full Address * </label>
                   <input
                     type="text"
                     id="address"
@@ -125,12 +91,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="city"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    City *
-                  </label>
+                  <label for="city" class="block text-sm font-medium text-gray-700 mb-2"> City * </label>
                   <input
                     type="text"
                     id="city"
@@ -142,12 +103,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="state"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    State/Province *
-                  </label>
+                  <label for="state" class="block text-sm font-medium text-gray-700 mb-2"> State/Province * </label>
                   <input
                     type="text"
                     id="state"
@@ -159,18 +115,12 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="country"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Country *
-                  </label>
+                  <label for="country" class="block text-sm font-medium text-gray-700 mb-2"> Country * </label>
                   <select
                     id="country"
                     name="country"
                     required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                     <option value="">Select Country</option>
                     <option value="USA">United States</option>
                     <option value="Canada">Canada</option>
@@ -185,12 +135,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="zipCode"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    ZIP/Postal Code
-                  </label>
+                  <label for="zipCode" class="block text-sm font-medium text-gray-700 mb-2"> ZIP/Postal Code </label>
                   <input
                     type="text"
                     id="zipCode"
@@ -204,18 +149,11 @@ import Footer from "../components/Footer.astro";
 
             <!-- Contact Information -->
             <div class="border-b border-gray-200 pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Contact Information
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Contact Information</h3>
 
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    for="phone"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Phone Number
-                  </label>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-2"> Phone Number </label>
                   <input
                     type="tel"
                     id="phone"
@@ -226,12 +164,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="email"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Email Address *
-                  </label>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2"> Email Address * </label>
                   <input
                     type="email"
                     id="email"
@@ -243,10 +176,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="contactName"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label for="contactName" class="block text-sm font-medium text-gray-700 mb-2">
                     Primary Contact Name
                   </label>
                   <input
@@ -259,12 +189,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="contactTitle"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Contact Title
-                  </label>
+                  <label for="contactTitle" class="block text-sm font-medium text-gray-700 mb-2"> Contact Title </label>
                   <input
                     type="text"
                     id="contactTitle"
@@ -278,45 +203,30 @@ import Footer from "../components/Footer.astro";
 
             <!-- Organization Details -->
             <div class="border-b border-gray-200 pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Organization Details
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Organization Details</h3>
 
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    for="ownershipModel"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label for="ownershipModel" class="block text-sm font-medium text-gray-700 mb-2">
                     Ownership Model *
                   </label>
                   <select
                     id="ownershipModel"
                     name="ownershipModel"
                     required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                     <option value="">Select Model</option>
                     <option value="Commercial">Commercial</option>
-                    <option value="Non-profit Community"
-                      >Non-profit Community</option
-                    >
-                    <option value="Member-owned Cooperative"
-                      >Member-owned Cooperative</option
-                    >
-                    <option value="University/Educational"
-                      >University/Educational</option
-                    >
+                    <option value="Non-profit Community">Non-profit Community</option>
+                    <option value="Member-owned Cooperative">Member-owned Cooperative</option>
+                    <option value="University/Educational">University/Educational</option>
                     <option value="Government/Public">Government/Public</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>
 
                 <div>
-                  <label
-                    for="established"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label for="established" class="block text-sm font-medium text-gray-700 mb-2">
                     Year Established
                   </label>
                   <input
@@ -332,10 +242,7 @@ import Footer from "../components/Footer.astro";
               </div>
 
               <div class="mt-6">
-                <label
-                  for="memberCount"
-                  class="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label for="memberCount" class="block text-sm font-medium text-gray-700 mb-2">
                   Approximate Number of Members
                 </label>
                 <input
@@ -351,16 +258,11 @@ import Footer from "../components/Footer.astro";
 
             <!-- Membership & Pricing -->
             <div class="border-b border-gray-200 pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Membership & Pricing
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Membership & Pricing</h3>
 
               <div class="grid md:grid-cols-3 gap-6">
                 <div>
-                  <label
-                    for="monthlyCost"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label for="monthlyCost" class="block text-sm font-medium text-gray-700 mb-2">
                     Monthly Membership ($)
                   </label>
                   <input
@@ -375,10 +277,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="annualCost"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label for="annualCost" class="block text-sm font-medium text-gray-700 mb-2">
                     Annual Membership ($)
                   </label>
                   <input
@@ -393,12 +292,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="dayPassCost"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Day Pass ($)
-                  </label>
+                  <label for="dayPassCost" class="block text-sm font-medium text-gray-700 mb-2"> Day Pass ($) </label>
                   <input
                     type="number"
                     id="dayPassCost"
@@ -419,24 +313,17 @@ import Footer from "../components/Footer.astro";
                     name="freeAccess"
                     class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
                   />
-                  <span class="ml-2 text-sm text-gray-700"
-                    >Free access available</span
-                  >
+                  <span class="ml-2 text-sm text-gray-700">Free access available</span>
                 </label>
               </div>
             </div>
 
             <!-- Equipment & Specialties -->
             <div class="border-b border-gray-200 pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Equipment & Specialties
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Equipment & Specialties</h3>
 
               <div class="mb-6">
-                <label
-                  for="equipment"
-                  class="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label for="equipment" class="block text-sm font-medium text-gray-700 mb-2">
                   Available Equipment
                 </label>
                 <textarea
@@ -446,21 +333,14 @@ import Footer from "../components/Footer.astro";
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   placeholder="List your equipment (e.g., 3D Printers, CNC Machines, Laser Cutters, Woodworking Tools, Electronics Lab, etc.)"
                 ></textarea>
-                <p class="text-sm text-gray-500 mt-2">
-                  Separate items with commas or new lines
-                </p>
+                <p class="text-sm text-gray-500 mt-2">Separate items with commas or new lines</p>
               </div>
 
               <div class="mb-6">
-                <label
-                  for="specialties"
-                  class="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label for="specialties" class="block text-sm font-medium text-gray-700 mb-2">
                   Specialties & Focus Areas
                 </label>
-                <div
-                  class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
-                >
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                   {
                     [
                       "Electronics",
@@ -495,9 +375,7 @@ import Footer from "../components/Footer.astro";
                           value={specialty}
                           class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
                         />
-                        <span class="ml-2 text-sm text-gray-700">
-                          {specialty}
-                        </span>
+                        <span class="ml-2 text-sm text-gray-700">{specialty}</span>
                       </label>
                     ))
                   }
@@ -507,9 +385,7 @@ import Footer from "../components/Footer.astro";
 
             <!-- Hours of Operation -->
             <div class="border-b border-gray-200 pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Hours of Operation
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Hours of Operation</h3>
 
               <div class="grid md:grid-cols-2 gap-6">
                 {
@@ -523,10 +399,7 @@ import Footer from "../components/Footer.astro";
                     { day: "sunday", label: "Sunday" },
                   ].map(({ day, label }) => (
                     <div>
-                      <label
-                        for={day}
-                        class="block text-sm font-medium text-gray-700 mb-2"
-                      >
+                      <label for={day} class="block text-sm font-medium text-gray-700 mb-2">
                         {label}
                       </label>
                       <input
@@ -544,18 +417,11 @@ import Footer from "../components/Footer.astro";
 
             <!-- Social Media -->
             <div class="border-b border-gray-200 pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Social Media & Links
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Social Media & Links</h3>
 
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    for="facebook"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Facebook URL
-                  </label>
+                  <label for="facebook" class="block text-sm font-medium text-gray-700 mb-2"> Facebook URL </label>
                   <input
                     type="url"
                     id="facebook"
@@ -566,12 +432,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="twitter"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Twitter URL
-                  </label>
+                  <label for="twitter" class="block text-sm font-medium text-gray-700 mb-2"> Twitter URL </label>
                   <input
                     type="url"
                     id="twitter"
@@ -582,12 +443,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="instagram"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Instagram URL
-                  </label>
+                  <label for="instagram" class="block text-sm font-medium text-gray-700 mb-2"> Instagram URL </label>
                   <input
                     type="url"
                     id="instagram"
@@ -598,12 +454,7 @@ import Footer from "../components/Footer.astro";
                 </div>
 
                 <div>
-                  <label
-                    for="youtube"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    YouTube URL
-                  </label>
+                  <label for="youtube" class="block text-sm font-medium text-gray-700 mb-2"> YouTube URL </label>
                   <input
                     type="url"
                     id="youtube"
@@ -617,15 +468,10 @@ import Footer from "../components/Footer.astro";
 
             <!-- Additional Information -->
             <div class="pb-8">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                Additional Information
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">Additional Information</h3>
 
               <div class="mb-6">
-                <label
-                  for="additionalInfo"
-                  class="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label for="additionalInfo" class="block text-sm font-medium text-gray-700 mb-2">
                   Additional Information
                 </label>
                 <textarea
@@ -646,8 +492,7 @@ import Footer from "../components/Footer.astro";
                     class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
                   />
                   <span class="ml-2 text-sm text-gray-700">
-                    I confirm that the information provided is accurate and I
-                    have permission to list this MakerSpace
+                    I confirm that the information provided is accurate and I have permission to list this MakerSpace
                   </span>
                 </label>
               </div>
@@ -661,8 +506,7 @@ import Footer from "../components/Footer.astro";
                     class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
                   />
                   <span class="ml-2 text-sm text-gray-700">
-                    MakerFriends may contact me for verification and updates
-                    about this listing
+                    MakerFriends may contact me for verification and updates about this listing
                   </span>
                 </label>
               </div>
@@ -672,8 +516,7 @@ import Footer from "../components/Footer.astro";
             <div class="text-center">
               <button
                 type="submit"
-                class="px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
+                class="px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
                 Submit MakerSpace 🚀
               </button>
             </div>
@@ -683,21 +526,17 @@ import Footer from "../components/Footer.astro";
     </section>
 
     <!-- Success Message -->
-    <div
-      id="successMessage"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
-    >
+    <div id="successMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
       <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center">
         <div class="text-6xl mb-4">🎉</div>
         <h3 class="text-2xl font-bold text-gray-900 mb-4">Thank You!</h3>
         <p class="text-gray-600 mb-6">
-          Your MakerSpace has been submitted successfully! We'll review it and
-          add it to our directory within 2-3 business days.
+          Your MakerSpace has been submitted successfully! We'll review it and add it to our directory within 2-3
+          business days.
         </p>
         <button
           id="closeSuccess"
-          class="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors"
-        >
+          class="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
           Close
         </button>
       </div>
@@ -708,61 +547,53 @@ import Footer from "../components/Footer.astro";
 </Layout>
 
 <script>
-  document
-    .getElementById("makerspaceForm")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
+  document.getElementById("makerspaceForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData.entries());
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
 
-      // Get checkbox values
-      const specialties = Array.from(
-        document.querySelectorAll('input[name="specialties"]:checked')
-      ).map(cb => cb.value);
-      data.specialties = specialties;
+    // Get checkbox values
+    const specialties = Array.from(document.querySelectorAll('input[name="specialties"]:checked')).map(cb => cb.value);
+    data.specialties = specialties;
 
-      // Get equipment as array
-      if (data.equipment) {
-        data.equipment = data.equipment
-          .split(/[,\n]/)
-          .map(item => item.trim())
-          .filter(item => item);
-      }
+    // Get equipment as array
+    if (data.equipment) {
+      data.equipment = data.equipment
+        .split(/[,\n]/)
+        .map(item => item.trim())
+        .filter(item => item);
+    }
 
-      // Convert costs to numbers
-      data.monthlyCost = data.monthlyCost ? parseFloat(data.monthlyCost) : 0;
-      data.annualCost = data.annualCost ? parseFloat(data.annualCost) : 0;
-      data.dayPassCost = data.dayPassCost ? parseFloat(data.dayPassCost) : 0;
-      data.memberCount = data.memberCount ? parseInt(data.memberCount) : 0;
-      data.established = data.established ? parseInt(data.established) : null;
+    // Convert costs to numbers
+    data.monthlyCost = data.monthlyCost ? parseFloat(data.monthlyCost) : 0;
+    data.annualCost = data.annualCost ? parseFloat(data.annualCost) : 0;
+    data.dayPassCost = data.dayPassCost ? parseFloat(data.dayPassCost) : 0;
+    data.memberCount = data.memberCount ? parseInt(data.memberCount) : 0;
+    data.established = data.established ? parseInt(data.established) : null;
 
-      // In a real application, this would send data to a server
-      console.log("MakerSpace data:", data);
+    // In a real application, this would send data to a server
+    // console.log("MakerSpace data:", data);
 
-      // Show success message
-      document.getElementById("successMessage").classList.remove("hidden");
+    // Show success message
+    document.getElementById("successMessage").classList.remove("hidden");
 
-      // Reset form
-      this.reset();
-    });
+    // Reset form
+    this.reset();
+  });
 
   // Close success message
-  document
-    .getElementById("closeSuccess")
-    .addEventListener("click", function () {
-      document.getElementById("successMessage").classList.add("hidden");
-    });
+  document.getElementById("closeSuccess").addEventListener("click", function () {
+    document.getElementById("successMessage").classList.add("hidden");
+  });
 
   // Close success message when clicking outside
-  document
-    .getElementById("successMessage")
-    .addEventListener("click", function (e) {
-      if (e.target === this) {
-        this.classList.add("hidden");
-      }
-    });
+  document.getElementById("successMessage").addEventListener("click", function (e) {
+    if (e.target === this) {
+      this.classList.add("hidden");
+    }
+  });
 
   // Free access checkbox handler
   document.getElementById("freeAccess").addEventListener("change", function () {

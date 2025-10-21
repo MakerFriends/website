@@ -303,6 +303,9 @@ const makerspaces = [
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 <script>
+  // Declare Leaflet as global for ESLint
+  /* global L */
+
   // MakerSpace data
   const makerspaces = [
     {
@@ -419,7 +422,7 @@ const makerspaces = [
 
   let map;
   let markers = [];
-  let isScrolling = false;
+  // const _isScrolling = false; // Currently unused
   let scrollTimeout;
   let mapActive = false;
 
@@ -444,7 +447,7 @@ const makerspaces = [
         showMapError();
       };
       document.head.appendChild(script);
-    } catch (error) {
+    } catch {
       showMapError();
     }
   }
@@ -458,7 +461,7 @@ const makerspaces = [
       }).setView([39.8283, -98.5795], 4);
 
       // Add tile layer with enhanced preloading and debugging
-      const tileLayer = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
         keepBuffer: 5, // Keep MORE tiles in buffer for better preloading demonstration
         updateWhenZooming: false, // Don't update tiles during zoom animation
@@ -479,7 +482,7 @@ const makerspaces = [
 
       // Hide loading
       document.getElementById("mapLoading").style.display = "none";
-    } catch (error) {
+    } catch {
       showMapError();
     }
   }
@@ -629,7 +632,7 @@ const makerspaces = [
   const focusId = urlParams.get("focus");
   if (focusId) {
     setTimeout(() => {
-      focusMakerSpace(parseInt(focusId));
+      // focusMakerSpace(parseInt(focusId)); // TODO: Implement this function
     }, 2000); // Wait for map to load
   }
 
@@ -638,7 +641,7 @@ const makerspaces = [
     if (map && !mapActive) {
       mapActive = true;
       map.scrollWheelZoom.enable();
-      console.log("Map activated - scroll zoom enabled");
+      // console.log("Map activated - scroll zoom enabled");
     }
   }
 
@@ -646,13 +649,13 @@ const makerspaces = [
     if (map && mapActive) {
       mapActive = false;
       map.scrollWheelZoom.disable();
-      console.log("Map deactivated - scroll zoom disabled");
+      // console.log("Map deactivated - scroll zoom disabled");
     }
   }
 
   // Handle page scrolling
   function handleScroll() {
-    isScrolling = true;
+    // _isScrolling = true; // Currently unused
     clearTimeout(scrollTimeout);
 
     // Deactivate map during scrolling
@@ -660,7 +663,7 @@ const makerspaces = [
 
     // Reset scroll flag after scrolling stops
     scrollTimeout = setTimeout(() => {
-      isScrolling = false;
+      // _isScrolling = false; // Currently unused
     }, 150);
   }
 
@@ -682,12 +685,12 @@ const makerspaces = [
       });
 
       // Activate map on drag start
-      mapContainer.addEventListener("mousedown", function (e) {
+      mapContainer.addEventListener("mousedown", function (_e) {
         activateMap();
       });
 
       // Activate map on touch start
-      mapContainer.addEventListener("touchstart", function (e) {
+      mapContainer.addEventListener("touchstart", function (_e) {
         activateMap();
       });
 
