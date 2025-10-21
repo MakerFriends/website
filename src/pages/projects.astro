@@ -1,16 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
-<Layout title="Projects" description="Explore amazing maker projects from our community across electronics, woodworking, robotics, and more!">
+<Layout
+  title="Projects"
+  description="Explore amazing maker projects from our community across electronics, woodworking, robotics, and more!"
+>
   <Navigation />
-  
+
   <main class="flex-1">
     <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+    >
       <div class="max-w-7xl mx-auto text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">Maker Projects</h1>
         <p class="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -20,34 +25,54 @@ import ProjectCard from '../components/ProjectCard.astro';
     </section>
 
     <!-- Categories Filter -->
-    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-white/70 sticky top-20 z-40 backdrop-blur-sm shadow-md">
+    <section
+      class="py-8 px-4 sm:px-6 lg:px-8 bg-white/70 sticky top-20 z-40 backdrop-blur-sm shadow-md"
+    >
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-wrap gap-3 justify-center">
-          <button class="px-4 py-2 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors">
+          <button
+            class="px-4 py-2 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors"
+          >
             All Projects
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             ⚡ Electronics
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             🪵 Woodworking
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             🤖 Robotics
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             📄 Papercrafting
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             🖨️ 3D Printing
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             🧵 Sewing
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             💻 Arduino
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             🥧 Raspberry Pi
           </button>
         </div>
@@ -59,21 +84,21 @@ import ProjectCard from '../components/ProjectCard.astro';
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Electronics Projects -->
-          <ProjectCard 
+          <ProjectCard
             title="Smart Home Weather Station"
             category="Electronics"
             maker="Sarah Chen"
             image="https://images.unsplash.com/photo-1592833159155-c62d1f560d8d?w=800&h=600&fit=crop"
             description="An Arduino-based weather station with LCD display and mobile app integration for real-time monitoring."
           />
-          <ProjectCard 
+          <ProjectCard
             title="LED Matrix Clock"
             category="Electronics"
             maker="David Park"
             image="https://images.unsplash.com/photo-1563089145-599997674d42?w=800&h=600&fit=crop"
             description="Beautiful 8x8 LED matrix clock with customizable animations and multiple display modes."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Wireless Charging Station"
             category="Electronics"
             maker="Emma Wilson"
@@ -82,21 +107,21 @@ import ProjectCard from '../components/ProjectCard.astro';
           />
 
           <!-- Woodworking Projects -->
-          <ProjectCard 
+          <ProjectCard
             title="Rustic Bookshelf with LED"
             category="Woodworking"
             maker="Mike Thompson"
             image="https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&h=600&fit=crop"
             description="Beautiful reclaimed wood bookshelf featuring integrated LED lighting and modern joinery techniques."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Live Edge Coffee Table"
             category="Woodworking"
             maker="James Cooper"
             image="https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=800&h=600&fit=crop"
             description="Stunning live edge walnut coffee table with epoxy river and hairpin legs."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Wooden Desk Organizer"
             category="Woodworking"
             maker="Lisa Anderson"
@@ -105,21 +130,21 @@ import ProjectCard from '../components/ProjectCard.astro';
           />
 
           <!-- Robotics Projects -->
-          <ProjectCard 
+          <ProjectCard
             title="Line Following Robot"
             category="Robotics"
             maker="Alex Rivera"
             image="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=800&h=600&fit=crop"
             description="Educational robot kit that teaches programming basics while following a line using IR sensors."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Robotic Arm with AI"
             category="Robotics"
             maker="Chen Wang"
             image="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop"
             description="6-axis robotic arm controlled by AI vision system for object recognition and manipulation."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Autonomous Lawn Mower"
             category="Robotics"
             maker="Mark Stevens"
@@ -128,21 +153,21 @@ import ProjectCard from '../components/ProjectCard.astro';
           />
 
           <!-- Papercrafting Projects -->
-          <ProjectCard 
+          <ProjectCard
             title="3D Paper Sculpture Garden"
             category="Papercrafting"
             maker="Maya Patel"
             image="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop"
             description="Intricate paper flower garden with layered petals and leaves creating a 3D effect."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Pop-up Storybook"
             category="Papercrafting"
             maker="Oliver Brown"
             image="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&h=600&fit=crop"
             description="Hand-crafted pop-up book with moving parts and interactive elements for children."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Origami LED Lampshade"
             category="Papercrafting"
             maker="Yuki Tanaka"
@@ -151,21 +176,21 @@ import ProjectCard from '../components/ProjectCard.astro';
           />
 
           <!-- 3D Printing Projects -->
-          <ProjectCard 
+          <ProjectCard
             title="Modular Organizer System"
             category="3D Printing"
             maker="Tom Harris"
             image="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800&h=600&fit=crop"
             description="Customizable 3D printed modular storage system with magnetic connectors."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Articulated Dragon"
             category="3D Printing"
             maker="Sophie Green"
             image="https://images.unsplash.com/photo-1551817958-11e0f7bbea9b?w=800&h=600&fit=crop"
             description="Fully articulated fantasy dragon with moveable joints, printed without supports."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Custom Keyboard Keycaps"
             category="3D Printing"
             maker="Jake Morrison"
@@ -174,14 +199,14 @@ import ProjectCard from '../components/ProjectCard.astro';
           />
 
           <!-- Arduino Projects -->
-          <ProjectCard 
+          <ProjectCard
             title="Plant Watering System"
             category="Arduino"
             maker="Rachel Kim"
             image="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&h=600&fit=crop"
             description="Automated plant watering system with soil moisture sensors and smartphone notifications."
           />
-          <ProjectCard 
+          <ProjectCard
             title="MIDI Music Controller"
             category="Arduino"
             maker="Daniel Lee"
@@ -190,14 +215,14 @@ import ProjectCard from '../components/ProjectCard.astro';
           />
 
           <!-- Raspberry Pi Projects -->
-          <ProjectCard 
+          <ProjectCard
             title="Smart Mirror Display"
             category="Raspberry Pi"
             maker="Nina Rodriguez"
             image="https://images.unsplash.com/photo-1600348372824-430eefc84011?w=800&h=600&fit=crop"
             description="Magic mirror displaying weather, calendar, news, and smart home controls."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Retro Gaming Console"
             category="Raspberry Pi"
             maker="Chris Taylor"
@@ -206,14 +231,14 @@ import ProjectCard from '../components/ProjectCard.astro';
           />
 
           <!-- Sewing Projects -->
-          <ProjectCard 
+          <ProjectCard
             title="Quilted Laptop Sleeve"
             category="Sewing"
             maker="Hannah White"
             image="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=800&h=600&fit=crop"
             description="Padded laptop sleeve with quilted exterior and magnetic closure."
           />
-          <ProjectCard 
+          <ProjectCard
             title="Upcycled Denim Tote Bag"
             category="Sewing"
             maker="Maria Garcia"
@@ -225,17 +250,28 @@ import ProjectCard from '../components/ProjectCard.astro';
     </section>
 
     <!-- Upload Project CTA -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-6 text-gray-900">Share Your Creation!</h2>
+        <h2 class="text-4xl font-bold mb-6 text-gray-900">
+          Share Your Creation!
+        </h2>
         <p class="text-xl text-gray-600 mb-8">
-          Have an amazing project to share? Join our community and inspire other makers!
+          Have an amazing project to share? Join our community and inspire other
+          makers!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/signup" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105">
+          <a
+            href="/signup"
+            class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105"
+          >
             Upload Your Project 📤
           </a>
-          <a href="/makers" class="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-all">
+          <a
+            href="/makers"
+            class="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-all"
+          >
             Browse Makers 👥
           </a>
         </div>
@@ -245,4 +281,3 @@ import ProjectCard from '../components/ProjectCard.astro';
 
   <Footer />
 </Layout>
-

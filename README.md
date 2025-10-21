@@ -289,6 +289,8 @@ npm run astro        # Run Astro CLI commands
 npm run lint         # Run ESLint
 npm run lint:fix     # Auto-fix ESLint issues
 npm run lint:strict  # Run ESLint with zero warnings allowed
+npm run format       # Format code with Prettier
+npm run format:check # Check code formatting
 
 # Setup
 npm run setup        # Set up Node version and install dependencies
@@ -299,17 +301,17 @@ npm run setup        # Set up Node version and install dependencies
 This project includes comprehensive code quality tools:
 
 - **ESLint**: Linting for JavaScript, TypeScript, and Astro files
+- **Prettier**: Code formatting with Astro support
 - **Husky**: Pre-commit hooks for code quality
 - **nodenv**: Node.js version management
 - **VS Code**: Optimized editor configuration
-- **Prettier**: Code formatting (via VS Code extension)
 
 ### Development Workflow
 
 1. **Run dev server**: Start the development server with hot-reload
 2. **Make changes**: Edit files in `src/` directory
-3. **Code quality**: ESLint will automatically check your code
-4. **Pre-commit hooks**: Husky runs ESLint before allowing commits
+3. **Code quality**: ESLint and Prettier will automatically check your code
+4. **Pre-commit hooks**: Husky runs ESLint and Prettier before allowing commits
 5. **See updates**: Changes are reflected immediately in the browser
 6. **Build**: Run `npm run build` to create production build
 
@@ -319,9 +321,9 @@ This project includes comprehensive code quality tools:
 
 ```astro
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Page Title">
@@ -341,7 +343,7 @@ import Footer from '../components/Footer.astro';
 
 ```astro
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 // ... imports
 ---
 
@@ -394,7 +396,6 @@ git push origin main
 ```
 
 3. **Connect to Cloudflare Pages**:
-
    - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
    - Navigate to Pages
    - Click "Create a project"
@@ -558,7 +559,10 @@ To add Google Analytics or other tracking:
 2. Add to the `<head>` section:
 
 ```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {

@@ -2,11 +2,11 @@
 
 @layer base {
   :root {
-    --color-primary: #3B82F6; /* Blue */
-    --color-secondary: #F59E0B; /* Amber */
-    --color-accent: #10B981; /* Green */
-    --color-purple: #8B5CF6; /* Purple */
-    --color-pink: #EC4899; /* Pink */
+    --color-primary: #3b82f6; /* Blue */
+    --color-secondary: #f59e0b; /* Amber */
+    --color-accent: #10b981; /* Green */
+    --color-purple: #8b5cf6; /* Purple */
+    --color-pink: #ec4899; /* Pink */
   }
 
   body {
@@ -16,7 +16,8 @@
 
 /* Fun animations */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -38,10 +39,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3B82F6;
+  background: #3b82f6;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563EB;
+  background: #2563eb;
 }

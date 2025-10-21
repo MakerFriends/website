@@ -1,15 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Community Forum" description="Join discussions with makers worldwide in our community forum (Coming Soon!)">
+<Layout
+  title="Community Forum"
+  description="Join discussions with makers worldwide in our community forum (Coming Soon!)"
+>
   <Navigation />
-  
+
   <main class="flex-1">
     <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
+    >
       <div class="max-w-7xl mx-auto text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">Community Forum</h1>
         <p class="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -22,43 +27,75 @@ import Footer from '../components/Footer.astro';
     <section class="py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <div class="mb-8">
-          <div class="inline-block p-6 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full mb-6">
-            <svg class="w-24 h-24 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+          <div
+            class="inline-block p-6 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full mb-6"
+          >
+            <svg
+              class="w-24 h-24 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              >
+              </path>
             </svg>
           </div>
         </div>
-        <h2 class="text-4xl font-bold mb-6 text-gray-900">Forum Coming Soon! 🚧</h2>
+        <h2 class="text-4xl font-bold mb-6 text-gray-900">
+          Forum Coming Soon! 🚧
+        </h2>
         <p class="text-xl text-gray-600 mb-8">
-          We're building an amazing community forum where makers can ask questions, share tips, 
-          showcase their work, and connect with fellow creators. This feature is currently under development 
-          and will be launching soon!
+          We're building an amazing community forum where makers can ask
+          questions, share tips, showcase their work, and connect with fellow
+          creators. This feature is currently under development and will be
+          launching soon!
         </p>
-        
+
         <!-- Features Preview -->
         <div class="grid md:grid-cols-3 gap-6 mb-12">
-          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+          <div
+            class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl"
+          >
             <div class="text-4xl mb-3">💬</div>
             <h3 class="font-bold text-gray-900 mb-2">Discussion Boards</h3>
-            <p class="text-sm text-gray-600">Organized by categories like Electronics, Woodworking, Robotics, and more</p>
+            <p class="text-sm text-gray-600">
+              Organized by categories like Electronics, Woodworking, Robotics,
+              and more
+            </p>
           </div>
-          <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
+          <div
+            class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl"
+          >
             <div class="text-4xl mb-3">❓</div>
             <h3 class="font-bold text-gray-900 mb-2">Q&A Support</h3>
-            <p class="text-sm text-gray-600">Get help from experienced makers and community experts</p>
+            <p class="text-sm text-gray-600">
+              Get help from experienced makers and community experts
+            </p>
           </div>
-          <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl">
+          <div
+            class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl"
+          >
             <div class="text-4xl mb-3">🎯</div>
             <h3 class="font-bold text-gray-900 mb-2">Project Showcases</h3>
-            <p class="text-sm text-gray-600">Share your creations and get feedback from the community</p>
+            <p class="text-sm text-gray-600">
+              Share your creations and get feedback from the community
+            </p>
           </div>
         </div>
 
         <!-- Notify Me Form -->
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Get Notified When We Launch!</h3>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">
+            Get Notified When We Launch!
+          </h3>
           <p class="text-gray-600 mb-6">
-            Be among the first to join our community forum. We'll send you an email as soon as it's ready.
+            Be among the first to join our community forum. We'll send you an
+            email as soon as it's ready.
           </p>
           <form class="flex flex-col sm:flex-row gap-4">
             <input
@@ -78,79 +115,111 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- What to Expect -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">What to Expect in Our Forum</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          What to Expect in Our Forum
+        </h2>
         <div class="grid md:grid-cols-2 gap-8">
           <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center"
+            >
               <span class="text-2xl">🏷️</span>
             </div>
             <div>
-              <h3 class="text-xl font-bold mb-2 text-gray-900">Category-Based Discussions</h3>
+              <h3 class="text-xl font-bold mb-2 text-gray-900">
+                Category-Based Discussions
+              </h3>
               <p class="text-gray-600">
-                Find discussions organized by topic - Electronics, Woodworking, 3D Printing, and more. 
-                Easy to navigate and find exactly what you're looking for.
+                Find discussions organized by topic - Electronics, Woodworking,
+                3D Printing, and more. Easy to navigate and find exactly what
+                you're looking for.
               </p>
             </div>
           </div>
           <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center"
+            >
               <span class="text-2xl">⭐</span>
             </div>
             <div>
-              <h3 class="text-xl font-bold mb-2 text-gray-900">Expert Badges & Reputation</h3>
+              <h3 class="text-xl font-bold mb-2 text-gray-900">
+                Expert Badges & Reputation
+              </h3>
               <p class="text-gray-600">
-                Earn badges and build reputation by helping others and sharing quality content. 
-                Recognize top contributors in the community.
+                Earn badges and build reputation by helping others and sharing
+                quality content. Recognize top contributors in the community.
               </p>
             </div>
           </div>
           <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center"
+            >
               <span class="text-2xl">🔍</span>
             </div>
             <div>
-              <h3 class="text-xl font-bold mb-2 text-gray-900">Advanced Search</h3>
+              <h3 class="text-xl font-bold mb-2 text-gray-900">
+                Advanced Search
+              </h3>
               <p class="text-gray-600">
-                Powerful search functionality to find solutions to your problems. Search by keywords, 
-                categories, tags, and user contributions.
+                Powerful search functionality to find solutions to your
+                problems. Search by keywords, categories, tags, and user
+                contributions.
               </p>
             </div>
           </div>
           <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center"
+            >
               <span class="text-2xl">🔔</span>
             </div>
             <div>
-              <h3 class="text-xl font-bold mb-2 text-gray-900">Real-Time Notifications</h3>
+              <h3 class="text-xl font-bold mb-2 text-gray-900">
+                Real-Time Notifications
+              </h3>
               <p class="text-gray-600">
-                Get instant notifications when someone replies to your post, mentions you, 
-                or when there's activity in threads you're following.
+                Get instant notifications when someone replies to your post,
+                mentions you, or when there's activity in threads you're
+                following.
               </p>
             </div>
           </div>
           <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center"
+            >
               <span class="text-2xl">📸</span>
             </div>
             <div>
-              <h3 class="text-xl font-bold mb-2 text-gray-900">Rich Media Support</h3>
+              <h3 class="text-xl font-bold mb-2 text-gray-900">
+                Rich Media Support
+              </h3>
               <p class="text-gray-600">
-                Share images, videos, code snippets, and files directly in your posts. 
-                Show your projects visually and get better feedback.
+                Share images, videos, code snippets, and files directly in your
+                posts. Show your projects visually and get better feedback.
               </p>
             </div>
           </div>
           <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center"
+            >
               <span class="text-2xl">🛡️</span>
             </div>
             <div>
-              <h3 class="text-xl font-bold mb-2 text-gray-900">Community Moderation</h3>
+              <h3 class="text-xl font-bold mb-2 text-gray-900">
+                Community Moderation
+              </h3>
               <p class="text-gray-600">
-                Safe and welcoming environment with active moderation. Report inappropriate content 
-                and help maintain our positive community culture.
+                Safe and welcoming environment with active moderation. Report
+                inappropriate content and help maintain our positive community
+                culture.
               </p>
             </div>
           </div>
@@ -161,25 +230,43 @@ import Footer from '../components/Footer.astro';
     <!-- Alternative Ways to Connect -->
     <section class="py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Connect With Us Now</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          Connect With Us Now
+        </h2>
         <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-          While we're building the forum, here are other ways to connect with the MakerFriends community:
+          While we're building the forum, here are other ways to connect with
+          the MakerFriends community:
         </p>
         <div class="grid md:grid-cols-3 gap-6">
-          <a href="/contact" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-1">
+          <a
+            href="/contact"
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-1"
+          >
             <div class="text-4xl mb-4">📧</div>
             <h3 class="text-xl font-bold mb-2 text-gray-900">Contact Us</h3>
-            <p class="text-gray-600">Send us a message with your questions, ideas, or feedback.</p>
+            <p class="text-gray-600">
+              Send us a message with your questions, ideas, or feedback.
+            </p>
           </a>
-          <a href="#" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-1">
+          <a
+            href="#"
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-1"
+          >
             <div class="text-4xl mb-4">💬</div>
             <h3 class="text-xl font-bold mb-2 text-gray-900">Discord Server</h3>
-            <p class="text-gray-600">Join our Discord community for real-time chat and discussions.</p>
+            <p class="text-gray-600">
+              Join our Discord community for real-time chat and discussions.
+            </p>
           </a>
-          <a href="/blog" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-1">
+          <a
+            href="/blog"
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-1"
+          >
             <div class="text-4xl mb-4">📝</div>
             <h3 class="text-xl font-bold mb-2 text-gray-900">Blog Comments</h3>
-            <p class="text-gray-600">Engage with our blog posts and connect with other readers.</p>
+            <p class="text-gray-600">
+              Engage with our blog posts and connect with other readers.
+            </p>
           </a>
         </div>
       </div>
@@ -188,4 +275,3 @@ import Footer from '../components/Footer.astro';
 
   <Footer />
 </Layout>
-

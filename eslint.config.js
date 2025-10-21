@@ -35,7 +35,10 @@ export default [
       ...tseslint.configs.recommended.rules,
       "no-console": "warn",
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_" },
+      ],
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "warn",
@@ -72,7 +75,10 @@ export default [
     rules: {
       "no-console": "warn",
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_" },
+      ],
       "prefer-const": "error",
       "no-var": "error",
     },
@@ -106,6 +112,13 @@ export default [
 
   // Ignore patterns
   {
-    ignores: ["dist/", "node_modules/", "build/", ".astro/", "package*.json", "tsconfig.json"],
+    ignores: [
+      "dist/",
+      "node_modules/",
+      "build/",
+      ".astro/",
+      "package*.json",
+      "tsconfig.json",
+    ],
   },
 ];

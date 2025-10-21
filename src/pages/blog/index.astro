@@ -1,78 +1,95 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Navigation from '../../components/Navigation.astro';
-import Footer from '../../components/Footer.astro';
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
 
 const blogPosts = [
   {
     title: "Getting Started with Arduino: A Beginner's Guide",
     slug: "getting-started-arduino",
-    excerpt: "Learn the basics of Arduino programming and start building your first electronic projects today!",
+    excerpt:
+      "Learn the basics of Arduino programming and start building your first electronic projects today!",
     author: "Sarah Chen",
     date: "March 15, 2025",
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1553406830-ef2513450d76?w=800&h=600&fit=crop",
-    readTime: "8 min read"
+    image:
+      "https://images.unsplash.com/photo-1553406830-ef2513450d76?w=800&h=600&fit=crop",
+    readTime: "8 min read",
   },
   {
     title: "10 Essential Woodworking Tools for Beginners",
     slug: "essential-woodworking-tools",
-    excerpt: "Building your first workshop? Here are the must-have tools every beginner woodworker needs.",
+    excerpt:
+      "Building your first workshop? Here are the must-have tools every beginner woodworker needs.",
     author: "Mike Thompson",
     date: "March 12, 2025",
     category: "Woodworking",
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=600&fit=crop",
-    readTime: "6 min read"
+    image:
+      "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=600&fit=crop",
+    readTime: "6 min read",
   },
   {
     title: "Building Your First Robot: Step-by-Step Tutorial",
     slug: "building-first-robot",
-    excerpt: "A complete guide to building a simple line-following robot perfect for beginners in robotics.",
+    excerpt:
+      "A complete guide to building a simple line-following robot perfect for beginners in robotics.",
     author: "Alex Rivera",
     date: "March 10, 2025",
     category: "Robotics",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
-    readTime: "12 min read"
+    image:
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
+    readTime: "12 min read",
   },
   {
     title: "The Art of Paper Engineering: Creating Pop-Up Cards",
     slug: "paper-engineering-popup-cards",
-    excerpt: "Discover the fascinating world of paper engineering and create stunning pop-up cards.",
+    excerpt:
+      "Discover the fascinating world of paper engineering and create stunning pop-up cards.",
     author: "Maya Patel",
     date: "March 8, 2025",
     category: "Papercrafting",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&h=600&fit=crop",
-    readTime: "10 min read"
+    image:
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&h=600&fit=crop",
+    readTime: "10 min read",
   },
   {
     title: "3D Printing Troubleshooting Guide",
     slug: "3d-printing-troubleshooting",
-    excerpt: "Fix common 3D printing problems and improve your print quality with these expert tips.",
+    excerpt:
+      "Fix common 3D printing problems and improve your print quality with these expert tips.",
     author: "Sophie Green",
     date: "March 5, 2025",
     category: "3D Printing",
-    image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800&h=600&fit=crop",
-    readTime: "9 min read"
+    image:
+      "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800&h=600&fit=crop",
+    readTime: "9 min read",
   },
   {
     title: "Smart Home Automation with Raspberry Pi",
     slug: "smart-home-raspberry-pi",
-    excerpt: "Transform your home into a smart home using a Raspberry Pi and open-source software.",
+    excerpt:
+      "Transform your home into a smart home using a Raspberry Pi and open-source software.",
     author: "Emma Wilson",
     date: "March 3, 2025",
     category: "Raspberry Pi",
-    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&h=600&fit=crop",
-    readTime: "11 min read"
-  }
+    image:
+      "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&h=600&fit=crop",
+    readTime: "11 min read",
+  },
 ];
 ---
 
-<Layout title="Blog" description="Explore tutorials, tips, and inspiration from the MakerFriends community. Learn new skills and stay updated with the latest in making.">
+<Layout
+  title="Blog"
+  description="Explore tutorials, tips, and inspiration from the MakerFriends community. Learn new skills and stay updated with the latest in making."
+>
   <Navigation />
-  
+
   <main class="flex-1">
     <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-pink-600 to-purple-600 text-white"
+    >
       <div class="max-w-7xl mx-auto text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">MakerFriends Blog</h1>
         <p class="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -82,25 +99,39 @@ const blogPosts = [
     </section>
 
     <!-- Categories -->
-    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-white/70 sticky top-20 z-40 backdrop-blur-sm shadow-md">
+    <section
+      class="py-8 px-4 sm:px-6 lg:px-8 bg-white/70 sticky top-20 z-40 backdrop-blur-sm shadow-md"
+    >
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-wrap gap-3 justify-center">
-          <button class="px-4 py-2 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors">
+          <button
+            class="px-4 py-2 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors"
+          >
             All Posts
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             Electronics
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             Woodworking
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             Robotics
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             3D Printing
           </button>
-          <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors">
+          <button
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition-colors"
+          >
             Tutorials
           </button>
         </div>
@@ -111,35 +142,52 @@ const blogPosts = [
     <section class="py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Post</h2>
-        <article class="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-shadow">
+        <article
+          class="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-shadow"
+        >
           <div class="md:flex">
             <div class="md:w-1/2">
-              <img 
-                src={blogPosts[0].image} 
+              <img
+                src={blogPosts[0].image}
                 alt={blogPosts[0].title}
                 class="w-full h-64 md:h-full object-cover"
               />
             </div>
             <div class="md:w-1/2 p-8">
               <div class="flex items-center space-x-4 mb-4">
-                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold"
+                >
                   {blogPosts[0].category}
                 </span>
-                <span class="text-gray-500 text-sm">{blogPosts[0].readTime}</span>
+                <span class="text-gray-500 text-sm"
+                  >{blogPosts[0].readTime}</span
+                >
               </div>
-              <h3 class="text-3xl font-bold mb-4 text-gray-900">{blogPosts[0].title}</h3>
+              <h3 class="text-3xl font-bold mb-4 text-gray-900">
+                {blogPosts[0].title}
+              </h3>
               <p class="text-gray-600 mb-6 text-lg">{blogPosts[0].excerpt}</p>
               <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                  <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
-                    {blogPosts[0].author.split(' ').map(n => n[0]).join('')}
+                  <div
+                    class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold"
+                  >
+                    {
+                      blogPosts[0].author
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")
+                    }
                   </div>
                   <div>
-                    <div class="font-semibold text-gray-900">{blogPosts[0].author}</div>
+                    <div class="font-semibold text-gray-900">
+                      {blogPosts[0].author}
+                    </div>
                     <div class="text-sm text-gray-500">{blogPosts[0].date}</div>
                   </div>
                 </div>
-                <a 
+                <a
                   href={`/blog/${blogPosts[0].slug}`}
                   class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                 >
@@ -153,46 +201,57 @@ const blogPosts = [
     </section>
 
     <!-- Recent Posts -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold mb-8 text-gray-900">Recent Posts</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.slice(1).map((post) => (
-            <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1">
-              <img 
-                src={post.image} 
-                alt={post.title}
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6">
-                <div class="flex items-center space-x-4 mb-3">
-                  <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-                    {post.category}
-                  </span>
-                  <span class="text-gray-500 text-sm">{post.readTime}</span>
-                </div>
-                <h3 class="text-xl font-bold mb-3 text-gray-900">{post.title}</h3>
-                <p class="text-gray-600 mb-4">{post.excerpt}</p>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                      {post.author.split(' ').map(n => n[0]).join('')}
-                    </div>
-                    <div>
-                      <div class="text-sm font-semibold text-gray-900">{post.author}</div>
-                      <div class="text-xs text-gray-500">{post.date}</div>
-                    </div>
+          {
+            blogPosts.slice(1).map((post) => (
+              <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <div class="flex items-center space-x-4 mb-3">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
+                      {post.category}
+                    </span>
+                    <span class="text-gray-500 text-sm">{post.readTime}</span>
                   </div>
-                  <a 
-                    href={`/blog/${post.slug}`}
-                    class="text-blue-600 font-semibold hover:text-blue-800 transition-colors"
-                  >
-                    Read →
-                  </a>
+                  <h3 class="text-xl font-bold mb-3 text-gray-900">
+                    {post.title}
+                  </h3>
+                  <p class="text-gray-600 mb-4">{post.excerpt}</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                      <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                        {post.author
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </div>
+                      <div>
+                        <div class="text-sm font-semibold text-gray-900">
+                          {post.author}
+                        </div>
+                        <div class="text-xs text-gray-500">{post.date}</div>
+                      </div>
+                    </div>
+                    <a
+                      href={`/blog/${post.slug}`}
+                      class="text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+                    >
+                      Read →
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -202,15 +261,16 @@ const blogPosts = [
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold mb-6 text-gray-900">Stay Updated!</h2>
         <p class="text-xl text-gray-600 mb-8">
-          Subscribe to our newsletter and never miss a tutorial, tip, or maker story.
+          Subscribe to our newsletter and never miss a tutorial, tip, or maker
+          story.
         </p>
         <form class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-          <input 
-            type="email" 
+          <input
+            type="email"
             placeholder="Enter your email address"
             class="flex-1 px-6 py-4 rounded-full border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
           />
-          <button 
+          <button
             type="submit"
             class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold hover:shadow-xl transition-all hover:scale-105"
           >
@@ -223,4 +283,3 @@ const blogPosts = [
 
   <Footer />
 </Layout>
-

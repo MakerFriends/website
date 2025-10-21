@@ -1,19 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="About Us" description="Learn about MakerFriends' mission to promote STEM/STEAM learning and connect makers worldwide.">
+<Layout
+  title="About Us"
+  description="Learn about MakerFriends' mission to promote STEM/STEAM learning and connect makers worldwide."
+>
   <Navigation />
-  
+
   <main class="flex-1">
     <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+    >
       <div class="max-w-7xl mx-auto text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">About MakerFriends</h1>
         <p class="text-xl md:text-2xl max-w-3xl mx-auto">
-          We're building the world's most vibrant community of makers, innovators, and creative minds.
+          We're building the world's most vibrant community of makers,
+          innovators, and creative minds.
         </p>
       </div>
     </section>
@@ -25,23 +31,26 @@ import Footer from '../components/Footer.astro';
           <div>
             <h2 class="text-4xl font-bold mb-6 text-gray-900">Our Story</h2>
             <p class="text-lg text-gray-600 mb-4">
-              MakerFriends was founded on a simple belief: that creativity flourishes when makers come together 
-              to share their knowledge, inspire one another, and build lasting friendships.
+              MakerFriends was founded on a simple belief: that creativity
+              flourishes when makers come together to share their knowledge,
+              inspire one another, and build lasting friendships.
             </p>
             <p class="text-lg text-gray-600 mb-4">
-              What started as a small group of enthusiasts tinkering in a garage has grown into a global 
-              community of over 5,000 makers across 50 countries, all united by a passion for creating, 
-              learning, and sharing.
+              What started as a small group of enthusiasts tinkering in a garage
+              has grown into a global community of over 5,000 makers across 50
+              countries, all united by a passion for creating, learning, and
+              sharing.
             </p>
             <p class="text-lg text-gray-600">
-              From electronics wizards to woodworking masters, from robotics enthusiasts to papercrafting 
-              artists, our community welcomes makers of all backgrounds, ages, and skill levels.
+              From electronics wizards to woodworking masters, from robotics
+              enthusiasts to papercrafting artists, our community welcomes
+              makers of all backgrounds, ages, and skill levels.
             </p>
           </div>
           <div class="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop" 
-              alt="Makers working together" 
+            <img
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
+              alt="Makers working together"
               class="rounded-2xl shadow-2xl"
             />
           </div>
@@ -53,22 +62,28 @@ import Footer from '../components/Footer.astro';
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white/50">
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12">
-          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+          <div
+            class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl"
+          >
             <div class="text-5xl mb-4">🎯</div>
             <h3 class="text-3xl font-bold mb-4 text-gray-900">Our Mission</h3>
             <p class="text-lg text-gray-700">
-              To democratize making by creating an inclusive platform where everyone can learn, 
-              share, and grow. We're committed to promoting STEM/STEAM education and empowering 
-              the next generation of innovators through hands-on learning and community support.
+              To democratize making by creating an inclusive platform where
+              everyone can learn, share, and grow. We're committed to promoting
+              STEM/STEAM education and empowering the next generation of
+              innovators through hands-on learning and community support.
             </p>
           </div>
-          <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl">
+          <div
+            class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl"
+          >
             <div class="text-5xl mb-4">🔮</div>
             <h3 class="text-3xl font-bold mb-4 text-gray-900">Our Vision</h3>
             <p class="text-lg text-gray-700">
-              A world where every person has the confidence, resources, and community support to 
-              bring their creative ideas to life. We envision a future where making is accessible 
-              to all, and innovation knows no boundaries.
+              A world where every person has the confidence, resources, and
+              community support to bring their creative ideas to life. We
+              envision a future where making is accessible to all, and
+              innovation knows no boundaries.
             </p>
           </div>
         </div>
@@ -78,45 +93,48 @@ import Footer from '../components/Footer.astro';
     <!-- Core Values -->
     <section class="py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Our Core Values</h2>
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">
+          Our Core Values
+        </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="text-center p-6">
             <div class="text-5xl mb-4">🌟</div>
             <h3 class="text-xl font-bold mb-3 text-gray-900">Inclusivity</h3>
             <p class="text-gray-600">
-              Everyone is welcome here, regardless of age, background, or experience level. 
-              We celebrate diversity and learn from each other.
+              Everyone is welcome here, regardless of age, background, or
+              experience level. We celebrate diversity and learn from each
+              other.
             </p>
           </div>
           <div class="text-center p-6">
             <div class="text-5xl mb-4">💡</div>
             <h3 class="text-xl font-bold mb-3 text-gray-900">Innovation</h3>
             <p class="text-gray-600">
-              We encourage creative thinking, experimentation, and pushing boundaries. 
-              Every failed attempt is a learning opportunity.
+              We encourage creative thinking, experimentation, and pushing
+              boundaries. Every failed attempt is a learning opportunity.
             </p>
           </div>
           <div class="text-center p-6">
             <div class="text-5xl mb-4">🤝</div>
             <h3 class="text-xl font-bold mb-3 text-gray-900">Collaboration</h3>
             <p class="text-gray-600">
-              Together we're stronger. We believe in the power of sharing knowledge 
-              and working together to achieve amazing things.
+              Together we're stronger. We believe in the power of sharing
+              knowledge and working together to achieve amazing things.
             </p>
           </div>
           <div class="text-center p-6">
             <div class="text-5xl mb-4">🎓</div>
             <h3 class="text-xl font-bold mb-3 text-gray-900">Learning</h3>
             <p class="text-gray-600">
-              Continuous learning is at our core. We provide resources, tutorials, 
-              and support for makers at every stage of their journey.
+              Continuous learning is at our core. We provide resources,
+              tutorials, and support for makers at every stage of their journey.
             </p>
           </div>
           <div class="text-center p-6">
             <div class="text-5xl mb-4">🌍</div>
             <h3 class="text-xl font-bold mb-3 text-gray-900">Sustainability</h3>
             <p class="text-gray-600">
-              We promote responsible making, encouraging reuse, recycling, and 
+              We promote responsible making, encouraging reuse, recycling, and
               environmentally conscious creation practices.
             </p>
           </div>
@@ -124,8 +142,8 @@ import Footer from '../components/Footer.astro';
             <div class="text-5xl mb-4">❤️</div>
             <h3 class="text-xl font-bold mb-3 text-gray-900">Community</h3>
             <p class="text-gray-600">
-              Building friendships and supporting each other is what makes us special. 
-              We're more than a platform—we're a family.
+              Building friendships and supporting each other is what makes us
+              special. We're more than a platform—we're a family.
             </p>
           </div>
         </div>
@@ -133,29 +151,53 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- What We Do -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">What We Do</h2>
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">
+          What We Do
+        </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-white p-6 rounded-xl shadow-lg">
             <div class="text-4xl mb-3">📚</div>
-            <h3 class="text-lg font-bold mb-2 text-gray-900">Educational Resources</h3>
-            <p class="text-gray-600">Free tutorials, guides, and learning materials for all skill levels.</p>
+            <h3 class="text-lg font-bold mb-2 text-gray-900">
+              Educational Resources
+            </h3>
+            <p class="text-gray-600">
+              Free tutorials, guides, and learning materials for all skill
+              levels.
+            </p>
           </div>
           <div class="bg-white p-6 rounded-xl shadow-lg">
             <div class="text-4xl mb-3">🎨</div>
-            <h3 class="text-lg font-bold mb-2 text-gray-900">Project Sharing</h3>
-            <p class="text-gray-600">Platform to showcase and share your amazing creations with the world.</p>
+            <h3 class="text-lg font-bold mb-2 text-gray-900">
+              Project Sharing
+            </h3>
+            <p class="text-gray-600">
+              Platform to showcase and share your amazing creations with the
+              world.
+            </p>
           </div>
           <div class="bg-white p-6 rounded-xl shadow-lg">
             <div class="text-4xl mb-3">👥</div>
-            <h3 class="text-lg font-bold mb-2 text-gray-900">Community Events</h3>
-            <p class="text-gray-600">Regular workshops, maker fairs, and online meetups to connect makers.</p>
+            <h3 class="text-lg font-bold mb-2 text-gray-900">
+              Community Events
+            </h3>
+            <p class="text-gray-600">
+              Regular workshops, maker fairs, and online meetups to connect
+              makers.
+            </p>
           </div>
           <div class="bg-white p-6 rounded-xl shadow-lg">
             <div class="text-4xl mb-3">🏆</div>
-            <h3 class="text-lg font-bold mb-2 text-gray-900">Maker Challenges</h3>
-            <p class="text-gray-600">Fun competitions and challenges to inspire creativity and innovation.</p>
+            <h3 class="text-lg font-bold mb-2 text-gray-900">
+              Maker Challenges
+            </h3>
+            <p class="text-gray-600">
+              Fun competitions and challenges to inspire creativity and
+              innovation.
+            </p>
           </div>
         </div>
       </div>
@@ -164,16 +206,24 @@ import Footer from '../components/Footer.astro';
     <!-- Join Us CTA -->
     <section class="py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-6 text-gray-900">Become Part of Our Story</h2>
+        <h2 class="text-4xl font-bold mb-6 text-gray-900">
+          Become Part of Our Story
+        </h2>
         <p class="text-xl text-gray-600 mb-8">
-          Whether you're a beginner or an expert, there's a place for you in our community. 
-          Join us and let's make amazing things together!
+          Whether you're a beginner or an expert, there's a place for you in our
+          community. Join us and let's make amazing things together!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/signup" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105">
+          <a
+            href="/signup"
+            class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105"
+          >
             Join MakerFriends 🚀
           </a>
-          <a href="/history" class="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-all">
+          <a
+            href="/history"
+            class="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-all"
+          >
             Learn Our History 📖
           </a>
         </div>
@@ -183,4 +233,3 @@ import Footer from '../components/Footer.astro';
 
   <Footer />
 </Layout>
-

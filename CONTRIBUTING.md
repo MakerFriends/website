@@ -291,8 +291,8 @@ docker-compose --profile production up app-prod
 This project uses automated code quality tools:
 
 - **ESLint**: Linting for JavaScript, TypeScript, and Astro files
-- **Husky**: Pre-commit hooks that run ESLint before allowing commits
-- **Prettier**: Code formatting (via VS Code extension)
+- **Prettier**: Code formatting with Astro support
+- **Husky**: Pre-commit hooks that run ESLint and Prettier before allowing commits
 - **TypeScript**: Strict type checking
 
 ### Running Code Quality Checks
@@ -306,6 +306,12 @@ npm run lint:fix
 
 # Run ESLint in strict mode (zero warnings allowed)
 npm run lint:strict
+
+# Format code with Prettier
+npm run format
+
+# Check code formatting
+npm run format:check
 ```
 
 ### General Guidelines
@@ -315,7 +321,7 @@ npm run lint:strict
 - Write clean, readable code
 - Add comments for complex logic
 - Use meaningful variable names
-- **All code must pass ESLint checks before committing**
+- **All code must pass ESLint and Prettier checks before committing**
 
 ### Astro Components
 

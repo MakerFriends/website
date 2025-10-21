@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 const makers = [
   {
@@ -10,7 +10,7 @@ const makers = [
     skills: ["Electronics", "Arduino", "IoT"],
     projects: 23,
     image: "SC",
-    bio: "Electronics enthusiast specializing in IoT and smart home automation."
+    bio: "Electronics enthusiast specializing in IoT and smart home automation.",
   },
   {
     name: "Mike Thompson",
@@ -18,7 +18,7 @@ const makers = [
     skills: ["Woodworking", "Furniture Design"],
     projects: 18,
     image: "MT",
-    bio: "Master woodworker creating modern furniture with traditional techniques."
+    bio: "Master woodworker creating modern furniture with traditional techniques.",
   },
   {
     name: "Alex Rivera",
@@ -26,7 +26,7 @@ const makers = [
     skills: ["Robotics", "3D Printing", "Arduino"],
     projects: 31,
     image: "AR",
-    bio: "Robotics engineer building educational robots and automation systems."
+    bio: "Robotics engineer building educational robots and automation systems.",
   },
   {
     name: "Emma Wilson",
@@ -34,7 +34,7 @@ const makers = [
     skills: ["Electronics", "Raspberry Pi", "Coding"],
     projects: 15,
     image: "EW",
-    bio: "Software developer turned hardware hacker, love combining code and circuits."
+    bio: "Software developer turned hardware hacker, love combining code and circuits.",
   },
   {
     name: "David Park",
@@ -42,7 +42,7 @@ const makers = [
     skills: ["Electronics", "LED Art", "Arduino"],
     projects: 27,
     image: "DP",
-    bio: "Creating interactive LED installations and artistic electronics."
+    bio: "Creating interactive LED installations and artistic electronics.",
   },
   {
     name: "Maya Patel",
@@ -50,7 +50,7 @@ const makers = [
     skills: ["Papercrafting", "Origami", "Design"],
     projects: 42,
     image: "MP",
-    bio: "Paper artist specializing in intricate 3D sculptures and origami."
+    bio: "Paper artist specializing in intricate 3D sculptures and origami.",
   },
   {
     name: "James Cooper",
@@ -58,7 +58,7 @@ const makers = [
     skills: ["Woodworking", "Metalworking"],
     projects: 19,
     image: "JC",
-    bio: "Craftsman working with wood and metal to create unique furniture."
+    bio: "Craftsman working with wood and metal to create unique furniture.",
   },
   {
     name: "Lisa Anderson",
@@ -66,7 +66,7 @@ const makers = [
     skills: ["Woodworking", "Electronics", "Design"],
     projects: 25,
     image: "LA",
-    bio: "Combining traditional woodworking with modern electronics in functional pieces."
+    bio: "Combining traditional woodworking with modern electronics in functional pieces.",
   },
   {
     name: "Chen Wang",
@@ -74,7 +74,7 @@ const makers = [
     skills: ["Robotics", "AI", "3D Printing"],
     projects: 33,
     image: "CW",
-    bio: "AI researcher building intelligent robots and automation systems."
+    bio: "AI researcher building intelligent robots and automation systems.",
   },
   {
     name: "Oliver Brown",
@@ -82,7 +82,7 @@ const makers = [
     skills: ["Papercrafting", "Book Art"],
     projects: 21,
     image: "OB",
-    bio: "Pop-up book artist creating interactive paper experiences."
+    bio: "Pop-up book artist creating interactive paper experiences.",
   },
   {
     name: "Sophie Green",
@@ -90,7 +90,7 @@ const makers = [
     skills: ["3D Printing", "Design", "Cosplay"],
     projects: 38,
     image: "SG",
-    bio: "3D printing enthusiast creating props, cosplay pieces, and functional art."
+    bio: "3D printing enthusiast creating props, cosplay pieces, and functional art.",
   },
   {
     name: "Tom Harris",
@@ -98,45 +98,79 @@ const makers = [
     skills: ["3D Printing", "CAD Design"],
     projects: 29,
     image: "TH",
-    bio: "Industrial designer creating practical 3D printed solutions."
-  }
+    bio: "Industrial designer creating practical 3D printed solutions.",
+  },
 ];
 
 const skillCategories = [
   { name: "All", icon: "🎨", count: makers.length },
-  { name: "Electronics", icon: "⚡", count: makers.filter(m => m.skills.includes("Electronics")).length },
-  { name: "Woodworking", icon: "🪵", count: makers.filter(m => m.skills.includes("Woodworking")).length },
-  { name: "Robotics", icon: "🤖", count: makers.filter(m => m.skills.includes("Robotics")).length },
-  { name: "3D Printing", icon: "🖨️", count: makers.filter(m => m.skills.includes("3D Printing")).length },
-  { name: "Papercrafting", icon: "📄", count: makers.filter(m => m.skills.includes("Papercrafting")).length },
-  { name: "Arduino", icon: "💻", count: makers.filter(m => m.skills.includes("Arduino")).length },
+  {
+    name: "Electronics",
+    icon: "⚡",
+    count: makers.filter((m) => m.skills.includes("Electronics")).length,
+  },
+  {
+    name: "Woodworking",
+    icon: "🪵",
+    count: makers.filter((m) => m.skills.includes("Woodworking")).length,
+  },
+  {
+    name: "Robotics",
+    icon: "🤖",
+    count: makers.filter((m) => m.skills.includes("Robotics")).length,
+  },
+  {
+    name: "3D Printing",
+    icon: "🖨️",
+    count: makers.filter((m) => m.skills.includes("3D Printing")).length,
+  },
+  {
+    name: "Papercrafting",
+    icon: "📄",
+    count: makers.filter((m) => m.skills.includes("Papercrafting")).length,
+  },
+  {
+    name: "Arduino",
+    icon: "💻",
+    count: makers.filter((m) => m.skills.includes("Arduino")).length,
+  },
 ];
 ---
 
-<Layout title="Maker Directory" description="Connect with makers worldwide. Browse our directory of talented creators and find collaborators for your next project.">
+<Layout
+  title="Maker Directory"
+  description="Connect with makers worldwide. Browse our directory of talented creators and find collaborators for your next project."
+>
   <Navigation />
-  
+
   <main class="flex-1">
     <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
+    >
       <div class="max-w-7xl mx-auto text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">Maker Directory</h1>
         <p class="text-xl md:text-2xl max-w-3xl mx-auto">
-          Connect with talented makers from around the world. Find collaborators, mentors, and friends!
+          Connect with talented makers from around the world. Find
+          collaborators, mentors, and friends!
         </p>
       </div>
     </section>
 
     <!-- Search and Filter -->
-    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-white/70 sticky top-20 z-40 backdrop-blur-sm shadow-md">
+    <section
+      class="py-8 px-4 sm:px-6 lg:px-8 bg-white/70 sticky top-20 z-40 backdrop-blur-sm shadow-md"
+    >
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row gap-4">
-          <input 
-            type="text" 
-            placeholder="Search makers by name or skill..." 
+          <input
+            type="text"
+            placeholder="Search makers by name or skill..."
             class="flex-1 px-6 py-3 rounded-full border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
           />
-          <select class="px-6 py-3 rounded-full border-2 border-gray-300 focus:border-blue-500 focus:outline-none bg-white">
+          <select
+            class="px-6 py-3 rounded-full border-2 border-gray-300 focus:border-blue-500 focus:outline-none bg-white"
+          >
             <option>All Locations</option>
             <option>North America</option>
             <option>Europe</option>
@@ -148,14 +182,18 @@ const skillCategories = [
     </section>
 
     <!-- Skill Categories -->
-    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section
+      class="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-wrap gap-3 justify-center">
-          {skillCategories.map(category => (
-            <button class="px-4 py-2 bg-white rounded-full font-medium hover:bg-blue-100 transition-colors shadow-sm">
-              {category.icon} {category.name} ({category.count})
-            </button>
-          ))}
+          {
+            skillCategories.map((category) => (
+              <button class="px-4 py-2 bg-white rounded-full font-medium hover:bg-blue-100 transition-colors shadow-sm">
+                {category.icon} {category.name} ({category.count})
+              </button>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -164,44 +202,56 @@ const skillCategories = [
     <section class="py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {makers.map((maker) => (
-            <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-1">
-              <div class="flex items-start space-x-4">
-                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                  {maker.image}
+          {
+            makers.map((maker) => (
+              <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-1">
+                <div class="flex items-start space-x-4">
+                  <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                    {maker.image}
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">
+                      {maker.name}
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-2">
+                      📍 {maker.location}
+                    </p>
+                    <p class="text-sm text-blue-600 font-medium mb-3">
+                      {maker.projects} Projects
+                    </p>
+                  </div>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <h3 class="text-xl font-bold text-gray-900 mb-1">{maker.name}</h3>
-                  <p class="text-sm text-gray-500 mb-2">📍 {maker.location}</p>
-                  <p class="text-sm text-blue-600 font-medium mb-3">{maker.projects} Projects</p>
+                <p class="text-gray-600 mt-4 mb-4">{maker.bio}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {maker.skills.map((skill) => (
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-              </div>
-              <p class="text-gray-600 mt-4 mb-4">{maker.bio}</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                {maker.skills.map(skill => (
-                  <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <div class="flex gap-2">
-                <button class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                  View Profile
-                </button>
-                <button class="px-4 py-2 border-2 border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors">
-                  Message
-                </button>
-              </div>
-            </article>
-          ))}
+                <div class="flex gap-2">
+                  <button class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    View Profile
+                  </button>
+                  <button class="px-4 py-2 border-2 border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+                    Message
+                  </button>
+                </div>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Community Stats</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          Community Stats
+        </h2>
         <div class="grid md:grid-cols-4 gap-8 text-center">
           <div>
             <div class="text-4xl font-bold text-blue-600 mb-2">5,000+</div>
@@ -226,15 +276,24 @@ const skillCategories = [
     <!-- Join CTA -->
     <section class="py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-6 text-gray-900">Join Our Maker Directory</h2>
+        <h2 class="text-4xl font-bold mb-6 text-gray-900">
+          Join Our Maker Directory
+        </h2>
         <p class="text-xl text-gray-600 mb-8">
-          Create your profile, showcase your skills, and connect with makers worldwide!
+          Create your profile, showcase your skills, and connect with makers
+          worldwide!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/signup" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105">
+          <a
+            href="/signup"
+            class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all hover:scale-105"
+          >
             Create Your Profile 🚀
           </a>
-          <a href="/projects" class="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-all">
+          <a
+            href="/projects"
+            class="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-all"
+          >
             View Projects 🔍
           </a>
         </div>
@@ -244,4 +303,3 @@ const skillCategories = [
 
   <Footer />
 </Layout>
-

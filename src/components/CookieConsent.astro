@@ -3,32 +3,43 @@
 // GDPR compliant cookie consent management
 ---
 
-<div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 shadow-lg z-50 hidden">
+<div
+  id="cookieConsent"
+  class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 shadow-lg z-50 hidden"
+>
   <div class="max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div
+      class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+    >
       <div class="flex-1">
         <h3 class="text-lg font-semibold mb-2">🍪 Cookie Consent</h3>
         <p class="text-sm text-gray-300">
-          We use cookies to enhance your experience, analyze site usage, and assist in our marketing efforts. By
-          clicking "Accept All", you consent to our use of cookies.
-          <a href="/privacy" class="underline hover:text-white" target="_blank">Learn more in our Privacy Policy</a>.
+          We use cookies to enhance your experience, analyze site usage, and
+          assist in our marketing efforts. By clicking "Accept All", you consent
+          to our use of cookies.
+          <a href="/privacy" class="underline hover:text-white" target="_blank"
+            >Learn more in our Privacy Policy</a
+          >.
         </p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3">
         <button
           id="cookieSettings"
-          class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors text-sm">
+          class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors text-sm"
+        >
           Cookie Settings
         </button>
         <button
           id="acceptNecessary"
-          class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-500 transition-colors text-sm">
+          class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-500 transition-colors text-sm"
+        >
           Accept Necessary Only
         </button>
         <button
           id="acceptAll"
-          class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
+          class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+        >
           Accept All
         </button>
       </div>
@@ -37,31 +48,53 @@
 </div>
 
 <!-- Cookie Settings Modal -->
-<div id="cookieSettingsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-  <div class="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+<div
+  id="cookieSettingsModal"
+  class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden"
+>
+  <div
+    class="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+  >
     <div class="p-6">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-2xl font-bold text-gray-900">Cookie Settings</h2>
         <button id="closeSettings" class="text-gray-500 hover:text-gray-700">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
 
       <p class="text-gray-600 mb-6">
-        Manage your cookie preferences. You can enable or disable different types of cookies below.
+        Manage your cookie preferences. You can enable or disable different
+        types of cookies below.
       </p>
 
       <div class="space-y-6">
         <!-- Necessary Cookies -->
         <div class="border rounded-lg p-4">
           <div class="flex items-center justify-between mb-2">
-            <h3 class="text-lg font-semibold text-gray-900">Necessary Cookies</h3>
-            <div class="bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700">Always Active</div>
+            <h3 class="text-lg font-semibold text-gray-900">
+              Necessary Cookies
+            </h3>
+            <div
+              class="bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700"
+            >
+              Always Active
+            </div>
           </div>
           <p class="text-sm text-gray-600 mb-3">
-            These cookies are essential for the website to function properly. They cannot be disabled.
+            These cookies are essential for the website to function properly.
+            They cannot be disabled.
           </p>
           <ul class="text-sm text-gray-600 space-y-1">
             <li>• Session management and security</li>
@@ -73,17 +106,24 @@
         <!-- Analytics Cookies -->
         <div class="border rounded-lg p-4">
           <div class="flex items-center justify-between mb-2">
-            <h3 class="text-lg font-semibold text-gray-900">Analytics Cookies</h3>
+            <h3 class="text-lg font-semibold text-gray-900">
+              Analytics Cookies
+            </h3>
             <label class="relative inline-flex items-center cursor-pointer">
-              <input type="checkbox" id="analyticsCookies" class="sr-only peer" />
+              <input
+                type="checkbox"
+                id="analyticsCookies"
+                class="sr-only peer"
+              />
               <div
-                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
+              >
               </div>
             </label>
           </div>
           <p class="text-sm text-gray-600 mb-3">
-            These cookies help us understand how visitors interact with our website by collecting and reporting
-            information anonymously.
+            These cookies help us understand how visitors interact with our
+            website by collecting and reporting information anonymously.
           </p>
           <ul class="text-sm text-gray-600 space-y-1">
             <li>• Page views and user interactions</li>
@@ -95,16 +135,24 @@
         <!-- Marketing Cookies -->
         <div class="border rounded-lg p-4">
           <div class="flex items-center justify-between mb-2">
-            <h3 class="text-lg font-semibold text-gray-900">Marketing Cookies</h3>
+            <h3 class="text-lg font-semibold text-gray-900">
+              Marketing Cookies
+            </h3>
             <label class="relative inline-flex items-center cursor-pointer">
-              <input type="checkbox" id="marketingCookies" class="sr-only peer" />
+              <input
+                type="checkbox"
+                id="marketingCookies"
+                class="sr-only peer"
+              />
               <div
-                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
+              >
               </div>
             </label>
           </div>
           <p class="text-sm text-gray-600 mb-3">
-            These cookies are used to track visitors across websites to display relevant and engaging advertisements.
+            These cookies are used to track visitors across websites to display
+            relevant and engaging advertisements.
           </p>
           <ul class="text-sm text-gray-600 space-y-1">
             <li>• Newsletter subscription tracking</li>
@@ -117,12 +165,14 @@
       <div class="flex flex-col sm:flex-row gap-3 mt-6">
         <button
           id="saveSettings"
-          class="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+          class="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+        >
           Save Preferences
         </button>
         <button
           id="acceptAllSettings"
-          class="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+          class="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+        >
           Accept All
         </button>
       </div>
@@ -193,8 +243,10 @@
         modal.classList.remove("hidden");
         modal.classList.add("flex", "items-center", "justify-center", "p-4");
         // Set current preferences
-        document.getElementById("analyticsCookies").checked = this.consentData.analytics;
-        document.getElementById("marketingCookies").checked = this.consentData.marketing;
+        document.getElementById("analyticsCookies").checked =
+          this.consentData.analytics;
+        document.getElementById("marketingCookies").checked =
+          this.consentData.marketing;
       }
     }
 
@@ -257,26 +309,32 @@
       });
 
       // Accept necessary only
-      document.getElementById("acceptNecessary")?.addEventListener("click", () => {
-        this.saveConsentData({
-          consentGiven: true,
-          necessary: true,
-          analytics: false,
-          marketing: false,
+      document
+        .getElementById("acceptNecessary")
+        ?.addEventListener("click", () => {
+          this.saveConsentData({
+            consentGiven: true,
+            necessary: true,
+            analytics: false,
+            marketing: false,
+          });
+          this.hideBanner();
+          this.applyConsentSettings();
         });
-        this.hideBanner();
-        this.applyConsentSettings();
-      });
 
       // Cookie settings
-      document.getElementById("cookieSettings")?.addEventListener("click", () => {
-        this.showSettings();
-      });
+      document
+        .getElementById("cookieSettings")
+        ?.addEventListener("click", () => {
+          this.showSettings();
+        });
 
       // Close settings
-      document.getElementById("closeSettings")?.addEventListener("click", () => {
-        this.hideSettings();
-      });
+      document
+        .getElementById("closeSettings")
+        ?.addEventListener("click", () => {
+          this.hideSettings();
+        });
 
       // Save settings
       document.getElementById("saveSettings")?.addEventListener("click", () => {
@@ -296,17 +354,19 @@
       });
 
       // Accept all in settings
-      document.getElementById("acceptAllSettings")?.addEventListener("click", () => {
-        this.saveConsentData({
-          consentGiven: true,
-          necessary: true,
-          analytics: true,
-          marketing: true,
+      document
+        .getElementById("acceptAllSettings")
+        ?.addEventListener("click", () => {
+          this.saveConsentData({
+            consentGiven: true,
+            necessary: true,
+            analytics: true,
+            marketing: true,
+          });
+          this.hideSettings();
+          this.hideBanner();
+          this.applyConsentSettings();
         });
-        this.hideSettings();
-        this.hideBanner();
-        this.applyConsentSettings();
-      });
     }
   }
 

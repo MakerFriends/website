@@ -10,21 +10,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **ESLint Integration**: Complete ESLint setup with Astro support
-- **Code Quality Tools**: ESLint v9 with flat config format
+- **Prettier Integration**: Code formatting with Astro plugin support
+- **Code Quality Tools**: ESLint v9 with flat config format and Prettier v3.4.2
 - **Astro ESLint Plugin**: Proper linting support for .astro files
 - **TypeScript ESLint**: Full TypeScript linting with strict rules
 - **Pre-commit Hooks**: Husky integration for automatic code quality checks
 - **Node.js Version Management**: Migrated from nvm to nodenv for better performance
 - **Automated Setup**: Enhanced setup.sh script for new contributors
-- **VS Code Integration**: Complete editor configuration for ESLint and formatting
-- **Code Quality Scripts**: npm scripts for linting, auto-fixing, and strict checking
+- **VS Code Integration**: Complete editor configuration for ESLint and Prettier
+- **Code Quality Scripts**: npm scripts for linting, formatting, auto-fixing, and strict checking
 
 ### Enhanced
 
 - **Developer Experience**: Streamlined development workflow with automated tools
-- **Code Consistency**: Enforced coding standards across the entire project
+- **Code Consistency**: Enforced coding standards and formatting across the entire project
 - **Type Safety**: Improved TypeScript integration with proper type checking
-- **Build Process**: Pre-commit validation ensures only clean code is committed
+- **Build Process**: Pre-commit validation ensures only clean, formatted code is committed
 - **Documentation**: Updated setup instructions and development guidelines
 
 ### Fixed
@@ -38,10 +39,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Technical Improvements
 
 - **ESLint Configuration**: Modern flat config format with Astro, TypeScript, and JavaScript support
-- **Husky Setup**: Pre-commit hooks that run ESLint before allowing commits
+- **Prettier Configuration**: Astro-aware formatting with proper plugin integration
+- **Husky Setup**: Pre-commit hooks that run ESLint and Prettier before allowing commits
 - **nodenv Integration**: Faster and more reliable Node.js version management
 - **VS Code Settings**: Optimized editor configuration for the project stack
-- **Package Scripts**: Added lint, lint:fix, lint:strict, and setup commands
+- **Package Scripts**: Added lint, lint:fix, lint:strict, format, format:check, and setup commands
 
 ## [1.3.0] - 2025-01-16
 

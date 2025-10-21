@@ -64,7 +64,7 @@ jobs:
         run: npm ci
 
       - name: Run ESLint
-        run: npx eslint . --ext .js,.ts,.astro --max-warnings 0
+        run: npm run lint:strict
 
       - name: Check Prettier formatting
-        run: npx prettier --check .
+        run: npm run format:check

@@ -8,4 +8,6 @@ eval "$(nodenv init -)"
 # Add node_modules/.bin to PATH
 export PATH="$PATH:$(pwd)/node_modules/.bin"
 
+# Run code quality checks
 npm run lint:strict
+npm run format:check

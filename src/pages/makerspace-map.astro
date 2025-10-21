@@ -112,7 +112,13 @@ const makerspaces = [
       annual: 850,
       dayPass: 30,
     },
-    specialties: ["Woodworking", "Metalworking", "Electronics", "Textiles", "Ceramics"],
+    specialties: [
+      "Woodworking",
+      "Metalworking",
+      "Electronics",
+      "Textiles",
+      "Ceramics",
+    ],
     verified: true,
   },
 ];
@@ -120,16 +126,20 @@ const makerspaces = [
 
 <Layout
   title="MakerSpace Map"
-  description="Find MakerSpaces near you with our interactive map. Use location services or search by address to discover local maker communities.">
+  description="Find MakerSpaces near you with our interactive map. Use location services or search by address to discover local maker communities."
+>
   <Navigation />
 
   <main class="flex-1">
     <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+    >
       <div class="max-w-7xl mx-auto text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">MakerSpace Map 🗺️</h1>
         <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-          Discover MakerSpaces in your area with our interactive map. Find the perfect workshop near you!
+          Discover MakerSpaces in your area with our interactive map. Find the
+          perfect workshop near you!
         </p>
       </div>
     </section>
@@ -137,23 +147,35 @@ const makerspaces = [
     <!-- Map Controls -->
     <section class="py-8 px-4 sm:px-6 lg:px-8 bg-white border-b">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div
+          class="flex flex-col md:flex-row gap-4 items-center justify-between"
+        >
           <!-- Location Controls -->
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <button
               id="useLocation"
-              class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center"
+            >
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                >
+                </path>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                >
+                </path>
               </svg>
               Use My Location
             </button>
@@ -167,7 +189,8 @@ const makerspaces = [
               />
               <button
                 id="searchAddress"
-                class="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                class="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors"
+              >
                 Search
               </button>
             </div>
@@ -176,7 +199,9 @@ const makerspaces = [
           <!-- Map Info -->
           <div class="text-sm text-gray-600">
             <div>📍 {makerspaces.length} MakerSpaces</div>
-            <div>🌍 {new Set(makerspaces.map(ms => ms.state)).size} States</div>
+            <div>
+              🌍 {new Set(makerspaces.map((ms) => ms.state)).size} States
+            </div>
           </div>
         </div>
       </div>
@@ -187,26 +212,48 @@ const makerspaces = [
       <div id="map" class="w-full h-[600px] bg-gray-200"></div>
 
       <!-- Map Loading -->
-      <div id="mapLoading" class="absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center">
+      <div
+        id="mapLoading"
+        class="absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center"
+      >
         <div class="text-center">
-          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div
+            class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"
+          >
+          </div>
           <div class="text-gray-600">Loading map...</div>
         </div>
       </div>
 
       <!-- Map Error -->
-      <div id="mapError" class="absolute inset-0 bg-red-50 flex items-center justify-center hidden">
+      <div
+        id="mapError"
+        class="absolute inset-0 bg-red-50 flex items-center justify-center hidden"
+      >
         <div class="text-center text-red-600">
-          <svg class="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            class="w-12 h-12 mx-auto mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            >
+            </path>
           </svg>
           <div class="text-lg font-semibold mb-2">Map Loading Failed</div>
-          <div class="text-sm mb-4">Unable to load the interactive map. Please check your internet connection.</div>
-          <button id="retryMap" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+          <div class="text-sm mb-4">
+            Unable to load the interactive map. Please check your internet
+            connection.
+          </div>
+          <button
+            id="retryMap"
+            class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+          >
             Retry
           </button>
         </div>
@@ -243,16 +290,25 @@ const makerspaces = [
     <!-- Nearby MakerSpaces List -->
     <section class="py-12 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">All MakerSpaces</h2>
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">
+          All MakerSpaces
+        </h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {
-            makerspaces.map(makerspace => (
+            makerspaces.map((makerspace) => (
               <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">{makerspace.name}</h3>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  {makerspace.name}
+                </h3>
                 <div class="text-gray-600 mb-3">
                   <div class="flex items-center mb-1">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      class="w-4 h-4 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -270,21 +326,27 @@ const makerspaces = [
                   </div>
                   <div class="text-sm">{makerspace.ownershipModel}</div>
                 </div>
-                <p class="text-gray-700 text-sm mb-4">{makerspace.description.substring(0, 120)}...</p>
+                <p class="text-gray-700 text-sm mb-4">
+                  {makerspace.description.substring(0, 120)}...
+                </p>
                 <div class="flex flex-wrap gap-2 mb-4">
-                  {makerspace.specialties.slice(0, 3).map(specialty => (
-                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">{specialty}</span>
+                  {makerspace.specialties.slice(0, 3).map((specialty) => (
+                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
+                      {specialty}
+                    </span>
                   ))}
                 </div>
                 <div class="flex gap-2">
                   <button
                     onclick={`focusMakerSpace(${makerspace.id})`}
-                    class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                    class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                  >
                     Show on Map
                   </button>
                   <a
                     href="/makerspaces"
-                    class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition-colors">
+                    class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition-colors"
+                  >
                     View Details
                   </a>
                 </div>
@@ -300,7 +362,10 @@ const makerspaces = [
 </Layout>
 
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
 
 <script>
   // Declare Leaflet as global for ESLint
@@ -327,7 +392,12 @@ const makerspaces = [
         annual: 1750,
         dayPass: 25,
       },
-      specialties: ["Electronics", "Woodworking", "Metalworking", "3D Printing"],
+      specialties: [
+        "Electronics",
+        "Woodworking",
+        "Metalworking",
+        "3D Printing",
+      ],
       verified: true,
     },
     {
@@ -415,7 +485,13 @@ const makerspaces = [
         annual: 850,
         dayPass: 30,
       },
-      specialties: ["Woodworking", "Metalworking", "Electronics", "Textiles", "Ceramics"],
+      specialties: [
+        "Woodworking",
+        "Metalworking",
+        "Electronics",
+        "Textiles",
+        "Ceramics",
+      ],
       verified: true,
     },
   ];
@@ -488,20 +564,24 @@ const makerspaces = [
   }
 
   function addMakerSpaceMarkers() {
-    markers.forEach(marker => map.removeLayer(marker));
+    markers.forEach((marker) => map.removeLayer(marker));
     markers = [];
 
-    makerspaces.forEach(makerspace => {
-      const color = ownershipColors[makerspace.ownershipModel] || ownershipColors["Other"];
+    makerspaces.forEach((makerspace) => {
+      const color =
+        ownershipColors[makerspace.ownershipModel] || ownershipColors["Other"];
 
-      const marker = L.circleMarker([makerspace.coordinates.lat, makerspace.coordinates.lng], {
-        radius: 8,
-        fillColor: color,
-        color: "#fff",
-        weight: 2,
-        opacity: 1,
-        fillOpacity: 0.8,
-      }).addTo(map);
+      const marker = L.circleMarker(
+        [makerspace.coordinates.lat, makerspace.coordinates.lng],
+        {
+          radius: 8,
+          fillColor: color,
+          color: "#fff",
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.8,
+        },
+      ).addTo(map);
 
       // Create popup content
       const popupContent = `
@@ -522,8 +602,8 @@ const makerspaces = [
             ${makerspace.specialties
               .slice(0, 4)
               .map(
-                specialty =>
-                  `<span style="background-color: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 4px; font-size: 12px;">${specialty}</span>`
+                (specialty) =>
+                  `<span style="background-color: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 4px; font-size: 12px;">${specialty}</span>`,
               )
               .join("")}
           </div>
@@ -586,32 +666,37 @@ const makerspaces = [
         alert("Error getting location: " + error.message);
         document.getElementById("useLocation").textContent = "Use My Location";
         document.getElementById("useLocation").disabled = false;
-      }
+      },
     );
   });
 
   // Address search (simplified - in production, use a geocoding service)
-  document.getElementById("searchAddress").addEventListener("click", function () {
-    const address = document.getElementById("addressInput").value.trim();
-    if (!address) return;
+  document
+    .getElementById("searchAddress")
+    .addEventListener("click", function () {
+      const address = document.getElementById("addressInput").value.trim();
+      if (!address) return;
 
-    // This is a simplified example - in production, you'd use a geocoding service
-    alert(
-      "Address search requires integration with a geocoding service like Google Maps API or OpenStreetMap Nominatim."
-    );
-  });
+      // This is a simplified example - in production, you'd use a geocoding service
+      alert(
+        "Address search requires integration with a geocoding service like Google Maps API or OpenStreetMap Nominatim.",
+      );
+    });
 
   // Focus on specific MakerSpace
   window.focusMakerSpace = function (id) {
-    const makerspace = makerspaces.find(ms => ms.id === id);
+    const makerspace = makerspaces.find((ms) => ms.id === id);
     if (makerspace && map) {
       map.setView([makerspace.coordinates.lat, makerspace.coordinates.lng], 12);
 
       // Find and open the corresponding marker popup
-      const marker = markers.find(m => {
+      const marker = markers.find((m) => {
         const lat = m.getLatLng().lat;
         const lng = m.getLatLng().lng;
-        return Math.abs(lat - makerspace.coordinates.lat) < 0.001 && Math.abs(lng - makerspace.coordinates.lng) < 0.001;
+        return (
+          Math.abs(lat - makerspace.coordinates.lat) < 0.001 &&
+          Math.abs(lng - makerspace.coordinates.lng) < 0.001
+        );
       });
 
       if (marker) {

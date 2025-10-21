@@ -1,17 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Support MakerFriends" description="Help us continue our mission to promote STEM/STEAM learning and connect makers worldwide. Your donation makes a difference!">
+<Layout
+  title="Support MakerFriends"
+  description="Help us continue our mission to promote STEM/STEAM learning and connect makers worldwide. Your donation makes a difference!"
+>
   <Navigation />
-  
+
   <main class="flex-1">
     <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-pink-600 to-purple-600 text-white"
+    >
       <div class="max-w-7xl mx-auto text-center">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6">Support Our Mission ❤️</h1>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          Support Our Mission ❤️
+        </h1>
         <p class="text-xl md:text-2xl max-w-3xl mx-auto">
           Help us keep MakerFriends free and accessible for makers everywhere
         </p>
@@ -23,10 +30,13 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h2 class="text-4xl font-bold mb-6 text-gray-900">Why Your Support Matters</h2>
+            <h2 class="text-4xl font-bold mb-6 text-gray-900">
+              Why Your Support Matters
+            </h2>
             <p class="text-lg text-gray-600 mb-4">
-              MakerFriends is a community-driven platform dedicated to making STEM/STEAM education 
-              and maker culture accessible to everyone. Your generous donations help us:
+              MakerFriends is a community-driven platform dedicated to making
+              STEM/STEAM education and maker culture accessible to everyone.
+              Your generous donations help us:
             </p>
             <ul class="space-y-3 text-gray-700">
               <li class="flex items-start">
@@ -35,7 +45,9 @@ import Footer from '../components/Footer.astro';
               </li>
               <li class="flex items-start">
                 <span class="text-2xl mr-3">✓</span>
-                <span>Provide resources and tools for underserved communities</span>
+                <span
+                  >Provide resources and tools for underserved communities</span
+                >
               </li>
               <li class="flex items-start">
                 <span class="text-2xl mr-3">✓</span>
@@ -52,41 +64,55 @@ import Footer from '../components/Footer.astro';
             </ul>
           </div>
           <div class="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop" 
-              alt="Community making together" 
+            <img
+              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
+              alt="Community making together"
               class="rounded-2xl shadow-2xl"
             />
           </div>
         </div>
 
         <!-- Donation Tiers -->
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Choose Your Support Level</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          Choose Your Support Level
+        </h2>
         <div class="grid md:grid-cols-3 gap-8 mb-16">
           <!-- Maker Tier -->
-          <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200 hover:border-blue-500 transition-all">
+          <div
+            class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200 hover:border-blue-500 transition-all"
+          >
             <div class="text-4xl mb-4">🔧</div>
             <h3 class="text-2xl font-bold mb-2 text-gray-900">Maker</h3>
-            <div class="text-4xl font-bold text-blue-600 mb-6">$10<span class="text-lg text-gray-500">/month</span></div>
+            <div class="text-4xl font-bold text-blue-600 mb-6">
+              $10<span class="text-lg text-gray-500">/month</span>
+            </div>
             <ul class="space-y-3 mb-8 text-gray-600">
               <li>✓ Support platform maintenance</li>
               <li>✓ Maker badge on profile</li>
               <li>✓ Monthly newsletter</li>
               <li>✓ Community gratitude</li>
             </ul>
-            <button class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            <button
+              class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
               Become a Maker
             </button>
           </div>
 
           <!-- Creator Tier -->
-          <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl shadow-2xl p-8 border-4 border-purple-500 transform scale-105 relative">
-            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+          <div
+            class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl shadow-2xl p-8 border-4 border-purple-500 transform scale-105 relative"
+          >
+            <div
+              class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold"
+            >
               Most Popular
             </div>
             <div class="text-4xl mb-4">⭐</div>
             <h3 class="text-2xl font-bold mb-2 text-gray-900">Creator</h3>
-            <div class="text-4xl font-bold text-purple-600 mb-6">$25<span class="text-lg text-gray-500">/month</span></div>
+            <div class="text-4xl font-bold text-purple-600 mb-6">
+              $25<span class="text-lg text-gray-500">/month</span>
+            </div>
             <ul class="space-y-3 mb-8 text-gray-700">
               <li>✓ All Maker benefits</li>
               <li>✓ Creator badge & profile highlight</li>
@@ -94,16 +120,22 @@ import Footer from '../components/Footer.astro';
               <li>✓ Featured in community spotlight</li>
               <li>✓ Exclusive Discord channel</li>
             </ul>
-            <button class="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-xl transition-all">
+            <button
+              class="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-xl transition-all"
+            >
               Become a Creator
             </button>
           </div>
 
           <!-- Innovator Tier -->
-          <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200 hover:border-purple-500 transition-all">
+          <div
+            class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200 hover:border-purple-500 transition-all"
+          >
             <div class="text-4xl mb-4">🚀</div>
             <h3 class="text-2xl font-bold mb-2 text-gray-900">Innovator</h3>
-            <div class="text-4xl font-bold text-purple-600 mb-6">$50<span class="text-lg text-gray-500">/month</span></div>
+            <div class="text-4xl font-bold text-purple-600 mb-6">
+              $50<span class="text-lg text-gray-500">/month</span>
+            </div>
             <ul class="space-y-3 mb-8 text-gray-600">
               <li>✓ All Creator benefits</li>
               <li>✓ Innovator badge & premium profile</li>
@@ -111,32 +143,49 @@ import Footer from '../components/Footer.astro';
               <li>✓ Monthly video call with team</li>
               <li>✓ Listed as platform supporter</li>
             </ul>
-            <button class="w-full px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+            <button
+              class="w-full px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+            >
               Become an Innovator
             </button>
           </div>
         </div>
 
         <!-- One-Time Donation -->
-        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Prefer a One-Time Donation?</h3>
+        <div
+          class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 text-center"
+        >
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">
+            Prefer a One-Time Donation?
+          </h3>
           <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Every contribution, no matter the size, helps us continue our mission. Choose your amount:
+            Every contribution, no matter the size, helps us continue our
+            mission. Choose your amount:
           </p>
           <div class="flex flex-wrap gap-4 justify-center mb-6">
-            <button class="px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <button
+              class="px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            >
               $15
             </button>
-            <button class="px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <button
+              class="px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            >
               $35
             </button>
-            <button class="px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <button
+              class="px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            >
               $50
             </button>
-            <button class="px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <button
+              class="px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            >
               $100
             </button>
-            <button class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl transition-all">
+            <button
+              class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl transition-all"
+            >
               Custom Amount
             </button>
           </div>
@@ -147,7 +196,9 @@ import Footer from '../components/Footer.astro';
     <!-- Impact Stats -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Your Impact in Numbers</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          Your Impact in Numbers
+        </h2>
         <div class="grid md:grid-cols-4 gap-8 text-center">
           <div>
             <div class="text-4xl font-bold text-blue-600 mb-2">$150K+</div>
@@ -170,33 +221,50 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Other Ways to Help -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Other Ways to Support Us</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          Other Ways to Support Us
+        </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white p-6 rounded-xl shadow-lg text-center">
             <div class="text-5xl mb-4">🛍️</div>
             <h3 class="text-xl font-bold mb-3 text-gray-900">Shop Our Merch</h3>
             <p class="text-gray-600 mb-4">
-              Buy MakerFriends t-shirts, stickers, and maker tools. All proceeds support our mission.
+              Buy MakerFriends t-shirts, stickers, and maker tools. All proceeds
+              support our mission.
             </p>
-            <button class="text-blue-600 font-semibold hover:text-blue-800">Visit Shop →</button>
+            <button class="text-blue-600 font-semibold hover:text-blue-800"
+              >Visit Shop →</button
+            >
           </div>
           <div class="bg-white p-6 rounded-xl shadow-lg text-center">
             <div class="text-5xl mb-4">💼</div>
-            <h3 class="text-xl font-bold mb-3 text-gray-900">Corporate Sponsorship</h3>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">
+              Corporate Sponsorship
+            </h3>
             <p class="text-gray-600 mb-4">
-              Partner with us to support maker education and reach our engaged community.
+              Partner with us to support maker education and reach our engaged
+              community.
             </p>
-            <button class="text-blue-600 font-semibold hover:text-blue-800">Learn More →</button>
+            <button class="text-blue-600 font-semibold hover:text-blue-800"
+              >Learn More →</button
+            >
           </div>
           <div class="bg-white p-6 rounded-xl shadow-lg text-center">
             <div class="text-5xl mb-4">🎁</div>
-            <h3 class="text-xl font-bold mb-3 text-gray-900">Equipment Donations</h3>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">
+              Equipment Donations
+            </h3>
             <p class="text-gray-600 mb-4">
-              Donate tools, materials, or equipment to help makers in need access resources.
+              Donate tools, materials, or equipment to help makers in need
+              access resources.
             </p>
-            <button class="text-blue-600 font-semibold hover:text-blue-800">Contact Us →</button>
+            <button class="text-blue-600 font-semibold hover:text-blue-800"
+              >Contact Us →</button
+            >
           </div>
         </div>
       </div>
@@ -205,11 +273,17 @@ import Footer from '../components/Footer.astro';
     <!-- Testimonials -->
     <section class="py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">What Our Supporters Say</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          What Our Supporters Say
+        </h2>
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+          <div
+            class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl"
+          >
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
+              <div
+                class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
+              >
                 JD
               </div>
               <div>
@@ -218,13 +292,17 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
             <p class="text-gray-700 italic">
-              "Supporting MakerFriends is the best investment I've made. Seeing the community grow 
-              and help others is incredibly rewarding!"
+              "Supporting MakerFriends is the best investment I've made. Seeing
+              the community grow and help others is incredibly rewarding!"
             </p>
           </div>
-          <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
+          <div
+            class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl"
+          >
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
+              <div
+                class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
+              >
                 TM
               </div>
               <div>
@@ -233,13 +311,17 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
             <p class="text-gray-700 italic">
-              "Partnering with MakerFriends aligns perfectly with our mission to support STEM education. 
-              The impact is real and measurable."
+              "Partnering with MakerFriends aligns perfectly with our mission to
+              support STEM education. The impact is real and measurable."
             </p>
           </div>
-          <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl">
+          <div
+            class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl"
+          >
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
+              <div
+                class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
+              >
                 LR
               </div>
               <div>
@@ -248,8 +330,8 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
             <p class="text-gray-700 italic">
-              "As a teacher, I've seen firsthand how MakerFriends resources help my students. 
-              I'm proud to support this incredible platform!"
+              "As a teacher, I've seen firsthand how MakerFriends resources help
+              my students. I'm proud to support this incredible platform!"
             </p>
           </div>
         </div>
@@ -257,17 +339,23 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- CTA -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+    >
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
         <p class="text-xl mb-8">
-          Join hundreds of supporters helping us build a more creative, innovative future for makers everywhere.
+          Join hundreds of supporters helping us build a more creative,
+          innovative future for makers everywhere.
         </p>
-        <button class="px-10 py-4 bg-white text-blue-600 rounded-full font-bold text-xl hover:shadow-2xl transition-all hover:scale-105">
+        <button
+          class="px-10 py-4 bg-white text-blue-600 rounded-full font-bold text-xl hover:shadow-2xl transition-all hover:scale-105"
+        >
           Start Supporting Today ❤️
         </button>
         <p class="mt-6 text-blue-100">
-          MakerFriends is a registered 501(c)(3) nonprofit. Your donation may be tax-deductible.
+          MakerFriends is a registered 501(c)(3) nonprofit. Your donation may be
+          tax-deductible.
         </p>
       </div>
     </section>
@@ -275,4 +363,3 @@ import Footer from '../components/Footer.astro';
 
   <Footer />
 </Layout>
-
