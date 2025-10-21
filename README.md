@@ -19,9 +19,19 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 - **Static Site**: Lightning-fast performance with Astro
 - **Cloudflare Pages Ready**: Optimized for Cloudflare Pages deployment
 
-## 🆕 Recent Additions (v1.3.0)
+## 🆕 Recent Additions (v1.4.0)
 
-### GDPR Compliance & Privacy
+### Code Quality & Developer Experience
+
+- **ESLint Integration**: Complete ESLint setup with Astro support
+- **Code Quality Tools**: ESLint v9 with flat config format and TypeScript support
+- **Pre-commit Hooks**: Husky integration for automatic code quality checks
+- **Node.js Version Management**: Migrated from nvm to nodenv for better performance
+- **Automated Setup**: Enhanced setup.sh script for new contributors
+- **VS Code Integration**: Complete editor configuration for ESLint and formatting
+- **TypeScript Improvements**: Resolved all implicit any types and null checks
+
+### GDPR Compliance & Privacy (v1.3.0)
 
 - **Complete GDPR Compliance**: Full implementation of EU data protection regulations
 - **Cookie Consent Management**: Granular cookie controls with user preferences
@@ -116,8 +126,9 @@ All tools provide Docker-compatible APIs, so the same commands work across all o
 
 #### Option 2: Local Development
 
-- **Node.js 22+** (see `.node-version`)
-- **npm** or **yarn** package manager
+- **Node.js 24.5.0** (managed by nodenv)
+- **nodenv** for Node.js version management
+- **npm** package manager
 - **Git**
 
 ### Installation
@@ -155,13 +166,41 @@ git clone https://github.com/yourusername/makerfriends.com.git
 cd makerfriends.com
 ```
 
-2. Install dependencies:
+2. **Quick Setup** (Recommended):
 
 ```bash
+# Run the automated setup script
+./setup.sh
+```
+
+This script will:
+
+- ✅ Check for nodenv installation
+- ✅ Install the correct Node.js version
+- ✅ Install all dependencies
+- ✅ Set up Husky pre-commit hooks
+
+3. **Manual Setup** (Alternative):
+
+```bash
+# Install nodenv (if not already installed)
+brew install nodenv
+mkdir -p "$(nodenv root)/plugins"
+git clone https://github.com/nodenv/node-build.git "$(nodenv root)/plugins/node-build"
+
+# Configure your shell (add to ~/.bash_profile or ~/.bashrc)
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+# Install Node.js version
+nodenv install 24.5.0
+nodenv local 24.5.0
+
+# Install dependencies
 npm install
 ```
 
-3. Start the development server:
+4. Start the development server:
 
 ```bash
 npm run dev
@@ -240,25 +279,39 @@ docker-compose up
 ### Available Scripts
 
 ```bash
-# Start development server
-npm run dev
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run astro        # Run Astro CLI commands
 
-# Build for production
-npm run build
+# Code Quality
+npm run lint         # Run ESLint
+npm run lint:fix     # Auto-fix ESLint issues
+npm run lint:strict  # Run ESLint with zero warnings allowed
 
-# Preview production build
-npm run preview
-
-# Run Astro CLI commands
-npm run astro
+# Setup
+npm run setup        # Set up Node version and install dependencies
 ```
+
+### Code Quality Tools
+
+This project includes comprehensive code quality tools:
+
+- **ESLint**: Linting for JavaScript, TypeScript, and Astro files
+- **Husky**: Pre-commit hooks for code quality
+- **nodenv**: Node.js version management
+- **VS Code**: Optimized editor configuration
+- **Prettier**: Code formatting (via VS Code extension)
 
 ### Development Workflow
 
 1. **Run dev server**: Start the development server with hot-reload
 2. **Make changes**: Edit files in `src/` directory
-3. **See updates**: Changes are reflected immediately in the browser
-4. **Build**: Run `npm run build` to create production build
+3. **Code quality**: ESLint will automatically check your code
+4. **Pre-commit hooks**: Husky runs ESLint before allowing commits
+5. **See updates**: Changes are reflected immediately in the browser
+6. **Build**: Run `npm run build` to create production build
 
 ### Adding New Pages
 

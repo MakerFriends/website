@@ -71,9 +71,10 @@ Choose one of the following containerization tools:
 
 #### Option 2: Local Development
 
-- Node.js 22+ (see `.node-version`)
-- npm or yarn
-- Git
+- **Node.js 24.9.0** (managed by nodenv)
+- **nodenv** for Node.js version management
+- **npm** package manager
+- **Git**
 
 ### Installation
 
@@ -98,7 +99,33 @@ The site will be available at `http://localhost:4321`
 
 #### Using Local Development
 
+**Quick Setup (Recommended):**
+
 ```bash
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/makerfriends.com.git
+cd makerfriends.com
+
+# Run the automated setup script
+./setup.sh
+```
+
+**Manual Setup:**
+
+```bash
+# Install nodenv (if not already installed)
+brew install nodenv
+mkdir -p "$(nodenv root)/plugins"
+git clone https://github.com/nodenv/node-build.git "$(nodenv root)/plugins/node-build"
+
+# Configure your shell (add to ~/.bash_profile or ~/.bashrc)
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+# Install Node.js version
+nodenv install 24.9.0
+nodenv local 24.9.0
+
 # Install dependencies
 npm install
 
@@ -259,6 +286,28 @@ docker-compose --profile production up app-prod
 
 ## Coding Standards
 
+### Code Quality Tools
+
+This project uses automated code quality tools:
+
+- **ESLint**: Linting for JavaScript, TypeScript, and Astro files
+- **Husky**: Pre-commit hooks that run ESLint before allowing commits
+- **Prettier**: Code formatting (via VS Code extension)
+- **TypeScript**: Strict type checking
+
+### Running Code Quality Checks
+
+```bash
+# Run ESLint
+npm run lint
+
+# Auto-fix ESLint issues
+npm run lint:fix
+
+# Run ESLint in strict mode (zero warnings allowed)
+npm run lint:strict
+```
+
 ### General Guidelines
 
 - Use TypeScript for type safety
@@ -266,6 +315,7 @@ docker-compose --profile production up app-prod
 - Write clean, readable code
 - Add comments for complex logic
 - Use meaningful variable names
+- **All code must pass ESLint checks before committing**
 
 ### Astro Components
 
