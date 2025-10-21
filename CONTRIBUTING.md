@@ -71,7 +71,7 @@ Choose one of the following containerization tools:
 
 #### Option 2: Local Development
 
-- **Node.js 24.9.0** (managed by nodenv)
+- **Node.js 22** (managed by nodenv)
 - **nodenv** for Node.js version management
 - **npm** package manager
 - **Git**
@@ -123,8 +123,8 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
 # Install Node.js version
-nodenv install 24.9.0
-nodenv local 24.9.0
+nodenv install 22.20.0
+nodenv local 22.20.0
 
 # Install dependencies
 npm install

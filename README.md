@@ -403,7 +403,7 @@ git push origin main
    - Configure build settings:
      - **Build command**: `npm run build`
      - **Build output directory**: `dist`
-     - **Node version**: `20`
+     - **Node version**: `22`
 
 4. **Deploy**: Cloudflare will automatically build and deploy your site
 
