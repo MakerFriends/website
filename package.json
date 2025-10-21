@@ -16,6 +16,7 @@
     "lint:strict": "eslint . --ext .js,.ts,.astro --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "deploy:local": "npm run build && wrangler pages deploy dist --project-name=makerfriends-com-website",
     "prepare": "husky"
   },
   "dependencies": {
