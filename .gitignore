@@ -1,5 +1,7 @@
+# local development private files
 docs/
 notes.md
+temp/
 
 # build output
 dist/

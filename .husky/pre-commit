@@ -1,14 +1,9 @@
 #!/usr/bin/env sh
 set -e
 
-# Load nvm and use the version specified in .nvmrc
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# Use the Node version specified in .nvmrc
-if [ -f ".nvmrc" ]; then
-  nvm use
-fi
+# Load nodenv and use the version specified in .node-version
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
 
 # Add node_modules/.bin to PATH
 export PATH="$PATH:$(pwd)/node_modules/.bin"

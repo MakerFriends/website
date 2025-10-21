@@ -1,23 +1,28 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Setup script for MakerFriends project
+
+set -euo pipefail
 
 echo "🚀 Setting up MakerFriends project..."
 
-# Check if nvm is installed
-if ! command -v nvm &> /dev/null; then
-    echo "❌ nvm is not installed. Please install nvm first:"
-    echo "   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash"
+# Check if nodenv is installed
+if ! command -v nodenv >/dev/null 2>&1; then
+    echo "❌ nodenv is not installed. Please install nodenv first:"
+    echo "   brew install nodenv"
+    echo "   Then add to your shell config:"
+    echo "   export PATH=\"\$HOME/.nodenv/bin:\$PATH\""
+    echo "   eval \"\$(nodenv init -)\""
     echo "   Then restart your terminal and run this script again."
     exit 1
 fi
 
-# Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# Load nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
 
-# Use the Node version specified in .nvmrc
-echo "📦 Using Node.js version from .nvmrc..."
-nvm use
+# Use the Node version specified in .node-version
+echo "📦 Using Node.js version from .node-version..."
+nodenv version
 
 # Install dependencies
 echo "📦 Installing dependencies..."
