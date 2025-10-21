@@ -22,8 +22,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run linting and formatting checks
+        run: |
+          npm run lint:strict
+          npm run format:check
+
       - name: Build project
         run: npm run build
+
+      - name: Check build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Build failed - dist directory not found"
+            exit 1
+          fi
+          echo "Build successful - dist directory created"
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -33,3 +46,4 @@ jobs:
           projectName: makerfriends-com
           directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: "3"
