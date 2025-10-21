@@ -1,4 +1,4 @@
-# MakerFriends.com 🚀
+# MakerFriends.com website 🚀
 
 A vibrant community platform connecting makers worldwide to share projects, learn new skills, and build lasting friendships through STEM/STEAM innovation.
 

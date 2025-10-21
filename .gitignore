@@ -10,6 +10,9 @@ dist/
 # generated types
 .astro/
 
+# Astro build artifacts
+.temp/
+
 # dependencies
 node_modules/
 
@@ -75,6 +78,7 @@ $RECYCLE.BIN/
 
 # Editor directories and files
 .vscode/
+!.vscode/settings.json
 !.vscode/extensions.json
 .idea/
 *.suo
@@ -108,6 +112,9 @@ coverage/
 
 # Optional eslint cache
 .eslintcache
+
+# Husky
+.husky/_
 
 # Optional stylelint cache
 .stylelintcache
