@@ -1,20 +1,16 @@
 #!/usr/bin/env sh
 set -e
 
-# Find npm and add node_modules/.bin to PATH
-export PATH="$PATH:$(pwd)/node_modules/.bin"
+# Load nvm and use the version specified in .nvmrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Try to find npm in common locations
-NPM_PATH=""
-if command -v npm >/dev/null 2>&1; then
-  NPM_PATH="npm"
-elif [ -f "/usr/local/bin/npm" ]; then
-  NPM_PATH="/usr/local/bin/npm"
-elif [ -f "/opt/homebrew/bin/npm" ]; then
-  NPM_PATH="/opt/homebrew/bin/npm"
-else
-  echo "npm not found"
-  exit 1
+# Use the Node version specified in .nvmrc
+if [ -f ".nvmrc" ]; then
+  nvm use
 fi
 
-$NPM_PATH run lint:strict
+# Add node_modules/.bin to PATH
+export PATH="$PATH:$(pwd)/node_modules/.bin"
+
+npm run lint:strict

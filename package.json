@@ -14,6 +14,7 @@
     "lint": "eslint . --ext .js,.ts,.astro",
     "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
     "lint:strict": "eslint . --ext .js,.ts,.astro --max-warnings 0",
+    "setup": "nvm use && npm install",
     "prepare": "husky"
   },
   "dependencies": {
