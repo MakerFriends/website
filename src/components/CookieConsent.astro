@@ -37,9 +37,7 @@
 </div>
 
 <!-- Cookie Settings Modal -->
-<div
-  id="cookieSettingsModal"
-  class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+<div id="cookieSettingsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
   <div class="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
     <div class="p-6">
       <div class="flex justify-between items-center mb-4">
@@ -193,6 +191,7 @@
       const modal = document.getElementById("cookieSettingsModal");
       if (modal) {
         modal.classList.remove("hidden");
+        modal.classList.add("flex", "items-center", "justify-center", "p-4");
         // Set current preferences
         document.getElementById("analyticsCookies").checked = this.consentData.analytics;
         document.getElementById("marketingCookies").checked = this.consentData.marketing;
@@ -203,6 +202,7 @@
       const modal = document.getElementById("cookieSettingsModal");
       if (modal) {
         modal.classList.add("hidden");
+        modal.classList.remove("flex", "items-center", "justify-center", "p-4");
       }
     }
 

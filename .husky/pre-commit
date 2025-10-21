@@ -1,7 +1,20 @@
 #!/usr/bin/env sh
 set -e
 
-# Add node_modules/.bin to PATH
+# Find npm and add node_modules/.bin to PATH
 export PATH="$PATH:$(pwd)/node_modules/.bin"
 
-npm run lint:strict
+# Try to find npm in common locations
+NPM_PATH=""
+if command -v npm >/dev/null 2>&1; then
+  NPM_PATH="npm"
+elif [ -f "/usr/local/bin/npm" ]; then
+  NPM_PATH="/usr/local/bin/npm"
+elif [ -f "/opt/homebrew/bin/npm" ]; then
+  NPM_PATH="/opt/homebrew/bin/npm"
+else
+  echo "npm not found"
+  exit 1
+fi
+
+$NPM_PATH run lint:strict
