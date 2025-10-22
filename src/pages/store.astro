@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
 
 const products = [
   {
@@ -173,12 +174,15 @@ const products = [
             products.map((product) => (
               <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1">
                 <div class="relative h-64 overflow-hidden">
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
                     class="w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
+                    width={400}
+                    height={300}
+                    format="webp"
                   />
                   <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     ${product.price}
@@ -298,12 +302,15 @@ const products = [
             </div>
           </div>
           <div class="relative">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
               alt="MakerFriends community"
               class="rounded-2xl shadow-2xl"
               loading="lazy"
               decoding="async"
+              width={800}
+              height={600}
+              format="webp"
             />
           </div>
         </div>

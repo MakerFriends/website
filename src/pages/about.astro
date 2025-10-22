@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout
@@ -48,12 +49,15 @@ import Footer from "../components/Footer.astro";
             </p>
           </div>
           <div class="relative">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
               alt="Makers working together"
               class="rounded-2xl shadow-2xl"
               loading="lazy"
               decoding="async"
+              width={800}
+              height={600}
+              format="webp"
             />
           </div>
         </div>

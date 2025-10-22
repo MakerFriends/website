@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout
@@ -45,12 +46,15 @@ import Footer from "../../components/Footer.astro";
       </div>
 
       <!-- Featured Image -->
-      <img
+      <Image
         src="https://images.unsplash.com/photo-1553406830-ef2513450d76?w=1200&h=600&fit=crop"
         alt="Arduino Board"
         class="w-full rounded-2xl shadow-2xl mb-12"
         loading="lazy"
         decoding="async"
+        width={1200}
+        height={600}
+        format="webp"
       />
 
       <!-- Article Content -->

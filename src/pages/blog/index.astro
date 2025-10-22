@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import { Image } from "astro:assets";
 
 const blogPosts = [
   {
@@ -179,12 +180,15 @@ const blogPosts = [
         >
           <div class="md:flex">
             <div class="md:w-1/2">
-              <img
+              <Image
                 src={blogPosts[0].image}
                 alt={blogPosts[0].title}
                 class="w-full h-64 md:h-full object-cover"
                 loading="lazy"
                 decoding="async"
+                width={600}
+                height={400}
+                format="webp"
               />
             </div>
             <div class="md:w-1/2 p-8">
@@ -244,12 +248,15 @@ const blogPosts = [
           {
             blogPosts.slice(1).map((post) => (
               <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1">
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
                   class="w-full h-48 object-cover"
                   loading="lazy"
                   decoding="async"
+                  width={400}
+                  height={300}
+                  format="webp"
                 />
                 <div class="p-6">
                   <div class="flex items-center space-x-4 mb-3">
