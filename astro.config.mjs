@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
-import image from "@astrojs/image";
+import image from "@astrojs/image-optimization";
 import { compression } from "vite-plugin-compression";
 
 
