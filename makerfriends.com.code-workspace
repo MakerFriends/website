@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"prettier.documentSelectors": [
+			"**/*.astro"
+		],
+		"git.ignoreLimitWarning": true,
+		"terminal.integrated.env.osx": {
+			"PATH": "${env:PATH}:${env:HOME}/.nodenv/bin"
+		},
+		"typescript.preferences.includePackageJsonAutoImports": "auto"
+	}
+}

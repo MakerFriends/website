@@ -1,3 +1,9 @@
+# local development private files
+docs/
+notes.md
+temp/
+*.code-workspace
+
 # Build outputs
 dist/
 .astro/

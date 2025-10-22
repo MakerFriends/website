@@ -2,6 +2,7 @@
 docs/
 notes.md
 temp/
+*.code-workspace
 
 # build output
 dist/
