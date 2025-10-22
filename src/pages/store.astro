@@ -177,6 +177,8 @@ const products = [
                     src={product.image}
                     alt={product.name}
                     class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     ${product.price}
@@ -300,6 +302,8 @@ const products = [
               src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
               alt="MakerFriends community"
               class="rounded-2xl shadow-2xl"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
