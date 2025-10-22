@@ -1,0 +1,339 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<Layout
+  title="WebAwesome UI Components Demo"
+  description="Demonstration of WebAwesome UI components integrated into the MakerFriends website."
+>
+  <Navigation />
+
+  <Breadcrumb
+    items={[{ label: "Home", href: "/" }, { label: "WebAwesome Demo" }]}
+  />
+
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <!-- eslint-disable-next-line tailwindcss/no-custom-classname -->
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+    >
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          WebAwesome UI Components
+        </h1>
+        <p class="text-xl md:text-2xl text-blue-100 mb-8">
+          Professional UI components now integrated into MakerFriends
+        </p>
+      </div>
+    </section>
+
+    <!-- Components Demo Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            WebAwesome Components in Action
+          </h2>
+          <p class="text-lg text-gray-600">
+            Explore the powerful UI components now available throughout the
+            MakerFriends website.
+          </p>
+        </div>
+
+        <!-- Buttons Demo -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">Buttons</h3>
+          <div class="flex flex-wrap gap-4">
+            <webawesome-button variant="primary"
+              >Primary Button</webawesome-button
+            >
+            <webawesome-button variant="secondary"
+              >Secondary Button</webawesome-button
+            >
+            <webawesome-button variant="success"
+              >Success Button</webawesome-button
+            >
+            <webawesome-button variant="warning"
+              >Warning Button</webawesome-button
+            >
+            <webawesome-button variant="danger">Danger Button</webawesome-button
+            >
+            <webawesome-button variant="neutral"
+              >Neutral Button</webawesome-button
+            >
+          </div>
+        </div>
+
+        <!-- Cards Demo -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">Cards</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <webawesome-card>
+              <h4 slot="header">Project Card</h4>
+              <p>
+                This is a WebAwesome card component with a header slot. Perfect
+                for displaying project information, maker profiles, or any
+                content that needs a clean, structured layout.
+              </p>
+              <div slot="footer">
+                <webawesome-button variant="primary" size="small"
+                  >View Details</webawesome-button
+                >
+              </div>
+            </webawesome-card>
+
+            <webawesome-card>
+              <h4 slot="header">Maker Profile</h4>
+              <p>
+                Another example of the flexible card component. The slot system
+                allows for great customization while maintaining consistent
+                styling.
+              </p>
+              <div slot="footer">
+                <webawesome-button variant="secondary" size="small"
+                  >Contact Maker</webawesome-button
+                >
+              </div>
+            </webawesome-card>
+          </div>
+        </div>
+
+        <!-- Form Components Demo -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+            Form Components
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="demo-input"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Text Input</label
+              >
+              <webawesome-input
+                id="demo-input"
+                placeholder="Enter your project name"></webawesome-input>
+            </div>
+            <div>
+              <label
+                for="demo-textarea"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Textarea</label
+              >
+              <webawesome-textarea
+                id="demo-textarea"
+                placeholder="Describe your project"></webawesome-textarea>
+            </div>
+            <div>
+              <label
+                for="demo-select"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Select</label
+              >
+              <webawesome-select id="demo-select">
+                <webawesome-option value="electronics"
+                  >Electronics</webawesome-option
+                >
+                <webawesome-option value="woodworking"
+                  >Woodworking</webawesome-option
+                >
+                <webawesome-option value="3d-printing"
+                  >3D Printing</webawesome-option
+                >
+                <webawesome-option value="robotics">Robotics</webawesome-option>
+              </webawesome-select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Checkboxes</label
+              >
+              <div class="space-y-2">
+                <webawesome-checkbox>Electronics</webawesome-checkbox>
+                <webawesome-checkbox>Woodworking</webawesome-checkbox>
+                <webawesome-checkbox>3D Printing</webawesome-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges and Tags Demo -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+            Badges and Tags
+          </h3>
+          <div class="flex flex-wrap gap-4">
+            <webawesome-badge variant="primary">Electronics</webawesome-badge>
+            <webawesome-badge variant="success">Completed</webawesome-badge>
+            <webawesome-badge variant="warning">In Progress</webawesome-badge>
+            <webawesome-badge variant="danger">Urgent</webawesome-badge>
+            <webawesome-tag>Arduino</webawesome-tag>
+            <webawesome-tag>Raspberry Pi</webawesome-tag>
+            <webawesome-tag>3D Printing</webawesome-tag>
+          </div>
+        </div>
+
+        <!-- Progress and Loading Demo -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+            Progress and Loading
+          </h3>
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Progress Bar</label
+              >
+              <webawesome-progress-bar value="75" class="w-full"
+              ></webawesome-progress-bar>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Progress Ring</label
+              >
+              <webawesome-progress-ring value="60" class="w-16 h-16"
+              ></webawesome-progress-ring>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Spinner</label
+              >
+              <webawesome-spinner></webawesome-spinner>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dialog Demo -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+            Interactive Components
+          </h3>
+          <div class="flex flex-wrap gap-4">
+            <webawesome-button id="dialog-trigger" variant="primary"
+              >Open Dialog</webawesome-button
+            >
+            <webawesome-button id="drawer-trigger" variant="secondary"
+              >Open Drawer</webawesome-button
+            >
+            <webawesome-button id="popup-trigger" variant="success"
+              >Show Popup</webawesome-button
+            >
+          </div>
+        </div>
+
+        <!-- Dialog -->
+        <webawesome-dialog id="demo-dialog" label="Project Details">
+          <h3 slot="header">Project Information</h3>
+          <p>
+            This is a WebAwesome dialog component. It provides a modal overlay
+            for displaying important information or forms.
+          </p>
+          <div slot="footer">
+            <webawesome-button
+              variant="primary"
+              onclick="document.getElementById('demo-dialog').hide()"
+              >Close</webawesome-button
+            >
+          </div>
+        </webawesome-dialog>
+
+        <!-- Drawer -->
+        <webawesome-drawer
+          id="demo-drawer"
+          placement="end"
+          label="Project Settings"
+        >
+          <h3 slot="header">Project Settings</h3>
+          <p>
+            This is a WebAwesome drawer component. Perfect for settings panels,
+            navigation menus, or any content that should slide in from the side.
+          </p>
+          <div slot="footer">
+            <webawesome-button
+              variant="primary"
+              onclick="document.getElementById('demo-drawer').hide()"
+              >Save Changes</webawesome-button
+            >
+          </div>
+        </webawesome-drawer>
+
+        <!-- Popup -->
+        <webawesome-popup id="demo-popup" placement="top" label="Tooltip">
+          <p>
+            This is a WebAwesome popup component. Great for tooltips, help text,
+            or contextual information.
+          </p>
+        </webawesome-popup>
+      </div>
+    </section>
+
+    <!-- Integration Benefits -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+          Why WebAwesome Components?
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">⚡</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Fast & Lightweight
+            </h3>
+            <p class="text-gray-600">
+              Optimized for performance with minimal bundle size impact.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">♿</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Accessible by Default
+            </h3>
+            <p class="text-gray-600">
+              Built with accessibility in mind, following WCAG guidelines.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">🎨</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Customizable
+            </h3>
+            <p class="text-gray-600">
+              Easy to theme and customize to match your brand.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script>
+    // Demo interactions
+    document.getElementById("dialog-trigger")?.addEventListener("click", () => {
+      document.getElementById("demo-dialog")?.show();
+    });
+
+    document.getElementById("drawer-trigger")?.addEventListener("click", () => {
+      document.getElementById("demo-drawer")?.show();
+    });
+
+    document.getElementById("popup-trigger")?.addEventListener("click", () => {
+      document.getElementById("demo-popup")?.show();
+    });
+  </script>
+</Layout>

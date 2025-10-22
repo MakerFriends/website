@@ -1,0 +1,218 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<Layout
+  title="Page Not Found"
+  description="The page you're looking for doesn't exist. Let's get you back on track!"
+>
+  <Navigation />
+
+  <Breadcrumb
+    items={[{ label: "Home", href: "/" }, { label: "404 - Page Not Found" }]}
+  />
+
+  <main class="flex-1">
+    <!-- 404 Hero Section -->
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+    >
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8">
+          <h1 class="text-6xl md:text-8xl font-bold mb-4">404</h1>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Oops! Page Not Found
+          </h2>
+          <p class="text-xl md:text-2xl text-blue-100 mb-8">
+            The page you're looking for seems to have wandered off into the
+            digital void. Don't worry, even the best makers sometimes take a
+            wrong turn!
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/"
+            class="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+          >
+            🏠 Go Home
+          </a>
+          <a
+            href="/projects"
+            class="px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors"
+          >
+            🔧 Browse Projects
+          </a>
+          <a
+            href="/contact"
+            class="px-8 py-4 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-400 transition-colors"
+          >
+            💬 Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Helpful Links Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h3 class="text-3xl font-bold text-gray-900 mb-4">
+            Let's Get You Back on Track
+          </h3>
+          <p class="text-lg text-gray-600">
+            Here are some popular destinations to help you find what you're
+            looking for:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Popular Pages -->
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-2xl">🏠</span>
+              </div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">Home</h4>
+              <p class="text-gray-600 mb-4">
+                Start your journey with MakerFriends
+              </p>
+              <a
+                href="/"
+                class="text-blue-600 font-semibold hover:text-blue-800"
+              >
+                Visit Home →
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-2xl">🔧</span>
+              </div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">Projects</h4>
+              <p class="text-gray-600 mb-4">Explore amazing maker projects</p>
+              <a
+                href="/projects"
+                class="text-blue-600 font-semibold hover:text-blue-800"
+              >
+                Browse Projects →
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-2xl">👥</span>
+              </div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">Makers</h4>
+              <p class="text-gray-600 mb-4">Connect with fellow makers</p>
+              <a
+                href="/makers"
+                class="text-blue-600 font-semibold hover:text-blue-800"
+              >
+                Meet Makers →
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-2xl">🏭</span>
+              </div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">
+                MakerSpaces
+              </h4>
+              <p class="text-gray-600 mb-4">Find local maker spaces</p>
+              <a
+                href="/makerspaces"
+                class="text-blue-600 font-semibold hover:text-blue-800"
+              >
+                Explore Spaces →
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-2xl">📝</span>
+              </div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">Blog</h4>
+              <p class="text-gray-600 mb-4">Read tutorials and tips</p>
+              <a
+                href="/blog"
+                class="text-blue-600 font-semibold hover:text-blue-800"
+              >
+                Read Blog →
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+          >
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-2xl">💬</span>
+              </div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">Contact</h4>
+              <p class="text-gray-600 mb-4">Get in touch with us</p>
+              <a
+                href="/contact"
+                class="text-blue-600 font-semibold hover:text-blue-800"
+              >
+                Contact Us →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fun Maker Quote Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+          <blockquote
+            class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6"
+          >
+            "Every expert was once a beginner. Every pro was once an amateur.
+            Every icon was once an unknown. Don't be afraid to start."
+          </blockquote>
+          <cite class="text-lg text-gray-600">— Robin Sharma</cite>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

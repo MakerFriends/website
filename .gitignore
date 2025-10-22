@@ -10,6 +10,9 @@ dist/
 .vercel/
 .netlify/
 
+# Exception: WebAwesome components (needed for production)
+!public/webawesome/dist/
+
 # generated types
 .astro/
 

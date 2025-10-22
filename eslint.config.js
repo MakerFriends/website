@@ -119,6 +119,7 @@ export default [
       ".astro/",
       "package*.json",
       "tsconfig.json",
+      "public/webawesome/",
     ],
   },
 ];
