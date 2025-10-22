@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import { Image } from "astro:assets";
 ---
 
@@ -10,6 +11,14 @@ import { Image } from "astro:assets";
   description="Learn the basics of Arduino programming and start building your first electronic projects today!"
 >
   <Navigation />
+
+  <Breadcrumb
+    items={[
+      { label: "Home", href: "/" },
+      { label: "Blog", href: "/blog" },
+      { label: "Getting Started with Arduino" },
+    ]}
+  />
 
   <main class="flex-1">
     <!-- Article Header -->
