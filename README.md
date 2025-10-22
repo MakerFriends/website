@@ -5,7 +5,7 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 ![Astro](https://img.shields.io/badge/Astro-5.14.5-FF5D01?style=flat-square&logo=astro)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.14-38B2AC?style=flat-square&logo=tailwind-css)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
-![CI](https://github.com/makerfriends/makerfriends.com/workflows/CI/badge.svg)
+![CI](https://github.com/makerfriends/makerfriends.com/actions/workflows/ci.yml/badge.svg)
 
 ## 🌟 Features
 
