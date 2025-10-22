@@ -82,8 +82,40 @@ const blogPosts = [
 <Layout
   title="Blog"
   description="Explore tutorials, tips, and inspiration from the MakerFriends community. Learn new skills and stay updated with the latest in making."
+  image="https://images.unsplash.com/photo-1553406830-ef2513450d76?w=1200&h=630&fit=crop"
+  imageAlt="MakerFriends blog content"
 >
   <Navigation />
+
+  <!-- Blog Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "MakerFriends Blog",
+      "description": "Explore tutorials, tips, and inspiration from the MakerFriends community. Learn new skills and stay updated with the latest in making.",
+      "url": "https://makerfriends.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MakerFriends",
+        "url": "https://makerfriends.com"
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Getting Started with Arduino: A Beginner's Guide",
+          "url": "https://makerfriends.com/blog/getting-started-arduino",
+          "datePublished": "2025-03-15",
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Chen"
+          },
+          "image": "https://images.unsplash.com/photo-1553406830-ef2513450d76?w=1200&h=600&fit=crop",
+          "description": "Learn the basics of Arduino programming and start building your first electronic projects today!"
+        }
+      ]
+    }
+  </script>
 
   <main class="flex-1">
     <!-- Hero Section -->

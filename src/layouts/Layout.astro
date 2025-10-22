@@ -45,6 +45,35 @@ const {
     <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content={imageAlt} />
     <meta name="twitter:site" content="@makerfriends" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MakerFriends",
+        "url": "https://makerfriends.com",
+        "logo": "https://makerfriends.com/favicon.svg",
+        "description": "Connect with makers, share projects, and inspire creativity in STEM/STEAM learning!",
+        "foundingDate": "2020",
+        "sameAs": [
+          "https://facebook.com/makerfriends",
+          "https://twitter.com/makerfriends",
+          "https://instagram.com/makerfriends",
+          "https://youtube.com/makerfriends",
+          "https://github.com/makerfriends"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "contact@makerfriends.com"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
+        }
+      }
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
