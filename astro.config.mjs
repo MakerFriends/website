@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +15,7 @@ export default defineConfig({
     domains: ["images.unsplash.com"], // Allow external images
   },
   vite: {
+    plugins: [tailwindcss()],
     server: {
       fs: {
         strict: true,
