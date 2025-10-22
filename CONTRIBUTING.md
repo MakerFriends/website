@@ -73,6 +73,7 @@ Choose one of the following containerization tools:
 
 - **Node.js 22** (managed by nodenv)
 - **nodenv** for Node.js version management
+- **Environment Configuration**: Copy `.env.example` to `.env` and configure as needed
 - **npm** package manager
 - **Git**
 
@@ -294,6 +295,10 @@ This project uses automated code quality tools:
 - **Prettier**: Code formatting with Astro support
 - **Husky**: Pre-commit hooks that run ESLint and Prettier before allowing commits
 - **TypeScript**: Strict type checking
+- **Security Headers**: Comprehensive HTTP security headers configured
+- **Image Optimization**: Automatic image optimization with @astrojs/image
+- **SEO Tools**: Automatic sitemap generation
+- **Compression**: Gzip compression for better performance
 
 ### Running Code Quality Checks
 

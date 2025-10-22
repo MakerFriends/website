@@ -5,6 +5,33 @@ All notable changes to the MakerFriends website project will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2025-01-21
+
+### Added
+
+- **SEO Optimization**: Sitemap generation with @astrojs/sitemap integration
+- **Image Optimization**: @astrojs/image integration for optimized image delivery
+- **Compression**: Gzip compression via vite-plugin-compression for better performance
+- **Security Headers**: Comprehensive security headers (X-Frame-Options, X-Content-Type-Options, etc.)
+- **Environment Configuration**: .env.example template with all necessary environment variables
+- **Tailwind Configuration**: Custom tailwind.config.js with theme extensions and animations
+- **Enhanced Scripts**: Additional npm scripts for type-checking, cleaning, and preview deployment
+- **Performance Improvements**: Asset compression and image optimization for faster loading
+
+### Enhanced
+
+- **Build Configuration**: Updated astro.config.mjs with new integrations and security settings
+- **Package Scripts**: Added clean, type-check, and deploy:preview commands
+- **Security**: Added comprehensive security headers to prevent XSS, clickjacking, and MIME sniffing
+- **Developer Experience**: Enhanced tooling with better linting, formatting, and build processes
+
+### Technical Improvements
+
+- **Node.js Version**: Standardized on Node.js 22 across all configuration files
+- **Build Performance**: Optimized build process with compression and image optimization
+- **Security**: Implemented security best practices with proper HTTP headers
+- **SEO**: Automatic sitemap generation for better search engine visibility
+
 ## [1.4.0] - 2025-01-21
 
 ### Added

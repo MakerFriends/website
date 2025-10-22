@@ -19,7 +19,15 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 - **Static Site**: Lightning-fast performance with Astro
 - **Cloudflare Pages Ready**: Optimized for Cloudflare Pages deployment
 
-## 🆕 Recent Additions (v1.4.0)
+## 🆕 Recent Additions (v1.5.0)
+
+### Performance & SEO Optimization
+
+- **SEO Optimization**: Automatic sitemap generation with @astrojs/sitemap
+- **Image Optimization**: @astrojs/image integration for optimized image delivery
+- **Compression**: Gzip compression for faster loading times
+- **Security Headers**: Comprehensive security headers for enhanced protection
+- **Environment Configuration**: Complete environment variable setup
 
 ### Code Quality & Developer Experience
 
@@ -291,6 +299,14 @@ npm run lint:fix     # Auto-fix ESLint issues
 npm run lint:strict  # Run ESLint with zero warnings allowed
 npm run format       # Format code with Prettier
 npm run format:check # Check code formatting
+npm run type-check   # Run TypeScript type checking
+
+# Utilities
+npm run clean        # Clean build artifacts and cache
+
+# Deployment
+npm run deploy:local    # Deploy to Cloudflare Pages locally
+npm run deploy:preview  # Deploy to preview environment
 
 # Setup
 npm run setup        # Set up Node version and install dependencies
@@ -305,6 +321,10 @@ This project includes comprehensive code quality tools:
 - **Husky**: Pre-commit hooks for code quality
 - **nodenv**: Node.js version management
 - **VS Code**: Optimized editor configuration
+- **TypeScript**: Full type checking and strict mode
+- **Security Headers**: Comprehensive HTTP security headers
+- **Image Optimization**: Automatic image optimization and compression
+- **SEO Tools**: Automatic sitemap generation
 
 ### Development Workflow
 

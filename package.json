@@ -1,7 +1,7 @@
 {
   "name": "makerfriends.com",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "MakerFriends - A vibrant community platform connecting makers worldwide",
   "author": "MakerFriends Team",
   "license": "MIT",
@@ -11,12 +11,15 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
+    "type-check": "astro check",
     "lint": "eslint . --ext .js,.ts,.astro",
     "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
     "lint:strict": "eslint . --ext .js,.ts,.astro --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "clean": "rm -rf dist .astro",
     "deploy:local": "npm run build && wrangler pages deploy dist --project-name=makerfriends-com-website",
+    "deploy:preview": "wrangler pages deploy dist --project-name=makerfriends-com-website --env preview",
     "prepare": "husky"
   },
   "dependencies": {
