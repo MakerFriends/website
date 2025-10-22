@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
-import image from "@astrojs/image-optimization";
+// Image optimization is built into Astro 5.x - no separate package needed
 import { compression } from "vite-plugin-compression";
 
 
@@ -11,7 +11,7 @@ import { compression } from "vite-plugin-compression";
 export default defineConfig({
   site: "https://makerfriends.com",
   output: "static",
-  integrations: [sitemap(), image()],
+  integrations: [sitemap()],
   devToolbar: {
     enabled: false, // Disable dev toolbar to avoid module loading issues
   },
