@@ -1,11 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
-// Image optimization is built into Astro 5.x - no separate package needed
-// Compression is handled by Cloudflare Pages automatically
-
-
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +14,6 @@ export default defineConfig({
     domains: ["images.unsplash.com"], // Allow external images
   },
   vite: {
-    plugins: [tailwindcss()],
     server: {
       fs: {
         strict: true,
