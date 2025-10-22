@@ -5,11 +5,15 @@ import CookieConsent from "../components/CookieConsent.astro";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 const {
   title,
   description = "Join MakerFriends - Connect with makers, share projects, and inspire creativity in STEM/STEAM learning!",
+  image = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=630&fit=crop",
+  imageAlt = "Makers working together in a collaborative environment",
 } = Astro.props;
 ---
 
@@ -31,7 +35,16 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:url" content={`${Astro.site}${Astro.url.pathname}`} />
+    <meta property="og:site_name" content="MakerFriends" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+    <meta name="twitter:site" content="@makerfriends" />
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
