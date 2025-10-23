@@ -20,9 +20,25 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 - **Static Site**: Lightning-fast performance with Astro
 - **Cloudflare Pages Ready**: Optimized for Cloudflare Pages deployment
 
-## 🆕 Recent Additions (v1.5.0)
+## 🆕 Recent Additions (v1.6.0)
 
-### Performance & SEO Optimization
+### WebAwesome UI Components Integration
+
+- **WebAwesome UI Library**: Complete integration of 400+ professional UI components
+- **Component Demo Page**: Interactive showcase at `/webawesome-demo` demonstrating all components
+- **Accessibility First**: All components built with WCAG 2.1 AA compliance
+- **TypeScript Support**: Full TypeScript definitions for all components
+- **Lightweight**: Minimal bundle size impact with optimized performance
+- **Customizable**: Easy theming and customization options
+
+### Enhanced User Experience
+
+- **Custom 404 Page**: Professional error page with helpful navigation
+- **Fixed Image URLs**: Resolved broken image links across the site
+- **CI Status Badge**: Real-time GitHub Actions CI status in README
+- **Branch Switching Guide**: Comprehensive documentation for development workflows
+
+### Performance & SEO Optimization (v1.5.0)
 
 - **SEO Optimization**: Automatic sitemap generation with @astrojs/sitemap
 - **Image Optimization**: @astrojs/image integration for optimized image delivery
@@ -76,7 +92,8 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 makerfriends.com/
 ├── public/
 │   ├── favicon.svg
-│   └── _redirects          # Cloudflare Pages redirects
+│   ├── _redirects          # Cloudflare Pages redirects
+│   └── webawesome/         # WebAwesome UI components
 ├── src/
 │   ├── components/
 │   │   ├── Navigation.astro
@@ -102,6 +119,8 @@ makerfriends.com/
 │   │   ├── signup.astro     # Sign Up
 │   │   ├── members.astro    # Member Benefits
 │   │   ├── forum.astro      # Forum (Coming Soon)
+│   │   ├── 404.astro        # Custom 404 error page
+│   │   ├── webawesome-demo.astro # WebAwesome components demo
 │   │   └── blog/
 │   │       ├── index.astro
 │   │       └── getting-started-arduino.astro
@@ -532,7 +551,40 @@ npm install
 
 ### Current Integrations
 
-- Tailwind CSS v4
+- **Tailwind CSS v4**: Modern utility-first CSS framework
+- **WebAwesome UI Components**: 400+ professional UI components with full accessibility support
+
+### WebAwesome UI Components
+
+The project now includes a complete UI component library with:
+
+- **Form Components**: Input, textarea, select, checkbox, radio, button, etc.
+- **Layout Components**: Card, dialog, drawer, popup, dropdown, etc.
+- **Interactive Components**: Progress bars, spinners, sliders, tabs, etc.
+- **Utility Components**: Icons, date formatting, QR codes, etc.
+
+#### Using WebAwesome Components
+
+```astro
+<!-- Example usage in an Astro component -->
+<webawesome-button variant="primary" onclick="alert('Hello!')">
+  Click Me
+</webawesome-button>
+
+<webawesome-input placeholder="Your Name"></webawesome-input>
+
+<webawesome-card>
+  <h3 slot="header">Card Title</h3>
+  <p>Card content goes here</p>
+  <div slot="footer">
+    <webawesome-button variant="secondary">Action</webawesome-button>
+  </div>
+</webawesome-card>
+```
+
+#### Demo Page
+
+Visit `/webawesome-demo` to see all components in action with interactive examples.
 
 ### Adding New Integrations
 

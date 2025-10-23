@@ -5,6 +5,43 @@ All notable changes to the MakerFriends website project will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2025-01-22
+
+### Added
+
+- **WebAwesome UI Components**: Complete integration of WebAwesome UI component library
+- **WebAwesome Demo Page**: Interactive showcase page demonstrating all available components
+- **Custom 404 Error Page**: Professional 404 page with helpful navigation and popular destinations
+- **CI Badge**: GitHub Actions CI status badge in README
+- **Branch Switching Guide**: Comprehensive documentation for branch switching best practices
+- **WebAwesome Integration Documentation**: Complete guide for using WebAwesome components
+- **400+ WebAwesome Components**: Full component library with TypeScript definitions
+- **Component Categories**: Form components, layout components, interactive components, and utility components
+
+### Enhanced
+
+- **Layout Component**: Updated to include WebAwesome CSS and JavaScript loader
+- **Image Optimization**: Fixed broken image URLs across multiple pages
+- **ESLint Configuration**: Added WebAwesome files to ignore patterns
+- **Git Configuration**: Updated .gitignore to include WebAwesome components
+- **Documentation**: Added comprehensive WebAwesome integration guide
+- **Build Process**: WebAwesome components properly included in production builds
+
+### Fixed
+
+- **Broken Image URLs**: Fixed multiple broken Unsplash image URLs in projects and store pages
+- **Build Failures**: Resolved image loading issues that were causing build failures
+- **ESLint Warnings**: Fixed false positive linter warnings for Tailwind CSS gradient classes
+- **Unused Imports**: Removed unused Image import from 404.astro
+
+### Technical Improvements
+
+- **WebAwesome Integration**: Complete UI component library integration with 400+ components
+- **Component Accessibility**: All WebAwesome components are accessible by default (WCAG 2.1 AA)
+- **TypeScript Support**: Full TypeScript definitions for all WebAwesome components
+- **Performance**: Lightweight component library with minimal bundle size impact
+- **Customization**: Easy theming and customization options for all components
+
 ## [1.5.0] - 2025-01-21
 
 ### Added
