@@ -9,82 +9,82 @@ A vibrant community platform connecting makers worldwide to share projects, lear
 
 ## 🌟 Features
 
-- **Project Showcase**: Browse and share maker projects across multiple categories
-- **Maker Directory**: Connect with talented makers worldwide
-- **Interactive MakerSpaces Map**: Discover maker spaces worldwide with Leaflet.js integration
-- **MakerSpaces Directory**: Searchable directory with filtering and community contributions
-- **Newsletter System**: Email subscriptions with multiple backend integrations
-- **Blog System**: Tutorials, tips, and maker stories
-- **Community Features**: Forums (coming soon), workshops, and events
-- **Responsive Design**: Beautiful UI that works on all devices
-- **Static Site**: Lightning-fast performance with Astro
-- **Cloudflare Pages Ready**: Optimized for Cloudflare Pages deployment
+- 🎨 **Project Showcase**: Browse and share maker projects across multiple categories
+- 👥 **Maker Directory**: Connect with talented makers worldwide
+- 🗺️ **Interactive MakerSpaces Map**: Discover maker spaces worldwide with Leaflet.js integration
+- 📍 **MakerSpaces Directory**: Searchable directory with filtering and community contributions
+- 📧 **Newsletter System**: Email subscriptions with multiple backend integrations
+- 📝 **Blog System**: Tutorials, tips, and maker stories
+- 🤝 **Community Features**: Forums (coming soon), workshops, and events
+- 📱 **Responsive Design**: Beautiful UI that works on all devices
+- ⚡ **Static Site**: Lightning-fast performance with Astro
+- ☁️ **Cloudflare Pages Ready**: Optimized for Cloudflare Pages deployment
 
 ## 🆕 Recent Additions (v1.6.0)
 
-### WebAwesome UI Components Integration
+### 🎨 WebAwesome UI Components Integration
 
-- **WebAwesome UI Library**: Complete integration of 400+ professional UI components
-- **Component Demo Page**: Interactive showcase at `/webawesome-demo` demonstrating all components
-- **Accessibility First**: All components built with WCAG 2.1 AA compliance
-- **TypeScript Support**: Full TypeScript definitions for all components
-- **Lightweight**: Minimal bundle size impact with optimized performance
-- **Customizable**: Easy theming and customization options
+- 🧩 **WebAwesome UI Library**: Complete integration of 400+ professional UI components
+- 🎪 **Component Demo Page**: Interactive showcase at `/webawesome-demo` demonstrating all components
+- ♿ **Accessibility First**: All components built with WCAG 2.1 AA compliance
+- 📘 **TypeScript Support**: Full TypeScript definitions for all components
+- 🪶 **Lightweight**: Minimal bundle size impact with optimized performance
+- 🎨 **Customizable**: Easy theming and customization options
 
-### Enhanced User Experience
+### ✨ Enhanced User Experience
 
-- **Custom 404 Page**: Professional error page with helpful navigation
-- **Fixed Image URLs**: Resolved broken image links across the site
-- **CI Status Badge**: Real-time GitHub Actions CI status in README
-- **Branch Switching Guide**: Comprehensive documentation for development workflows
+- 🚫 **Custom 404 Page**: Professional error page with helpful navigation
+- 🖼️ **Fixed Image URLs**: Resolved broken image links across the site
+- ✅ **CI Status Badge**: Real-time GitHub Actions CI status in README
+- 📚 **Branch Switching Guide**: Comprehensive documentation for development workflows
 
-### Performance & SEO Optimization (v1.5.0)
+### 🚀 Performance & SEO Optimization (v1.5.0)
 
-- **SEO Optimization**: Automatic sitemap generation with @astrojs/sitemap
-- **Image Optimization**: @astrojs/image integration for optimized image delivery
-- **Compression**: Gzip compression for faster loading times
-- **Security Headers**: Comprehensive security headers for enhanced protection
-- **Environment Configuration**: Complete environment variable setup
+- 🔍 **SEO Optimization**: Automatic sitemap generation with @astrojs/sitemap
+- 🖼️ **Image Optimization**: @astrojs/image integration for optimized image delivery
+- 📦 **Compression**: Gzip compression for faster loading times
+- 🔒 **Security Headers**: Comprehensive security headers for enhanced protection
+- ⚙️ **Environment Configuration**: Complete environment variable setup
 
-### Code Quality & Developer Experience
+### 🛠️ Code Quality & Developer Experience
 
-- **ESLint Integration**: Complete ESLint setup with Astro support
-- **Code Quality Tools**: ESLint v9 with flat config format and TypeScript support
-- **Pre-commit Hooks**: Husky integration for automatic code quality checks
-- **Node.js Version Management**: Migrated from nvm to nodenv for better performance
-- **Automated Setup**: Enhanced setup.sh script for new contributors
-- **VS Code Integration**: Complete editor configuration for ESLint and formatting
-- **TypeScript Improvements**: Resolved all implicit any types and null checks
+- 🔧 **ESLint Integration**: Complete ESLint setup with Astro support
+- 📏 **Code Quality Tools**: ESLint v9 with flat config format and TypeScript support
+- 🪝 **Pre-commit Hooks**: Husky integration for automatic code quality checks
+- 📦 **Node.js Version Management**: Migrated from nvm to nodenv for better performance
+- 🤖 **Automated Setup**: Enhanced setup.sh script for new contributors
+- 💻 **VS Code Integration**: Complete editor configuration for ESLint and formatting
+- 📘 **TypeScript Improvements**: Resolved all implicit any types and null checks
 
-### GDPR Compliance & Privacy (v1.3.0)
+### 🔒 GDPR Compliance & Privacy (v1.3.0)
 
-- **Complete GDPR Compliance**: Full implementation of EU data protection regulations
-- **Cookie Consent Management**: Granular cookie controls with user preferences
-- **Privacy Documentation**: Comprehensive privacy policy and GDPR compliance pages
-- **User Rights Implementation**: Access, rectification, erasure, and data portability
-- **Consent Tracking**: Explicit consent management for all data processing
-- **Data Protection by Design**: Privacy built into all systems and processes
+- ✅ **Complete GDPR Compliance**: Full implementation of EU data protection regulations
+- 🍪 **Cookie Consent Management**: Granular cookie controls with user preferences
+- 📄 **Privacy Documentation**: Comprehensive privacy policy and GDPR compliance pages
+- 👤 **User Rights Implementation**: Access, rectification, erasure, and data portability
+- 📊 **Consent Tracking**: Explicit consent management for all data processing
+- 🛡️ **Data Protection by Design**: Privacy built into all systems and processes
 
-### Interactive MakerSpaces Map
+### 🗺️ Interactive MakerSpaces Map
 
-- **Leaflet.js Integration**: Interactive map showing maker spaces worldwide
-- **Location Services**: Automatic location detection and address search
-- **Smart Zoom Controls**: Precise zoom sensitivity for better user experience
-- **Tile Preloading**: Smooth map interactions with preloaded tiles
-- **Color-coded Markers**: Different colors for ownership models (Commercial, Non-profit, etc.)
+- 🗺️ **Leaflet.js Integration**: Interactive map showing maker spaces worldwide
+- 📍 **Location Services**: Automatic location detection and address search
+- 🎯 **Smart Zoom Controls**: Precise zoom sensitivity for better user experience
+- ⚡ **Tile Preloading**: Smooth map interactions with preloaded tiles
+- 🎨 **Color-coded Markers**: Different colors for ownership models (Commercial, Non-profit, etc.)
 
-### MakerSpaces Directory
+### 📍 MakerSpaces Directory
 
-- **Searchable Directory**: Filter maker spaces by location, specialties, and ownership
-- **Community Contributions**: Form for users to add new maker spaces
-- **Detailed Information**: Contact info, equipment, membership costs, and more
+- 🔍 **Searchable Directory**: Filter maker spaces by location, specialties, and ownership
+- 👥 **Community Contributions**: Form for users to add new maker spaces
+- 📋 **Detailed Information**: Contact info, equipment, membership costs, and more
 
-### Newsletter System
+### 📧 Newsletter System
 
-- **Buttondown Integration**: Developer-friendly newsletter service
-- **GDPR Compliant**: Explicit consent checkbox and privacy notices
-- **Responsive Design**: Beautiful signup form that works on all devices
-- **Consent Tracking**: Records consent timestamps and sources
+- 📬 **Buttondown Integration**: Developer-friendly newsletter service
+- ✅ **GDPR Compliant**: Explicit consent checkbox and privacy notices
+- 📱 **Responsive Design**: Beautiful signup form that works on all devices
+- 📊 **Consent Tracking**: Records consent timestamps and sources
 
 ## 📁 Project Structure
 
@@ -136,41 +136,41 @@ makerfriends.com/
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### 📋 Prerequisites
 
 Choose one of the following options:
 
-#### Option 1: Containerized Development (Recommended)
+#### 🐳 Option 1: Containerized Development (Recommended)
 
 Choose one of the following containerization tools:
 
-- **Docker Desktop** + **Docker Compose**
-- **Rancher Desktop** + **Docker Compose**
-- **Podman** + **Podman Compose**
-- **Colima** + **Docker Compose**
-- **OrbStack** + **Docker Compose**
+- 🐳 **Docker Desktop** + **Docker Compose**
+- 🐄 **Rancher Desktop** + **Docker Compose**
+- 🐧 **Podman** + **Podman Compose**
+- 🍎 **Colima** + **Docker Compose**
+- ⚡ **OrbStack** + **Docker Compose**
 
 All tools provide Docker-compatible APIs, so the same commands work across all options.
 
-#### Option 2: Local Development
+#### 💻 Option 2: Local Development
 
-- **Node.js 24.5.0** (managed by nodenv)
-- **nodenv** for Node.js version management
-- **npm** package manager
-- **Git**
+- 📦 **Node.js 22.x** (managed by nodenv)
+- 🔧 **nodenv** for Node.js version management
+- 📦 **npm** package manager
+- 🔀 **Git**
 
-### Installation
+### 📦 Installation
 
-#### Using Docker (Recommended)
+#### 🐳 Using Docker (Recommended)
 
-1. Clone the repository:
+1. 📥 **Clone the repository:**
 
 ```bash
 git clone https://github.com/yourusername/makerfriends.com.git
 cd makerfriends.com
 ```
 
-2. Start development environment:
+2. 🚀 **Start development environment:**
 
 ```bash
 # Using Docker Compose (works with all Docker alternatives)
@@ -183,18 +183,18 @@ docker-compose up
 podman-compose up
 ```
 
-3. Open your browser and navigate to `http://localhost:4321`
+3. 🌐 **Open your browser and navigate to `http://localhost:4321`**
 
-#### Using Local Development
+#### 💻 Using Local Development
 
-1. Clone the repository:
+1. 📥 **Clone the repository:**
 
 ```bash
 git clone https://github.com/yourusername/makerfriends.com.git
 cd makerfriends.com
 ```
 
-2. **Quick Setup** (Recommended):
+2. ⚡ **Quick Setup** (Recommended):
 
 ```bash
 # Run the automated setup script
@@ -208,7 +208,7 @@ This script will:
 - ✅ Install all dependencies
 - ✅ Set up Husky pre-commit hooks
 
-3. **Manual Setup** (Alternative):
+3. 🔧 **Manual Setup** (Alternative):
 
 ```bash
 # Install nodenv (if not already installed)
@@ -221,24 +221,24 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
 # Install Node.js version
-nodenv install 24.5.0
-nodenv local 24.5.0
+nodenv install 22.20.0
+nodenv local 22.20.0
 
 # Install dependencies
 npm install
 ```
 
-4. Start the development server:
+4. 🚀 **Start the development server:**
 
 ```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:4321`
+4. 🌐 **Open your browser and navigate to `http://localhost:4321`**
 
 ## 🛠️ Development
 
-### Containerized Development (Recommended)
+### 🐳 Containerized Development (Recommended)
 
 ```bash
 # Start development environment
@@ -261,9 +261,9 @@ npm run dev
 ./docker-dev.sh rebuild
 ```
 
-### Docker Alternative Setup
+### 🔧 Docker Alternative Setup
 
-#### Rancher Desktop
+#### 🐄 Rancher Desktop
 
 ```bash
 # Install Rancher Desktop from https://rancherdesktop.io/
@@ -272,7 +272,7 @@ npm run dev
 docker-compose up
 ```
 
-#### Podman
+#### 🐧 Podman
 
 ```bash
 # Install Podman and podman-compose
@@ -282,7 +282,7 @@ docker-compose up
 podman-compose up
 ```
 
-#### Colima (macOS/Linux)
+#### 🍎 Colima (macOS/Linux)
 
 ```bash
 # Install Colima
@@ -295,7 +295,7 @@ colima start --with-kubernetes=false
 docker-compose up
 ```
 
-#### OrbStack (macOS)
+#### ⚡ OrbStack (macOS)
 
 ```bash
 # Install OrbStack from https://orbstack.dev/
@@ -304,16 +304,16 @@ docker-compose up
 docker-compose up
 ```
 
-### Available Scripts
+### 📜 Available Scripts
 
 ```bash
-# Development
+# 🚀 Development
 npm run dev          # Start development server
 npm run build        # Build for production
 npm run preview      # Preview production build
 npm run astro        # Run Astro CLI commands
 
-# Code Quality
+# 🔧 Code Quality
 npm run lint         # Run ESLint
 npm run lint:fix     # Auto-fix ESLint issues
 npm run lint:strict  # Run ESLint with zero warnings allowed
@@ -321,43 +321,43 @@ npm run format       # Format code with Prettier
 npm run format:check # Check code formatting
 npm run type-check   # Run TypeScript type checking
 
-# Utilities
+# 🧹 Utilities
 npm run clean        # Clean build artifacts and cache
 
-# Deployment
+# 🚀 Deployment
 npm run deploy:local    # Deploy to Cloudflare Pages locally
 npm run deploy:preview  # Deploy to preview environment
 
-# Setup
+# ⚙️ Setup
 npm run setup        # Set up Node version and install dependencies
 ```
 
-### Code Quality Tools
+### 🔧 Code Quality Tools
 
 This project includes comprehensive code quality tools:
 
-- **ESLint**: Linting for JavaScript, TypeScript, and Astro files
-- **Prettier**: Code formatting with Astro support
-- **Husky**: Pre-commit hooks for code quality
-- **nodenv**: Node.js version management
-- **VS Code**: Optimized editor configuration
-- **TypeScript**: Full type checking and strict mode
-- **Security Headers**: Comprehensive HTTP security headers
-- **Image Optimization**: Automatic image optimization and compression
-- **SEO Tools**: Automatic sitemap generation
+- 🔍 **ESLint**: Linting for JavaScript, TypeScript, and Astro files
+- 🎨 **Prettier**: Code formatting with Astro support
+- 🪝 **Husky**: Pre-commit hooks for code quality
+- 📦 **nodenv**: Node.js version management
+- 💻 **VS Code**: Optimized editor configuration
+- 📘 **TypeScript**: Full type checking and strict mode
+- 🔒 **Security Headers**: Comprehensive HTTP security headers
+- 🖼️ **Image Optimization**: Automatic image optimization and compression
+- 🔍 **SEO Tools**: Automatic sitemap generation
 
-### Development Workflow
+### 🔄 Development Workflow
 
-1. **Run dev server**: Start the development server with hot-reload
-2. **Make changes**: Edit files in `src/` directory
-3. **Code quality**: ESLint and Prettier will automatically check your code
-4. **Pre-commit hooks**: Husky runs ESLint and Prettier before allowing commits
-5. **See updates**: Changes are reflected immediately in the browser
-6. **Build**: Run `npm run build` to create production build
+1. 🚀 **Run dev server**: Start the development server with hot-reload
+2. ✏️ **Make changes**: Edit files in `src/` directory
+3. 🔍 **Code quality**: ESLint and Prettier will automatically check your code
+4. 🪝 **Pre-commit hooks**: Husky runs ESLint and Prettier before allowing commits
+5. 👀 **See updates**: Changes are reflected immediately in the browser
+6. 🏗️ **Build**: Run `npm run build` to create production build
 
-### Adding New Pages
+### 📄 Adding New Pages
 
-1. Create a new `.astro` file in `src/pages/`:
+1. 📝 **Create a new `.astro` file in `src/pages/`:**
 
 ```astro
 ---
@@ -375,11 +375,11 @@ import Footer from "../components/Footer.astro";
 </Layout>
 ```
 
-2. The page will be automatically available at `/page-name`
+2. 🌐 **The page will be automatically available at `/page-name`**
 
-### Adding Blog Posts
+### 📝 Adding Blog Posts
 
-1. Create a new `.astro` file in `src/pages/blog/`:
+1. 📄 **Create a new `.astro` file in `src/pages/blog/`:**
 
 ```astro
 ---
@@ -392,7 +392,7 @@ import Layout from "../../layouts/Layout.astro";
 </Layout>
 ```
 
-2. Update `src/pages/blog/index.astro` to include your new post in the list
+2. 📋 **Update `src/pages/blog/index.astro` to include your new post in the list**
 
 ## 🎨 Styling
 
