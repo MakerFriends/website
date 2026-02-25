@@ -1,6 +1,6 @@
 # MakerFriends.com website 🚀
 
-A vibrant community platform connecting makers worldwide to share projects, learn new skills, and build lasting friendships through STEM/STEAM innovation.
+A vibrant community platform connecting makers worldwide to share projects, learn new skills, and build lasting friendships through STEM/STEAM innovation. Updated for 2026.
 
 ![Astro](https://img.shields.io/badge/Astro-5.14.5-FF5D01?style=flat-square&logo=astro)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.14-38B2AC?style=flat-square&logo=tailwind-css)
